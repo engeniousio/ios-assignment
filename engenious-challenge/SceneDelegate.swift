@@ -14,11 +14,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let nc = UINavigationController(rootViewController: RootViewController())
+        let dependencies = Dependencies()
+        let nc = UINavigationController(
+            rootViewController: ReposAssembly.createModule(repositoryService: dependencies.reposService)
+        )
         window.rootViewController = nc
         self.window = window
         window.makeKeyAndVisible()
     }
-
 }
-
