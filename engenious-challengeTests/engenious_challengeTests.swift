@@ -6,31 +6,77 @@
 //
 
 import XCTest
+import Combine
 @testable import engenious_challenge
+
+class MockApiRequest: APIRequest {
+    typealias Response = MockResponse
+
+    var resourceName: String { "/test" }
+    var method: HttpMethod { .get }
+
+}
+
+class MockResponse: Decodable {
+
+}
 
 class engenious_challengeTests: XCTestCase {
 
+    private var builder: RequestBuilderProtocol!
+    private var networkService: NetworkServiceProtocol!
+    private var subscriptions: Set<AnyCancellable>!
+
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.builder = RequestBuilder()
+        self.networkService = NetworkService(baseUrl: URL(string: "https://api.github.com")!, requestBuilder: builder)
+        self.subscriptions = []
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testMakingRequest() throws {
+        let url = URL(string: "https://apple.com")!
+        let urlRequest = try builder.makeRequest(MockApiRequest(), baseURL: url)
+        XCTAssertTrue(urlRequest.url?.scheme == "https")
+        XCTAssertTrue(urlRequest.url?.path == "/test")
+        XCTAssertTrue(urlRequest.url?.host == "apple.com")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testApiRequestMethod() {
+        var response: [Repo]?
+        let expectation = expectation(description: "GitHub Response come")
+        networkService.send(GetReposRequest(username: "Apple")) { repos, error in
+            response = repos
+            expectation.fulfill()
         }
+        waitForExpectations(timeout: 20)
+        XCTAssertNotNil(response)
+
     }
 
+    func testApiCombineMethod() {
+        var response: [Repo]?
+        var error: Error?
+        let expectation = expectation(description: "GitHub Response come")
+        networkService.send(GetReposRequest(username: "Apple"))
+            .sink {
+                switch $0 {
+                case .finished:
+                    break
+                case .failure(let encounteredError):
+                    error = encounteredError
+                }
+                expectation.fulfill()
+            } receiveValue: {
+                response = $0
+            }.store(in: &subscriptions)
+
+        waitForExpectations(timeout: 20)
+        XCTAssertNil(error)
+        XCTAssertNotNil(response)
+
+    }
 }
