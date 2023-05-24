@@ -11,6 +11,7 @@
 		112562802A1E4CB300BB64C9 /* MockRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1125627F2A1E4CB300BB64C9 /* MockRepositoryService.swift */; };
 		112562812A1E4D1800BB64C9 /* MockRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1125627F2A1E4CB300BB64C9 /* MockRepositoryService.swift */; };
 		112562822A1E4D1F00BB64C9 /* NetworkRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* NetworkRepositoryService.swift */; };
+		112562862A1E596500BB64C9 /* RepoTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112562852A1E596500BB64C9 /* RepoTableSectionHeaderView.swift */; };
 		20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */; };
 		20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */; };
 		20F3FA3528379AE2008BFAF8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3428379AE2008BFAF8 /* RootViewController.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		1125627D2A1E4C6300BB64C9 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
 		1125627F2A1E4CB300BB64C9 /* MockRepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepositoryService.swift; sourceTree = "<group>"; };
+		112562852A1E596500BB64C9 /* RepoTableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableSectionHeaderView.swift; sourceTree = "<group>"; };
 		20F3FA2D28379AE2008BFAF8 /* engenious-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "engenious-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,24 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		112562832A1E594100BB64C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20F3FA3428379AE2008BFAF8 /* RootViewController.swift */,
+				20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */,
+				112562852A1E596500BB64C9 /* RepoTableSectionHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		112562842A1E594900BB64C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20F3FA6228379F1D008BFAF8 /* Repo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		20F3FA2428379AE2008BFAF8 = {
 			isa = PBXGroup;
 			children = (
@@ -119,12 +139,11 @@
 		20F3FA2F28379AE2008BFAF8 /* engenious-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				112562842A1E594900BB64C9 /* Model */,
+				112562832A1E594100BB64C9 /* View */,
 				1125627C2A1E4C4100BB64C9 /* Repository */,
 				20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */,
 				20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */,
-				20F3FA3428379AE2008BFAF8 /* RootViewController.swift */,
-				20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */,
-				20F3FA6228379F1D008BFAF8 /* Repo.swift */,
 				20F3FA3928379AE3008BFAF8 /* Assets.xcassets */,
 				20F3FA3B28379AE3008BFAF8 /* LaunchScreen.storyboard */,
 				20F3FA3E28379AE3008BFAF8 /* Info.plist */,
@@ -280,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F3FA3528379AE2008BFAF8 /* RootViewController.swift in Sources */,
+				112562862A1E596500BB64C9 /* RepoTableSectionHeaderView.swift in Sources */,
 				112562802A1E4CB300BB64C9 /* MockRepositoryService.swift in Sources */,
 				1125627E2A1E4C6300BB64C9 /* RepositoryService.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,

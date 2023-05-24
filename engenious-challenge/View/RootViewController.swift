@@ -33,6 +33,9 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         tv.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tv.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
+		tv.separatorColor = .clear
+		tv.allowsSelection = false
+		
         getRepos()
     }
 
@@ -54,7 +57,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RepoTableViewCell.self)) as? RepoTableViewCell else { return UITableViewCell() }
         let repo = repoList[indexPath.row]
-        cell.titleLabel.text = repo.name
+		cell.update(with: repo)
         return cell
     }
 
