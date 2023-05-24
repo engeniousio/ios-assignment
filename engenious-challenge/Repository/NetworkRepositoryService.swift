@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct RepositoryService {
+struct NetworkRepositoryService: RepositoryService {
 
 	func getUserRepos(username: String) -> Future<[Repo], Error> {
 		return Future { promise in

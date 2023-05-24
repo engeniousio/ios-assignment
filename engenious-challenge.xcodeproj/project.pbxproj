@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1125627E2A1E4C6300BB64C9 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1125627D2A1E4C6300BB64C9 /* RepositoryService.swift */; };
+		112562802A1E4CB300BB64C9 /* MockRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1125627F2A1E4CB300BB64C9 /* MockRepositoryService.swift */; };
+		112562812A1E4D1800BB64C9 /* MockRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1125627F2A1E4CB300BB64C9 /* MockRepositoryService.swift */; };
+		112562822A1E4D1F00BB64C9 /* NetworkRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* NetworkRepositoryService.swift */; };
 		20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */; };
 		20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */; };
 		20F3FA3528379AE2008BFAF8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3428379AE2008BFAF8 /* RootViewController.swift */; };
@@ -15,7 +19,7 @@
 		20F3FA4828379AE3008BFAF8 /* engenious_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA4728379AE3008BFAF8 /* engenious_challengeTests.swift */; };
 		20F3FA5228379AE3008BFAF8 /* engenious_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */; };
 		20F3FA5428379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */; };
-		20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* NetworkService.swift */; };
+		20F3FA6128379F06008BFAF8 /* NetworkRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* NetworkRepositoryService.swift */; };
 		20F3FA6328379F1D008BFAF8 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6228379F1D008BFAF8 /* Repo.swift */; };
 		20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1125627D2A1E4C6300BB64C9 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
+		1125627F2A1E4CB300BB64C9 /* MockRepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepositoryService.swift; sourceTree = "<group>"; };
 		20F3FA2D28379AE2008BFAF8 /* engenious-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "engenious-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +56,7 @@
 		20F3FA4D28379AE3008BFAF8 /* engenious-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "engenious-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITests.swift; sourceTree = "<group>"; };
 		20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		20F3FA6028379F06008BFAF8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		20F3FA6028379F06008BFAF8 /* NetworkRepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepositoryService.swift; sourceTree = "<group>"; };
 		20F3FA6228379F1D008BFAF8 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +86,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1125627C2A1E4C4100BB64C9 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				20F3FA6028379F06008BFAF8 /* NetworkRepositoryService.swift */,
+				1125627D2A1E4C6300BB64C9 /* RepositoryService.swift */,
+				1125627F2A1E4CB300BB64C9 /* MockRepositoryService.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		20F3FA2428379AE2008BFAF8 = {
 			isa = PBXGroup;
 			children = (
@@ -103,11 +119,11 @@
 		20F3FA2F28379AE2008BFAF8 /* engenious-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				1125627C2A1E4C4100BB64C9 /* Repository */,
 				20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */,
 				20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */,
 				20F3FA3428379AE2008BFAF8 /* RootViewController.swift */,
 				20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */,
-				20F3FA6028379F06008BFAF8 /* NetworkService.swift */,
 				20F3FA6228379F1D008BFAF8 /* Repo.swift */,
 				20F3FA3928379AE3008BFAF8 /* Assets.xcassets */,
 				20F3FA3B28379AE3008BFAF8 /* LaunchScreen.storyboard */,
@@ -264,9 +280,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F3FA3528379AE2008BFAF8 /* RootViewController.swift in Sources */,
+				112562802A1E4CB300BB64C9 /* MockRepositoryService.swift in Sources */,
+				1125627E2A1E4C6300BB64C9 /* RepositoryService.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,
 				20F3FA6328379F1D008BFAF8 /* Repo.swift in Sources */,
-				20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */,
+				20F3FA6128379F06008BFAF8 /* NetworkRepositoryService.swift in Sources */,
 				20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */,
 				20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */,
 			);
@@ -277,6 +295,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F3FA4828379AE3008BFAF8 /* engenious_challengeTests.swift in Sources */,
+				112562822A1E4D1F00BB64C9 /* NetworkRepositoryService.swift in Sources */,
+				112562812A1E4D1800BB64C9 /* MockRepositoryService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

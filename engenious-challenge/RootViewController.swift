@@ -10,7 +10,7 @@ import Combine
 
 class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let repositoryService: RepositoryService = RepositoryService()
+    let repositoryService: RepositoryService = NetworkRepositoryService()
     let username: String = "Apple"
     var repoList: [Repo] = []
     
