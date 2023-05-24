@@ -34,8 +34,8 @@ class RepoTableViewCell: UITableViewCell {
 		let layer = CAGradientLayer()
 		layer.accessibilityHint = "gradient"
 		layer.colors = [
-			UIColor(named: "backgroundColorTop")!.cgColor, 
-			UIColor(named: "backgroundColorBottom")!.cgColor
+			UIColor(named: "backgroundColorTop")!.withAlphaComponent(0.6).cgColor, 
+			UIColor(named: "backgroundColorBottom")!.withAlphaComponent(0.456).cgColor
 		]
 		layer.startPoint = .init(x: 0.5, y: 0)
 		layer.endPoint = .init(x: 0.5, y: 1)
