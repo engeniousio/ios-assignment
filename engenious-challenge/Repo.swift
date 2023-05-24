@@ -8,9 +8,10 @@
 import Foundation
 
 struct Repo: Codable {
-    var name: String
-    var description: String?
-    var url: String
+	
+    let name: String
+    let description: String?
+    let url: String
 
     enum CodingKeys: String, CodingKey {
         case name = "name"
