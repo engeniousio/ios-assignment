@@ -26,6 +26,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         tv.delegate = self
         tv.dataSource = self
         tv.register(RepoTableViewCell.self, forCellReuseIdentifier: String(describing: RepoTableViewCell.self))
+		tv.register(RepoTableSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: "RepoTableSectionHeaderView")
         tv.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tv)
         tv.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -61,5 +62,18 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
 
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return 56
+	}
+	
+	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "RepoTableSectionHeaderView") as? RepoTableSectionHeaderView else {
+			return UIView()
+		}
+		
+		header.update(with: "Repositories")
+		return header
+	}
+	
 }
 
