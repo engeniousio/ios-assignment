@@ -37,13 +37,15 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func getRepos() {
-        repositoryService.getUserRepos(username: username) { value in
-            DispatchQueue.main.async {
-                self.repoList = value
-                self.tv.reloadData()
-            }
-        }
-    }
+		Task {
+			let repoList = try await repositoryService.getUserRepos(username: username).value
+			
+			await MainActor.run(body: { 
+				self.repoList = repoList
+				self.tv.reloadData()
+			})
+		}
+	}
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repoList.count
