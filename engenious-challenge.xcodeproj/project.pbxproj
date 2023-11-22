@@ -18,6 +18,9 @@
 		20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* NetworkService.swift */; };
 		20F3FA6328379F1D008BFAF8 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6228379F1D008BFAF8 /* Repo.swift */; };
 		20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */; };
+		2FAF305B2B0E4179003D7130 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF305A2B0E4179003D7130 /* ViewModel.swift */; };
+		2FAF305D2B0E4642003D7130 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF305C2B0E4642003D7130 /* Colors.swift */; };
+		2FAF305F2B0E47CB003D7130 /* TableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF305E2B0E47CB003D7130 /* TableViewHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		20F3FA6028379F06008BFAF8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		20F3FA6228379F1D008BFAF8 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		2FAF305A2B0E4179003D7130 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		2FAF305C2B0E4642003D7130 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		2FAF305E2B0E47CB003D7130 /* TableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,9 @@
 				20F3FA3928379AE3008BFAF8 /* Assets.xcassets */,
 				20F3FA3B28379AE3008BFAF8 /* LaunchScreen.storyboard */,
 				20F3FA3E28379AE3008BFAF8 /* Info.plist */,
+				2FAF305A2B0E4179003D7130 /* ViewModel.swift */,
+				2FAF305C2B0E4642003D7130 /* Colors.swift */,
+				2FAF305E2B0E47CB003D7130 /* TableViewHeader.swift */,
 			);
 			path = "engenious-challenge";
 			sourceTree = "<group>";
@@ -263,12 +272,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FAF305F2B0E47CB003D7130 /* TableViewHeader.swift in Sources */,
 				20F3FA3528379AE2008BFAF8 /* RootViewController.swift in Sources */,
+				2FAF305D2B0E4642003D7130 /* Colors.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,
 				20F3FA6328379F1D008BFAF8 /* Repo.swift in Sources */,
 				20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */,
 				20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */,
 				20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */,
+				2FAF305B2B0E4179003D7130 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

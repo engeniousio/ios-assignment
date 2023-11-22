@@ -8,11 +8,13 @@
 import UIKit
 import Combine
 
+protocol RootView: AnyObject {
+    func updateView()
+}
+
 class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let repositoryService: RepositoryService = RepositoryService()
-    let username: String = "Apple"
-    var repoList: [Repo] = []
+    var viewModel: ViewModel!
     
     let tv = UITableView()
 
@@ -20,7 +22,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         view.backgroundColor = .white
 
-        title = "\(username)'s repos"
+        title = "\(viewModel.username)'s repos"
         navigationController?.navigationBar.prefersLargeTitles = true
 
         tv.delegate = self
@@ -29,32 +31,33 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         tv.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tv)
         tv.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tv.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tv.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        tv.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+        tv.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         tv.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        tv.tableHeaderView = TableViewHeader()
+        tv.separatorStyle = .none
+        tv.showsVerticalScrollIndicator = false
 
-        getRepos()
-    }
-
-    func getRepos() {
-        repositoryService.getUserRepos(username: username) { value in
-            DispatchQueue.main.async {
-                self.repoList = value
-                self.tv.reloadData()
-            }
-        }
+        viewModel.getRepos()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repoList.count
+        return viewModel.repoList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RepoTableViewCell.self)) as? RepoTableViewCell else { return UITableViewCell() }
-        let repo = repoList[indexPath.row]
+        let repo = viewModel.repoList[indexPath.row]
         cell.titleLabel.text = repo.name
+        cell.subtitleLabel.text = repo.description
+        cell.selectionStyle = .none
         return cell
     }
-
 }
 
+extension RootViewController: RootView {
+    func updateView() {
+        self.tv.reloadData()
+    }
+}
