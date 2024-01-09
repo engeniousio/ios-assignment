@@ -51,9 +51,9 @@ fileprivate extension RepoTableViewCell {
         stackView.axis = .vertical
         stackView.distribution = .fill
         
-        titleLabel.font = AppStyles.Fonts.title
+        titleLabel.font = AppearanceModel.Fonts.title
         titleLabel.textColor = self.tintColor
-        descriptioLabel.font = AppStyles.Fonts.description
+        descriptioLabel.font = AppearanceModel.Fonts.description
         descriptioLabel.textColor = K.Colors.blue1
         titleLabel.numberOfLines = 0
         descriptioLabel.numberOfLines = 0
@@ -64,12 +64,12 @@ fileprivate extension RepoTableViewCell {
         gradientView.layer.name = "gradientView"
         backgroundOverlayView.insertSubview(gradientView, at: 0)
 
-        backgroundOverlayView.layer.cornerRadius = AppStyles.viewCornerRadius
+        backgroundOverlayView.layer.cornerRadius = AppearanceModel.viewCornerRadius
         contentView.addSubview(backgroundOverlayView)
         
         gradientView.addConstaits([.left:0, .right:0, .top:0, .bottom:0])
         gradientView.layer.masksToBounds = true
-        gradientView.layer.cornerRadius = AppStyles.viewCornerRadius
+        gradientView.layer.cornerRadius = AppearanceModel.viewCornerRadius
         
         let _ = gradientView.layer.gradient(colors: [K.Colors.blueOpacity1, K.Colors.blueOpacity2].compactMap({$0.cgColor}), frame: .init(origin: .zero, size: contentView.frame.size), insertAt: 0)
         
@@ -85,8 +85,8 @@ fileprivate extension RepoTableViewCell {
     func setConstraints() {
         let views = [stackView, backgroundOverlayView]
         views.forEach {
-            let topConstant = AppStyles.containerMargins1 / ($0 == self.backgroundOverlayView ? 2 : 1)
-            $0.addConstaits([.top:topConstant, .bottom:-topConstant, .left:AppStyles.containerMargins1, .right:-AppStyles.containerMargins1])
+            let topConstant = AppearanceModel.containerMargins1 / ($0 == self.backgroundOverlayView ? 2 : 1)
+            $0.addConstaits([.top:topConstant, .bottom:-topConstant, .left:AppearanceModel.containerMargins1, .right:-AppearanceModel.containerMargins1])
         }
     }
     

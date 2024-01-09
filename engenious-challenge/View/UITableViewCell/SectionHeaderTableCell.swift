@@ -35,8 +35,8 @@ fileprivate extension SectionHeaderTableCell {
     }
     
     func setupUI() {
-        titleLabel.addConstaits([.left:AppStyles.containerMargins1, .right:AppStyles.containerMargins1, .top:AppStyles.containerMargins1 / 2, .bottom:-(AppStyles.containerMargins1 / 2)])
-        titleLabel.font = AppStyles.Fonts.section
+        titleLabel.addConstaits([.left:AppearanceModel.containerMargins1, .right:AppearanceModel.containerMargins1, .top:AppearanceModel.containerMargins1 / 2, .bottom:-(AppearanceModel.containerMargins1 / 2)])
+        titleLabel.font = AppearanceModel.Fonts.section
         titleLabel.textColor = K.Colors.blue
     }
     

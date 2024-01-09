@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct AppStyles {
+struct AppearanceModel {
     static let viewCornerRadius:CGFloat = 10
     static let containerMargins1:CGFloat = 16
     

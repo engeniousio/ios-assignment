@@ -26,7 +26,7 @@ class MessageTableViewCell:ClearCell {
         titleLabel.textAlignment = .center
         titleLabel.textColor = K.Colors.description
         titleLabel.numberOfLines = 0
-        titleLabel.font = AppStyles.Fonts.title
+        titleLabel.font = AppearanceModel.Fonts.title
     }
     
     required init?(coder: NSCoder) {

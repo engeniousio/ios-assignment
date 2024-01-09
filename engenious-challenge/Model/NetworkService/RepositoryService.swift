@@ -23,25 +23,28 @@ struct RepositoryService {
         return response
     }
     
+    /**
+     - updates results in NetworkPublisher.response
+     */
     func fetchRepositories(username: String) {
         Task {
             let response = await getRepositories(username: username)
             guard let result = response.data as? [Repository] else {
                 if let error = response.error {
-                    await updateObtherver(.error(error))
+                    await updateObzerver(.error(error))
                 } else {
-                    await updateObtherver(.error(.emptyResponse))
+                    await updateObzerver(.error(.emptyResponse))
                 }
                 return
             }
             if let error = response.error {
-                await updateObtherver(.error(error))
+                await updateObzerver(.error(error))
             }
-            await updateObtherver(.success(result))
+            await updateObzerver(.success(result))
         }
     }
     
-    @MainActor private func updateObtherver(_ response:ServerResponse) {
+    @MainActor private func updateObzerver(_ response:ServerResponse) {
         NetworkPublisher.response.send(response)
     }
 }
