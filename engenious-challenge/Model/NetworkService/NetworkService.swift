@@ -11,7 +11,7 @@ struct NetworkService {
     
     private let baseURL:String = "https://api.github.com"
     
-    func request(endpoint:Endpoint, parameters:String) async -> ServerResponse {
+    func request(endpoint:Endpoint, parameters:String, offline:Bool = false) async -> ServerResponse {
         
         let urlString = baseURL + endpoint.prefix +  parameters + endpoint.path
         guard let url = URL(string: urlString) else {
@@ -19,10 +19,14 @@ struct NetworkService {
         }
         
         do {
-            let task = try await URLSession.shared.data(for: .init(url: url))
+            let task = try await URLSession.shared.data(for: .init(url: url, cachePolicy: offline ? .returnCacheDataDontLoad : .reloadIgnoringLocalCacheData))
             return await unparceResponse(task: task)
         } catch let error {
-            return .error(.requestFailed(error.localizedDescription))
+            if offline {
+                return .error(.requestFailed(error.localizedDescription))
+            } else {
+                return await request(endpoint: endpoint, parameters: parameters, offline: true)
+            }
         }
     }
     

@@ -24,7 +24,7 @@ struct RepositoryService {
     }
     
     func fetchRepositories(username: String) {
-        print(#function)
+        print(#function, " fetchrepositories")
         Task {
             let response = await getRepositories(username: username)
             guard let result = response.data as? [Repository] else {

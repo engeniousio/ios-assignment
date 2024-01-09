@@ -83,6 +83,8 @@ class LoadingTableView: UITableView {
         if let refreshAction = refreshAction {
             sender.beginRefreshing()
             refreshAction()
+        } else {
+            sender.endRefreshing()
         }
     }
 }
@@ -109,7 +111,7 @@ fileprivate extension LoadingTableView {
         let refresh = UIRefreshControl()
         refresh.layer.name = "UIRefreshControl"
         refresh.addTarget(self, action: #selector(self.refreshed(_:)), for: .valueChanged)
-        addSubview(self.refresh ?? UIRefreshControl())
+        addSubview(refresh)
         refresh.tintColor = K.Colors.title
         refresh.backgroundColor = refreshBackgroundColor ?? .clear
     }

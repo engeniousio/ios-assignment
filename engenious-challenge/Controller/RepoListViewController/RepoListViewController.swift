@@ -52,7 +52,7 @@ extension RepoListViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         setConstraints()
-        tableView.refreshAction = viewModel.getRepositories
+        tableView.refreshAction = self.viewModel.getRepositories
     }
     
     private func setConstraints() {
