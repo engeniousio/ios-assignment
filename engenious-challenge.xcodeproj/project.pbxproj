@@ -24,6 +24,7 @@
 		8D1BB3352B4D3A940066305C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB3342B4D3A940066305C /* BaseViewController.swift */; };
 		8D1BB3392B4D3AE90066305C /* AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB3362B4D3AE90066305C /* AppStyles.swift */; };
 		8D1BB33A2B4D3AE90066305C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB3382B4D3AE90066305C /* UIFont.swift */; };
+		8D1BB33D2B4D42500066305C /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB33C2B4D42500066305C /* NetworkServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		8D1BB3342B4D3A940066305C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8D1BB3362B4D3AE90066305C /* AppStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStyles.swift; sourceTree = "<group>"; };
 		8D1BB3382B4D3AE90066305C /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		8D1BB33C2B4D42500066305C /* NetworkServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				20F3FA4728379AE3008BFAF8 /* engenious_challengeTests.swift */,
+				8D1BB33C2B4D42500066305C /* NetworkServiceTests.swift */,
 			);
 			path = "engenious-challengeTests";
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D1BB33D2B4D42500066305C /* NetworkServiceTests.swift in Sources */,
 				20F3FA4828379AE3008BFAF8 /* engenious_challengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
