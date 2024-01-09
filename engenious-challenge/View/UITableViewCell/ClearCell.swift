@@ -11,6 +11,7 @@ class ClearCell:UITableViewCell {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        self.setSelectedColor(.clear)
+        backgroundColor = .clear
+        setSelectedColor(.clear)
     }
 }

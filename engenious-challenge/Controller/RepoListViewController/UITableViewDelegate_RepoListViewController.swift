@@ -18,7 +18,9 @@ extension RepoListViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if viewModel.repoList.count == 0 || apiError != nil {
-            return UITableViewCell()
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MessageTableViewCell.self)) as? MessageTableViewCell else { return UITableViewCell() }
+            cell.set(message: apiError?.message ?? .init(title: "No data found in \(viewModel.username)"))
+            return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RepoTableViewCell.self)) as? RepoTableViewCell else { return UITableViewCell() }
             let repo = viewModel.repoList[indexPath.row]

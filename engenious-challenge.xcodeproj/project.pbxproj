@@ -37,6 +37,7 @@
 		8DD84BA02B4DCB2200D0AF6A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD84B9F2B4DCB2200D0AF6A /* APIError.swift */; };
 		8DD84BA22B4DCB3900D0AF6A /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD84BA12B4DCB3900D0AF6A /* ServerResponse.swift */; };
 		8DD84BA42B4DCBC800D0AF6A /* RepoLostViewModelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD84BA32B4DCBC800D0AF6A /* RepoLostViewModelPresenter.swift */; };
+		8DD84BA72B4DD2CD00D0AF6A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD84BA62B4DD2CD00D0AF6A /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		8DD84B9F2B4DCB2200D0AF6A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		8DD84BA12B4DCB3900D0AF6A /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
 		8DD84BA32B4DCBC800D0AF6A /* RepoLostViewModelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoLostViewModelPresenter.swift; sourceTree = "<group>"; };
+		8DD84BA62B4DD2CD00D0AF6A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 			children = (
 				20F3FA6228379F1D008BFAF8 /* Repository.swift */,
 				8DD84B9F2B4DCB2200D0AF6A /* APIError.swift */,
+				8DD84BA62B4DD2CD00D0AF6A /* Message.swift */,
 				8DD84BA12B4DCB3900D0AF6A /* ServerResponse.swift */,
 			);
 			path = DataStruct;
@@ -431,6 +434,7 @@
 				8DD84B922B4D9F5E00D0AF6A /* K.swift in Sources */,
 				8D1BB3432B4D43C60066305C /* SectionHeaderTableCell.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,
+				8DD84BA72B4DD2CD00D0AF6A /* Message.swift in Sources */,
 				20F3FA6328379F1D008BFAF8 /* Repository.swift in Sources */,
 				8D1BB32D2B4D34900066305C /* RepositoryService.swift in Sources */,
 				8DD84B992B4DC15200D0AF6A /* CALayer.swift in Sources */,
@@ -622,9 +626,11 @@
 				INFOPLIST_FILE = "engenious-challenge/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -650,9 +656,11 @@
 				INFOPLIST_FILE = "engenious-challenge/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,6 +9,9 @@ import UIKit
 
 struct K {
     struct Colors {
+        static let title:UIColor = .black
+        static let background:UIColor = .white
+        
         static let blue:UIColor = .init(named: "Blue") ?? .red
         static let blue1:UIColor = .init(named: "Blue2") ?? .red
         static let blueOpacity1:UIColor = .init(named: "BlueOpacity1") ?? .red

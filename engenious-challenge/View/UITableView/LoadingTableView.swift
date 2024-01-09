@@ -95,7 +95,8 @@ fileprivate extension LoadingTableView {
         }
         let activityIndicator:UIActivityIndicatorView = .init(style: .medium)
         activityIndicator.layer.name = "activityIndicator"
-        activityIndicator.tintColor = .white
+        activityIndicator.tintColor = K.Colors.title
+        activityIndicator.color = K.Colors.title
         addSubview(activityIndicator)
         activityIndicator.addConstaits([.centerX:0, .centerY:0])
         activityIndicator.startAnimating()
@@ -109,7 +110,7 @@ fileprivate extension LoadingTableView {
         refresh.layer.name = "UIRefreshControl"
         refresh.addTarget(self, action: #selector(self.refreshed(_:)), for: .valueChanged)
         addSubview(self.refresh ?? UIRefreshControl())
-        refresh.tintColor = .white
+        refresh.tintColor = K.Colors.title
         refresh.backgroundColor = refreshBackgroundColor ?? .clear
     }
 }

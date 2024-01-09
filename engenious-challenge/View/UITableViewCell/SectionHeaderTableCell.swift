@@ -45,8 +45,8 @@ fileprivate extension SectionHeaderTableCell {
         contentView.addSubview(view)
         view.addConstaits([.left:0, .right:0, .top:0, .bottom:0])
         let _ = view.addBluer()
-        view.backgroundColor = .white.withAlphaComponent(0.7)
-        view.layer.shadow(color: UIColor.white.cgColor, opacity: 0.7)
+        view.backgroundColor = K.Colors.background.withAlphaComponent(0.7)
+        view.layer.shadow(color:K.Colors.background.cgColor, opacity: 0.7)
         view.addSubview(titleLabel)
     }
 }

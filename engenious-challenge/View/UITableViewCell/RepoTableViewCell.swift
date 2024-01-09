@@ -77,7 +77,7 @@ fileprivate extension RepoTableViewCell {
         shadowView.layer.cornerRadius = backgroundOverlayView.layer.cornerRadius
         backgroundOverlayView.insertSubview(shadowView, at:0)
         shadowView.addConstaits([.left:0, .right:0, .top:0, .bottom:0])
-        shadowView.backgroundColor = .white
+        shadowView.backgroundColor = K.Colors.background
         shadowView.layer.shadow(color: K.Colors.blue.cgColor)
     }
     

@@ -37,7 +37,8 @@ extension RepoListViewController:RepoLostViewModelPresenter {
 extension RepoListViewController {
     func loadUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        view.backgroundColor = .white
+        view.backgroundColor = K.Colors.background
+        tableView.backgroundColor = K.Colors.background
         tableView.register(RepoTableViewCell.self, forCellReuseIdentifier: String(describing: RepoTableViewCell.self))
         tableView.register(SectionHeaderTableCell.self, forCellReuseIdentifier: String(describing: SectionHeaderTableCell.self))
 

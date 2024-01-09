@@ -19,15 +19,7 @@ class RepoLostViewModel {
     init(presenter:RepoLostViewModelPresenter) {
         self.presenter = presenter
         NetworkPublisher.response.sink {
-            print("NetworkPublisherNetworkPublisher ", $0)
-            guard let data = $0.data as? [Repository] else {
-                self.presenter.apiError = $0.error ?? .emptyResponse
-                self.presenter.requestCompleted()
-                return
-            }
-            self.repoList = data
-            self.presenter.apiError = $0.error
-            self.presenter.requestCompleted()
+            self.responseUpdated($0)
         }.store(in: &NetworkPublisher.cancellableHolder)
     }
     
@@ -38,5 +30,17 @@ class RepoLostViewModel {
     
     var navigationTitle:String {
         return "\(username)'s repos"
+    }
+    
+    private func responseUpdated(_ response:ServerResponse) {
+        print("NetworkPublisherNetworkPublisher ", response)
+        guard let data = response.data as? [Repository] else {
+            presenter.apiError = response.error ?? .emptyResponse
+            presenter.requestCompleted()
+            return
+        }
+        repoList = data
+        presenter.apiError = response.error
+        presenter.requestCompleted()
     }
 }

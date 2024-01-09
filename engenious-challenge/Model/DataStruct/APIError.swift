@@ -12,4 +12,20 @@ enum APIError:Error {
     case decode
     case emptyResponse
     case requestFailed(_ error: String)
+    
+    var message:Message {
+        switch self {
+        case .invalidURL:
+            return .init(title: "invalidURL")
+        case .decode:
+            return .init(title: "invalidURL")
+
+        case .emptyResponse:
+            return .init(title: "invalidURL")
+
+        case .requestFailed(let _):
+            return .init(title: "invalidURL")
+
+        }
+    }
 }
