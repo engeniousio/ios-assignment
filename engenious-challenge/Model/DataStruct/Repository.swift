@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Repo: Codable {
+struct Repository: Codable {
     var name: String
     var description: String?
     var url: String

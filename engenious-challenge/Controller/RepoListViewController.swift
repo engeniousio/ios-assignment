@@ -8,11 +8,11 @@
 import UIKit
 import Combine
 
-class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RepoListViewController: UIViewController {
 
     let repositoryService: RepositoryService = RepositoryService()
     let username: String = "Apple"
-    var repoList: [Repo] = []
+    var repoList: [Repository] = []
     
     let tv = UITableView()
 
@@ -45,6 +45,13 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
+    
+
+}
+
+
+
+extension RepoListViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repoList.count
     }
@@ -55,6 +62,4 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.titleLabel.text = repo.name
         return cell
     }
-
 }
-
