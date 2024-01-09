@@ -8,5 +8,5 @@
 import UIKit
 
 class BaseViewController:UIViewController {
-    var apiError:NetworkService.APIError?
+    var apiError:APIError?
 }

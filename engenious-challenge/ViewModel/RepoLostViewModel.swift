@@ -7,12 +7,8 @@
 
 import Foundation
 
-protocol RepoLostViewModelPresenter {
-    var apiError:NetworkService.APIError? { get set }
-    func requestCompleted()
-}
-
 class RepoLostViewModel {
+    
     private let repositoryService: RepositoryService = RepositoryService()
     let username: String = "Apple"
     let sectionTitle:String = "Repositories"
@@ -23,6 +19,7 @@ class RepoLostViewModel {
     init(presenter:RepoLostViewModelPresenter) {
         self.presenter = presenter
         NetworkPublisher.response.sink {
+            print("NetworkPublisherNetworkPublisher ", $0)
             guard let data = $0.data as? [Repository] else {
                 self.presenter.apiError = $0.error ?? .emptyResponse
                 self.presenter.requestCompleted()

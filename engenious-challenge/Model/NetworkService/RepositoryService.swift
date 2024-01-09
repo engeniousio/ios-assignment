@@ -6,13 +6,12 @@
 //
 
 import Foundation
-import Combine
 
 struct RepositoryService {
     
     private let networkService:NetworkService = .init()
     
-    func getRepositories(username: String) async -> NetworkService.ServerResponse {
+    func getRepositories(username: String) async -> ServerResponse {
         
         let response = await networkService.request(endpoint:.repositories, parameters:username)
         guard let result = response.data as? [Repository] else {
@@ -25,6 +24,7 @@ struct RepositoryService {
     }
     
     func fetchRepositories(username: String) {
+        print(#function)
         Task {
             let response = await getRepositories(username: username)
             guard let result = response.data as? [Repository] else {
@@ -39,13 +39,8 @@ struct RepositoryService {
         }
     }
     
-    @MainActor private func updateObtherver(_ response:NetworkService.ServerResponse) {
+    @MainActor private func updateObtherver(_ response:ServerResponse) {
         NetworkPublisher.response.send(response)
     }
 }
 
-
-struct NetworkPublisher {
-    static var response = PassthroughSubject<NetworkService.ServerResponse, Never>()
-    static var cancellableHolder = Set<AnyCancellable>()
-}
