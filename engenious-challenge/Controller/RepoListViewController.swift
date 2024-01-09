@@ -37,12 +37,15 @@ class RepoListViewController: UIViewController {
     }
 
     func getRepos() {
-        repositoryService.getUserRepos(username: username) { value in
-            DispatchQueue.main.async {
-                self.repoList = value
-                self.tv.reloadData()
-            }
+        Task {
+            let response = await self.repositoryService.getRepositories(username: username)
+            self.dataLoaded(response)
         }
+    }
+    
+    @MainActor func dataLoaded(_ response:NetworkService.ServerResponse) {
+        self.repoList = response.data as? [Repository] ?? []
+        self.tv.reloadData()
     }
 
     

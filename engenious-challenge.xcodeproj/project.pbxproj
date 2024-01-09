@@ -19,6 +19,7 @@
 		20F3FA6328379F1D008BFAF8 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6228379F1D008BFAF8 /* Repository.swift */; };
 		20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */; };
 		8D1BB32A2B4D32F00066305C /* RepoLostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB3292B4D32F00066305C /* RepoLostViewModel.swift */; };
+		8D1BB32D2B4D34900066305C /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB32C2B4D34900066305C /* RepositoryService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		20F3FA6228379F1D008BFAF8 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 		8D1BB3292B4D32F00066305C /* RepoLostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoLostViewModel.swift; sourceTree = "<group>"; };
+		8D1BB32C2B4D34900066305C /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				20F3FA6028379F06008BFAF8 /* NetworkService.swift */,
+				8D1BB32C2B4D34900066305C /* RepositoryService.swift */,
 				8D54E25C2B4D31AF00D9A236 /* DataStruct */,
 			);
 			path = Model;
@@ -317,6 +320,7 @@
 				20F3FA3528379AE2008BFAF8 /* RepoListViewController.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,
 				20F3FA6328379F1D008BFAF8 /* Repository.swift in Sources */,
+				8D1BB32D2B4D34900066305C /* RepositoryService.swift in Sources */,
 				20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */,
 				8D1BB32A2B4D32F00066305C /* RepoLostViewModel.swift in Sources */,
 				20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */,
