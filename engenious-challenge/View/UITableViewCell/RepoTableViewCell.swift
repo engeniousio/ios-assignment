@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RepoTableViewCell: UITableViewCell {
+class RepoTableViewCell: ClearCell {
 
     let titleLabel: UILabel = .init()
     let descriptioLabel: UILabel = .init()

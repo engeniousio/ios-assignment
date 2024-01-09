@@ -25,6 +25,9 @@
 		8D1BB3392B4D3AE90066305C /* AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB3362B4D3AE90066305C /* AppStyles.swift */; };
 		8D1BB33A2B4D3AE90066305C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB3382B4D3AE90066305C /* UIFont.swift */; };
 		8D1BB33D2B4D42500066305C /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB33C2B4D42500066305C /* NetworkServiceTests.swift */; };
+		8D1BB3402B4D42E30066305C /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB33E2B4D42E30066305C /* MessageTableViewCell.swift */; };
+		8D1BB3412B4D42E30066305C /* ClearCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB33F2B4D42E30066305C /* ClearCell.swift */; };
+		8D1BB3432B4D43C60066305C /* SectionHeaderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB3422B4D43C60066305C /* SectionHeaderTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		8D1BB3362B4D3AE90066305C /* AppStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStyles.swift; sourceTree = "<group>"; };
 		8D1BB3382B4D3AE90066305C /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		8D1BB33C2B4D42500066305C /* NetworkServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		8D1BB33E2B4D42E30066305C /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		8D1BB33F2B4D42E30066305C /* ClearCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearCell.swift; sourceTree = "<group>"; };
+		8D1BB3422B4D43C60066305C /* SectionHeaderTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +219,9 @@
 		8D54E25A2B4D30EA00D9A236 /* UITableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				8D1BB33F2B4D42E30066305C /* ClearCell.swift */,
+				8D1BB33E2B4D42E30066305C /* MessageTableViewCell.swift */,
+				8D1BB3422B4D43C60066305C /* SectionHeaderTableCell.swift */,
 				20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */,
 			);
 			path = UITableViewCell;
@@ -366,16 +375,19 @@
 			files = (
 				8D1BB3322B4D3A8B0066305C /* LoadingTableView.swift in Sources */,
 				20F3FA3528379AE2008BFAF8 /* RepoListViewController.swift in Sources */,
+				8D1BB3432B4D43C60066305C /* SectionHeaderTableCell.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,
 				20F3FA6328379F1D008BFAF8 /* Repository.swift in Sources */,
 				8D1BB32D2B4D34900066305C /* RepositoryService.swift in Sources */,
 				8D1BB3352B4D3A940066305C /* BaseViewController.swift in Sources */,
 				20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */,
+				8D1BB3402B4D42E30066305C /* MessageTableViewCell.swift in Sources */,
 				8D1BB3392B4D3AE90066305C /* AppStyles.swift in Sources */,
 				8D1BB33A2B4D3AE90066305C /* UIFont.swift in Sources */,
 				8D1BB32A2B4D32F00066305C /* RepoLostViewModel.swift in Sources */,
 				20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */,
 				20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */,
+				8D1BB3412B4D42E30066305C /* ClearCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
