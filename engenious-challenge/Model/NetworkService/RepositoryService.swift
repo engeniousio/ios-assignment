@@ -15,7 +15,7 @@ struct RepositoryService {
         
         let response = await networkService.request(endpoint:.repositories, parameters:username)
         guard let result = response.data as? [Repository] else {
-            return .error(.decode)
+            return .error(.emptyResponse)
         }
         if let error = response.error {
             return .error(error)
@@ -28,7 +28,7 @@ struct RepositoryService {
         Task {
             let response = await getRepositories(username: username)
             guard let result = response.data as? [Repository] else {
-                await updateObtherver(.error(.decode))
+                await updateObtherver(.error(.emptyResponse))
                 return
             }
             if let error = response.error {

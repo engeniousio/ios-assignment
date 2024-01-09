@@ -12,12 +12,13 @@ extension RepoListViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let data = viewModel.repoList.count
-        return data == 0 ? 1 : data
+        print("datadata ", data)
+        return data == 0 ? (apiError != nil ? 1 : 0) : data
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if viewModel.repoList.count == 0 || apiError != nil {
+        if apiError != nil {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MessageTableViewCell.self)) as? MessageTableViewCell else { return UITableViewCell() }
             cell.set(message: apiError?.message ?? .init(title: "No data found in \(viewModel.username)"))
             return cell
@@ -27,6 +28,10 @@ extension RepoListViewController:UITableViewDelegate, UITableViewDataSource {
             cell.setCell(repo)
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return apiError != nil ? tableView.frame.height : UITableView.automaticDimension
     }
     
     

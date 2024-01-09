@@ -17,6 +17,7 @@ class RepoTableViewCell: ClearCell {
     func setCell(_ data:Repository) {
         titleLabel.text = data.name
         descriptioLabel.text = data.description
+        descriptioLabel.isHidden = data.description ?? "" == ""
         DispatchQueue.main.async {
             self.updateGradientFrame()
         }

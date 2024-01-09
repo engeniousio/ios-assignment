@@ -12,7 +12,7 @@ class LoadingTableView: UITableView {
     private var activityIndicator:UIActivityIndicatorView? {
         return self.subviews.first(where: {$0 is UIActivityIndicatorView}) as? UIActivityIndicatorView
     }
-    private var refresh:UIRefreshControl? {
+    var refresh:UIRefreshControl? {
         return self.subviews.first(where: {$0 is UIRefreshControl}) as? UIRefreshControl
     }
     

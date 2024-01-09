@@ -16,16 +16,13 @@ enum APIError:Error {
     var message:Message {
         switch self {
         case .invalidURL:
-            return .init(title: "invalidURL")
+            return .init(title: "Invalide URL")
         case .decode:
-            return .init(title: "invalidURL")
-
+            return .init(title: "Error decoding data")
         case .emptyResponse:
-            return .init(title: "invalidURL")
-
-        case .requestFailed(let _):
-            return .init(title: "invalidURL")
-
+            return .init(title: "No Response")
+        case .requestFailed(let error):
+            return .init(title: error)
         }
     }
 }

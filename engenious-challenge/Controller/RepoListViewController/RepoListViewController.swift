@@ -28,6 +28,15 @@ class RepoListViewController: BaseViewController {
 
 extension RepoListViewController:RepoLostViewModelPresenter {
     func requestCompleted() {
+        let refreshedError = (tableView.refresh?.isRefreshing ?? false) && viewModel.repoList.count != 0
+        let showingError = title != viewModel.navigationTitle
+        
+        if refreshedError && !showingError {
+            title = apiError?.message.title ?? "Error updeting data"
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(6), execute: {
+                self.title = self.viewModel.navigationTitle
+            })
+        }
         tableView.reloadData()
     }
 }
@@ -39,9 +48,7 @@ extension RepoListViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = K.Colors.background
         tableView.backgroundColor = K.Colors.background
-        tableView.register(RepoTableViewCell.self, forCellReuseIdentifier: String(describing: RepoTableViewCell.self))
-        tableView.register(SectionHeaderTableCell.self, forCellReuseIdentifier: String(describing: SectionHeaderTableCell.self))
-
+        registerCells()
         view.addSubview(tableView)
     }
     
@@ -57,6 +64,13 @@ extension RepoListViewController {
     
     private func setConstraints() {
         tableView.addConstaits([.left:0, .right:0, .top:0, .bottom:0])
+    }
+    
+    
+    private func registerCells() {
+        tableView.register(RepoTableViewCell.self, forCellReuseIdentifier: String(describing: RepoTableViewCell.self))
+        tableView.register(SectionHeaderTableCell.self, forCellReuseIdentifier: String(describing: SectionHeaderTableCell.self))
+        tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: String(describing: MessageTableViewCell.self))
     }
 }
 
