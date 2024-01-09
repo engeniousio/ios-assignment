@@ -39,6 +39,8 @@ extension RepoListViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
         tableView.register(RepoTableViewCell.self, forCellReuseIdentifier: String(describing: RepoTableViewCell.self))
+        tableView.register(SectionHeaderTableCell.self, forCellReuseIdentifier: String(describing: SectionHeaderTableCell.self))
+
         view.addSubview(tableView)
     }
     
@@ -80,5 +82,11 @@ extension RepoListViewController:UITableViewDelegate, UITableViewDataSource {
             cell.setCell(repo)
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SectionHeaderTableCell.self)) as! SectionHeaderTableCell
+        cell.set(title: viewModel.sectionTitle)
+        return cell.contentView
     }
 }

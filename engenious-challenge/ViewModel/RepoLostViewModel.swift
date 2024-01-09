@@ -15,6 +15,7 @@ protocol RepoLostViewModelPresenter {
 class RepoLostViewModel {
     private let repositoryService: RepositoryService = RepositoryService()
     let username: String = "Apple"
+    let sectionTitle:String = "Repositories"
     var repoList: [Repository] = []
     
     var presenter:RepoLostViewModelPresenter
