@@ -30,8 +30,8 @@
             filePath = "engenious-challenge/Model/NetworkService/RepositoryService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "fetchRepositories(username:)"
             landmarkType = "7">
             <Locations>
@@ -93,8 +93,8 @@
             filePath = "engenious-challenge/Model/NetworkService/RepositoryService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "updateObtherver(_:)"
             landmarkType = "7">
          </BreakpointContent>

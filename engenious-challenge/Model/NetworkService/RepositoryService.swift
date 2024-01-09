@@ -14,7 +14,10 @@ struct RepositoryService {
     func getRepositories(username: String) async -> ServerResponse {
         
         let response = await networkService.request(endpoint:.repositories, parameters:username)
-        guard let result = response.data as? [Repository] else {
+        guard let _ = response.data as? [Repository] else {
+            if let error = response.error {
+                return .error(error)
+            }
             return .error(.emptyResponse)
         }
         return response
@@ -24,7 +27,11 @@ struct RepositoryService {
         Task {
             let response = await getRepositories(username: username)
             guard let result = response.data as? [Repository] else {
-                await updateObtherver(.error(.emptyResponse))
+                if let error = response.error {
+                    await updateObtherver(.error(error))
+                } else {
+                    await updateObtherver(.error(.emptyResponse))
+                }
                 return
             }
             if let error = response.error {

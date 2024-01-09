@@ -22,9 +22,10 @@ class MessageTableViewCell:ClearCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(titleLabel)
-        titleLabel.addConstaits([.left:0, .right:0, .top:0, .bottom:0])
+        titleLabel.addConstaits([.left:5, .right:5, .top:0, .bottom:0])
         titleLabel.textAlignment = .center
         titleLabel.textColor = K.Colors.description
+        titleLabel.numberOfLines = 0
         titleLabel.font = AppStyles.Fonts.title
     }
     
