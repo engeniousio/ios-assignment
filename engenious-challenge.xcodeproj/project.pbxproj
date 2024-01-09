@@ -20,6 +20,10 @@
 		20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */; };
 		8D1BB32A2B4D32F00066305C /* RepoLostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB3292B4D32F00066305C /* RepoLostViewModel.swift */; };
 		8D1BB32D2B4D34900066305C /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB32C2B4D34900066305C /* RepositoryService.swift */; };
+		8D1BB3322B4D3A8B0066305C /* LoadingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB3312B4D3A8A0066305C /* LoadingTableView.swift */; };
+		8D1BB3352B4D3A940066305C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB3342B4D3A940066305C /* BaseViewController.swift */; };
+		8D1BB3392B4D3AE90066305C /* AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB3362B4D3AE90066305C /* AppStyles.swift */; };
+		8D1BB33A2B4D3AE90066305C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB3382B4D3AE90066305C /* UIFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 		8D1BB3292B4D32F00066305C /* RepoLostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoLostViewModel.swift; sourceTree = "<group>"; };
 		8D1BB32C2B4D34900066305C /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
+		8D1BB3312B4D3A8A0066305C /* LoadingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTableView.swift; sourceTree = "<group>"; };
+		8D1BB3342B4D3A940066305C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		8D1BB3362B4D3AE90066305C /* AppStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStyles.swift; sourceTree = "<group>"; };
+		8D1BB3382B4D3AE90066305C /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +122,7 @@
 				8D1BB32B2B4D32F50066305C /* ViewModel */,
 				8D54E25B2B4D30F700D9A236 /* Controller */,
 				20F3FA3928379AE3008BFAF8 /* Assets.xcassets */,
+				8D1BB33B2B4D3AEF0066305C /* Mics */,
 				20F3FA3E28379AE3008BFAF8 /* Info.plist */,
 			);
 			path = "engenious-challenge";
@@ -144,6 +153,39 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		8D1BB3302B4D3A8A0066305C /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				8D1BB3312B4D3A8A0066305C /* LoadingTableView.swift */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		8D1BB3332B4D3A940066305C /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D1BB3342B4D3A940066305C /* BaseViewController.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		8D1BB3372B4D3AE90066305C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8D1BB3382B4D3AE90066305C /* UIFont.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8D1BB33B2B4D3AEF0066305C /* Mics */ = {
+			isa = PBXGroup;
+			children = (
+				8D1BB3362B4D3AE90066305C /* AppStyles.swift */,
+				8D1BB3372B4D3AE90066305C /* Extensions */,
+			);
+			path = Mics;
+			sourceTree = "<group>";
+		};
 		8D54E2582B4D30D400D9A236 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +199,8 @@
 		8D54E2592B4D30E200D9A236 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8D1BB3332B4D3A940066305C /* UIViewController */,
+				8D1BB3302B4D3A8A0066305C /* UITableView */,
 				8D54E25A2B4D30EA00D9A236 /* UITableViewCell */,
 				20F3FA3B28379AE3008BFAF8 /* LaunchScreen.storyboard */,
 			);
@@ -317,11 +361,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D1BB3322B4D3A8B0066305C /* LoadingTableView.swift in Sources */,
 				20F3FA3528379AE2008BFAF8 /* RepoListViewController.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,
 				20F3FA6328379F1D008BFAF8 /* Repository.swift in Sources */,
 				8D1BB32D2B4D34900066305C /* RepositoryService.swift in Sources */,
+				8D1BB3352B4D3A940066305C /* BaseViewController.swift in Sources */,
 				20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */,
+				8D1BB3392B4D3AE90066305C /* AppStyles.swift in Sources */,
+				8D1BB33A2B4D3AE90066305C /* UIFont.swift in Sources */,
 				8D1BB32A2B4D32F00066305C /* RepoLostViewModel.swift in Sources */,
 				20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */,
 				20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */,
