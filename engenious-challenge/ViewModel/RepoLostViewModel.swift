@@ -33,7 +33,6 @@ class RepoLostViewModel {
     }
     
     private func responseUpdated(_ response:ServerResponse) {
-        print("NetworkPublisherNetworkPublisher ", response)
         guard let data = response.data as? [Repository] else {
             presenter.apiError = response.error ?? .emptyResponse
             presenter.requestCompleted()

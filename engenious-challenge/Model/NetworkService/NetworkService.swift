@@ -25,7 +25,8 @@ struct NetworkService {
             if offline {
                 return .error(.requestFailed(error.localizedDescription))
             } else {
-                return await request(endpoint: endpoint, parameters: parameters, offline: true)
+                let offlineData = await request(endpoint: endpoint, parameters: parameters, offline: true)
+                return .init(data: offlineData.data, error: .requestFailed(error.localizedDescription))
             }
         }
     }

@@ -23,19 +23,26 @@ class RepoListViewController: BaseViewController {
         super.loadView()
         loadUI()
     }
+    
+    override func showError(content: Message? = nil) {
+        let error = (content ?? apiError?.message) ?? .init(title: "Unknown Error")
+        let showingError = title != viewModel.navigationTitle
+        
+        if !showingError {
+            title = error.title
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(6), execute: {
+                self.title = self.viewModel.navigationTitle
+            })
+        }
+    }
 }
 
 
 extension RepoListViewController:RepoLostViewModelPresenter {
     func requestCompleted() {
-        let refreshedError = (tableView.refresh?.isRefreshing ?? false) && viewModel.repoList.count != 0
-        let showingError = title != viewModel.navigationTitle
-        
-        if refreshedError && !showingError {
-            title = apiError?.message.title ?? "Error updeting data"
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(6), execute: {
-                self.title = self.viewModel.navigationTitle
-            })
+        let hasUnseenError = (tableView.refresh?.isRefreshing ?? false) && viewModel.repoList.count != 0
+        if hasUnseenError && apiError != nil {
+            showError()
         }
         tableView.reloadData()
     }

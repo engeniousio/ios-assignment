@@ -23,69 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B87FCFD5-C3BF-4C19-ACB1-921C63F14339"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "engenious-challenge/Model/NetworkService/RepositoryService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "fetchRepositories(username:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B87FCFD5-C3BF-4C19-ACB1-921C63F14339 - ef759f918b78e0af"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "engenious_challenge.RepositoryService.fetchRepositories(username: Swift.String) -&gt; ()"
-                  moduleName = "engenious-challenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mishadovhiy/Desktop/testTasks/ios-assignment/engenious-challenge/Model/NetworkService/RepositoryService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "408">
-               </Location>
-               <Location
-                  uuid = "B87FCFD5-C3BF-4C19-ACB1-921C63F14339 - 81a021133e8bab00"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable () async -&gt; () in engenious_challenge.RepositoryService.fetchRepositories(username: Swift.String) -&gt; ()"
-                  moduleName = "engenious-challenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mishadovhiy/Desktop/testTasks/ios-assignment/engenious-challenge/Model/NetworkService/RepositoryService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "164">
-               </Location>
-               <Location
-                  uuid = "B87FCFD5-C3BF-4C19-ACB1-921C63F14339 - 82d346444aec46c0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in engenious_challenge.RepositoryService.fetchRepositories(username: Swift.String) -&gt; ()"
-                  moduleName = "engenious-challenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mishadovhiy/Desktop/testTasks/ios-assignment/engenious-challenge/Model/NetworkService/RepositoryService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "5AB2C7DE-8F95-439F-A9BD-F476F7252040"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -93,8 +30,8 @@
             filePath = "engenious-challenge/Model/NetworkService/RepositoryService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "fetchRepositories(username:)"
             landmarkType = "7">
             <Locations>
@@ -156,58 +93,10 @@
             filePath = "engenious-challenge/Model/NetworkService/RepositoryService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "updateObtherver(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3F9E69AF-75D5-4D3E-94F7-46553CA42BFC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "engenious-challenge/ViewModel/RepoLostViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "responseUpdated(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3F9E69AF-75D5-4D3E-94F7-46553CA42BFC - 9e2bf3b27590301"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "engenious_challenge.RepoLostViewModel.responseUpdated(engenious_challenge.ServerResponse) -&gt; ()"
-                  moduleName = "engenious-challenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mishadovhiy/Desktop/testTasks/ios-assignment/engenious-challenge/ViewModel/RepoLostViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "128">
-               </Location>
-               <Location
-                  uuid = "3F9E69AF-75D5-4D3E-94F7-46553CA42BFC - 9e2bf3b27590301"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "engenious_challenge.RepoLostViewModel.responseUpdated(engenious_challenge.ServerResponse) -&gt; ()"
-                  moduleName = "engenious-challenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mishadovhiy/Desktop/testTasks/ios-assignment/engenious-challenge/ViewModel/RepoLostViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "324">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -268,8 +157,8 @@
             filePath = "engenious-challenge/ViewModel/RepoLostViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "responseUpdated(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -284,8 +173,8 @@
             filePath = "engenious-challenge/ViewModel/RepoLostViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "responseUpdated(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -293,33 +182,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AD56CE3B-62BA-455F-97D3-12F43258B967"
+            uuid = "895864E2-76AF-4800-9CBA-F017B4DF9A54"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "engenious-challenge/Controller/RepoListViewController/RepoListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "requestCompleted()"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "showError(content:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F3F8B7E0-FF02-4244-91AE-D20664DBC8A5"
+            uuid = "EA1E926D-56D9-4B4F-BF03-EC61520EB864"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "engenious-challenge/Controller/RepoListViewController/RepoListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "requestCompleted()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EA1E926D-56D9-4B4F-BF03-EC61520EB864 - d7fbdce96f8ba5bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "engenious_challenge.RepoListViewController.requestCompleted() -&gt; ()"
+                  moduleName = "engenious-challenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mishadovhiy/Desktop/testTasks/ios-assignment/engenious-challenge/Controller/RepoListViewController/RepoListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "944">
+               </Location>
+               <Location
+                  uuid = "EA1E926D-56D9-4B4F-BF03-EC61520EB864 - d7fbdce96f8ba5bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "engenious_challenge.RepoListViewController.requestCompleted() -&gt; ()"
+                  moduleName = "engenious-challenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mishadovhiy/Desktop/testTasks/ios-assignment/engenious-challenge/Controller/RepoListViewController/RepoListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "1192">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -9,4 +9,8 @@ import UIKit
 
 class BaseViewController:UIViewController {
     var apiError:APIError?
+    
+    func showError(content:Message) {
+        
+    }
 }

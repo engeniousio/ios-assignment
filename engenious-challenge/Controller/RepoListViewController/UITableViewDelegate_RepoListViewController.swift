@@ -12,7 +12,6 @@ extension RepoListViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let data = viewModel.repoList.count
-        print("datadata ", data)
         return data == 0 ? (apiError != nil ? 1 : 0) : data
     }
 

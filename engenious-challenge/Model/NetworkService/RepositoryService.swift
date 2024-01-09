@@ -17,14 +17,10 @@ struct RepositoryService {
         guard let result = response.data as? [Repository] else {
             return .error(.emptyResponse)
         }
-        if let error = response.error {
-            return .error(error)
-        }
-        return .success(result)
+        return response
     }
     
     func fetchRepositories(username: String) {
-        print(#function, " fetchrepositories")
         Task {
             let response = await getRepositories(username: username)
             guard let result = response.data as? [Repository] else {
@@ -33,7 +29,6 @@ struct RepositoryService {
             }
             if let error = response.error {
                 await updateObtherver(.error(error))
-                return
             }
             await updateObtherver(.success(result))
         }
