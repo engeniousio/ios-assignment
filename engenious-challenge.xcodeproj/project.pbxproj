@@ -28,6 +28,10 @@
 		8D1BB3402B4D42E30066305C /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB33E2B4D42E30066305C /* MessageTableViewCell.swift */; };
 		8D1BB3412B4D42E30066305C /* ClearCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB33F2B4D42E30066305C /* ClearCell.swift */; };
 		8D1BB3432B4D43C60066305C /* SectionHeaderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1BB3422B4D43C60066305C /* SectionHeaderTableCell.swift */; };
+		8D4D5C772B4DF64C004D5684 /* SF-Pro-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D5C732B4DF64B004D5684 /* SF-Pro-Thin.ttf */; };
+		8D4D5C782B4DF64C004D5684 /* SF-Pro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D5C742B4DF64B004D5684 /* SF-Pro-Regular.ttf */; };
+		8D4D5C792B4DF64C004D5684 /* SF-Pro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D5C752B4DF64B004D5684 /* SF-Pro-Black.ttf */; };
+		8D4D5C7A2B4DF64C004D5684 /* SF-Pro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D5C762B4DF64B004D5684 /* SF-Pro-Semibold.ttf */; };
 		8DD84B902B4D9CBD00D0AF6A /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD84B8F2B4D9CBD00D0AF6A /* UIView.swift */; };
 		8DD84B922B4D9F5E00D0AF6A /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD84B912B4D9F5E00D0AF6A /* K.swift */; };
 		8DD84B942B4DAC1D00D0AF6A /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD84B932B4DAC1D00D0AF6A /* UITableViewCell.swift */; };
@@ -83,6 +87,10 @@
 		8D1BB33E2B4D42E30066305C /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		8D1BB33F2B4D42E30066305C /* ClearCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearCell.swift; sourceTree = "<group>"; };
 		8D1BB3422B4D43C60066305C /* SectionHeaderTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderTableCell.swift; sourceTree = "<group>"; };
+		8D4D5C732B4DF64B004D5684 /* SF-Pro-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Thin.ttf"; sourceTree = "<group>"; };
+		8D4D5C742B4DF64B004D5684 /* SF-Pro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Regular.ttf"; sourceTree = "<group>"; };
+		8D4D5C752B4DF64B004D5684 /* SF-Pro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Black.ttf"; sourceTree = "<group>"; };
+		8D4D5C762B4DF64B004D5684 /* SF-Pro-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Semibold.ttf"; sourceTree = "<group>"; };
 		8DD84B8F2B4D9CBD00D0AF6A /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8DD84B912B4D9F5E00D0AF6A /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		8DD84B932B4DAC1D00D0AF6A /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
@@ -175,6 +183,17 @@
 			path = "engenious-challengeUITests";
 			sourceTree = "<group>";
 		};
+		8D1052462B4DF05800D2C0D9 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				8D4D5C742B4DF64B004D5684 /* SF-Pro-Regular.ttf */,
+				8D4D5C752B4DF64B004D5684 /* SF-Pro-Black.ttf */,
+				8D4D5C762B4DF64B004D5684 /* SF-Pro-Semibold.ttf */,
+				8D4D5C732B4DF64B004D5684 /* SF-Pro-Thin.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		8D1BB32B2B4D32F50066305C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +232,7 @@
 		8D1BB33B2B4D3AEF0066305C /* Mics */ = {
 			isa = PBXGroup;
 			children = (
+				8D1052462B4DF05800D2C0D9 /* Font */,
 				8D1BB3362B4D3AE90066305C /* AppStyles.swift */,
 				8DD84B912B4D9F5E00D0AF6A /* K.swift */,
 				8D1BB3372B4D3AE90066305C /* Extensions */,
@@ -401,8 +421,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D4D5C782B4DF64C004D5684 /* SF-Pro-Regular.ttf in Resources */,
 				20F3FA3D28379AE3008BFAF8 /* LaunchScreen.storyboard in Resources */,
+				8D4D5C7A2B4DF64C004D5684 /* SF-Pro-Semibold.ttf in Resources */,
+				8D4D5C772B4DF64C004D5684 /* SF-Pro-Thin.ttf in Resources */,
 				20F3FA3A28379AE3008BFAF8 /* Assets.xcassets in Resources */,
+				8D4D5C792B4DF64C004D5684 /* SF-Pro-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
