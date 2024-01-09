@@ -47,6 +47,7 @@ extension RepoListViewController {
         title = viewModel.navigationTitle
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         setConstraints()
     }
     
