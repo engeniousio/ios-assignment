@@ -18,3 +18,15 @@ created small unit test
 https://github.com/mishadovhiy/ios-assignment/blob/main/engenious-challengeTests/NetworkServiceTests.swift#L15
 calls async method getRepositories to check that results for passed username are not nill 
 
+
+<br><br><br>
+![IMG_3813](https://github.com/mishadovhiy/ios-assignment/assets/44978117/8de6ca0e-7c5c-4ec2-82a3-d81ef552fb49)
+
+<br>
+![IMG_3814](https://github.com/mishadovhiy/ios-assignment/assets/44978117/058b37cc-bf76-47db-95e6-f79a462ee14c)
+
+<br>
+
+
+https://github.com/mishadovhiy/ios-assignment/assets/44978117/cfa70fcd-8937-42b9-b4d6-0de09662101a
+
