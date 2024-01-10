@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIView {
-    func addBackgroundGradient(with layer: CAGradientLayer, gradientFrame: CGRect? = nil, colorSet: [UIColor],
+    func addBackgroundDecoration(with layer: CAGradientLayer, gradientFrame: CGRect? = nil, colorSet: [UIColor],
                      locations: [Double], startEndPoints: (CGPoint, CGPoint)? = nil) {
         layer.frame = gradientFrame ?? self.bounds
         layer.frame.origin = .zero
