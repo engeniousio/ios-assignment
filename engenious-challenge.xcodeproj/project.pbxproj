@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */; };
 		20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */; };
-		20F3FA3528379AE2008BFAF8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3428379AE2008BFAF8 /* RootViewController.swift */; };
+		20F3FA3528379AE2008BFAF8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3428379AE2008BFAF8 /* DashboardViewController.swift */; };
 		20F3FA3A28379AE3008BFAF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20F3FA3928379AE3008BFAF8 /* Assets.xcassets */; };
 		20F3FA3D28379AE3008BFAF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20F3FA3B28379AE3008BFAF8 /* LaunchScreen.storyboard */; };
 		20F3FA4828379AE3008BFAF8 /* engenious_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA4728379AE3008BFAF8 /* engenious_challengeTests.swift */; };
@@ -17,9 +17,11 @@
 		20F3FA5428379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */; };
 		20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* NetworkService.swift */; };
 		20F3FA6328379F1D008BFAF8 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6228379F1D008BFAF8 /* Repo.swift */; };
-		20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */; };
+		20F3FA652837D07F008BFAF8 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepositoryTableViewCell.swift */; };
+		A37BBCB92B4EFD6A00BB1CBD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37BBCB82B4EFD6A00BB1CBD /* UIView+Extension.swift */; };
 		A38C15792B4EECFC0054EA5D /* AppColorName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C15782B4EECFC0054EA5D /* AppColorName.swift */; };
 		A38C157B2B4EEDC00054EA5D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C157A2B4EEDC00054EA5D /* UIColor+Extension.swift */; };
+		A38C157E2B4EF17E0054EA5D /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C157D2B4EF17E0054EA5D /* DashboardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +45,7 @@
 		20F3FA2D28379AE2008BFAF8 /* engenious-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "engenious-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		20F3FA3428379AE2008BFAF8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		20F3FA3428379AE2008BFAF8 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		20F3FA3928379AE3008BFAF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20F3FA3C28379AE3008BFAF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20F3FA3E28379AE3008BFAF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,9 +56,11 @@
 		20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		20F3FA6028379F06008BFAF8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		20F3FA6228379F1D008BFAF8 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
-		20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		20F3FA642837D07F008BFAF8 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		A37BBCB82B4EFD6A00BB1CBD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		A38C15782B4EECFC0054EA5D /* AppColorName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorName.swift; sourceTree = "<group>"; };
 		A38C157A2B4EEDC00054EA5D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		A38C157D2B4EF17E0054EA5D /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +115,8 @@
 				A38C15752B4EECB80054EA5D /* Resourses */,
 				20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */,
 				20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */,
-				20F3FA3428379AE2008BFAF8 /* RootViewController.swift */,
-				20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */,
+				A38C157C2B4EF1680054EA5D /* Dashboard */,
+				A38C157F2B4EF1BA0054EA5D /* RepositoryCell */,
 				20F3FA6028379F06008BFAF8 /* NetworkService.swift */,
 				20F3FA6228379F1D008BFAF8 /* Repo.swift */,
 				20F3FA3E28379AE3008BFAF8 /* Info.plist */,
@@ -151,8 +155,26 @@
 			children = (
 				A38C15782B4EECFC0054EA5D /* AppColorName.swift */,
 				A38C157A2B4EEDC00054EA5D /* UIColor+Extension.swift */,
+				A37BBCB82B4EFD6A00BB1CBD /* UIView+Extension.swift */,
 			);
 			path = Helpers_tempname;
+			sourceTree = "<group>";
+		};
+		A38C157C2B4EF1680054EA5D /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				20F3FA3428379AE2008BFAF8 /* DashboardViewController.swift */,
+				A38C157D2B4EF17E0054EA5D /* DashboardViewModel.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		A38C157F2B4EF1BA0054EA5D /* RepositoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				20F3FA642837D07F008BFAF8 /* RepositoryTableViewCell.swift */,
+			);
+			path = RepositoryCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,13 +307,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20F3FA3528379AE2008BFAF8 /* RootViewController.swift in Sources */,
+				20F3FA3528379AE2008BFAF8 /* DashboardViewController.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,
 				20F3FA6328379F1D008BFAF8 /* Repo.swift in Sources */,
+				A38C157E2B4EF17E0054EA5D /* DashboardViewModel.swift in Sources */,
 				20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */,
 				A38C15792B4EECFC0054EA5D /* AppColorName.swift in Sources */,
 				20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */,
-				20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */,
+				20F3FA652837D07F008BFAF8 /* RepositoryTableViewCell.swift in Sources */,
+				A37BBCB92B4EFD6A00BB1CBD /* UIView+Extension.swift in Sources */,
 				A38C157B2B4EEDC00054EA5D /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

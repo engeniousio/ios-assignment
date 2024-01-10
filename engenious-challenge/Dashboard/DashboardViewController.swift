@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let repositoryService: RepositoryService = RepositoryService()
     let username: String = "Apple"
@@ -25,7 +25,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         tv.delegate = self
         tv.dataSource = self
-        tv.register(RepoTableViewCell.self, forCellReuseIdentifier: String(describing: RepoTableViewCell.self))
+        tv.register(RepositoryTableViewCell.self, forCellReuseIdentifier: String(describing: RepositoryTableViewCell.self))
         tv.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tv)
         tv.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -50,9 +50,10 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RepoTableViewCell.self)) as? RepoTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RepositoryTableViewCell.self)) as? RepositoryTableViewCell else { return UITableViewCell() }
         let repo = repoList[indexPath.row]
         cell.titleLabel.text = repo.name
+        cell.captionLabel.text = repo.description
         return cell
     }
 
