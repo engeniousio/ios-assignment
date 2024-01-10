@@ -32,7 +32,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         tv.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tv.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tv.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-
+        tv.separatorStyle = .none
         getRepos()
     }
 
