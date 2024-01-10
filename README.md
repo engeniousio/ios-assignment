@@ -20,14 +20,14 @@ calls async method getRepositories to check that results for passed username are
 
 
 <br><br><br>
-![IMG_3813](https://github.com/mishadovhiy/ios-assignment/assets/44978117/8de6ca0e-7c5c-4ec2-82a3-d81ef552fb49)
+# Previews
 
-<br>
+<div style="display:flex;flex-direction: row;">
+<img src="https://github.com/mishadovhiy/ios-assignment/assets/44978117/8de6ca0e-7c5c-4ec2-82a3-d81ef552fb49" width="45%">
+<img src="https://github.com/mishadovhiy/ios-assignment/assets/44978117/058b37cc-bf76-47db-95e6-f79a462ee14c" width="45%">
+</div>
 
-![IMG_3814](https://github.com/mishadovhiy/ios-assignment/assets/44978117/058b37cc-bf76-47db-95e6-f79a462ee14c)
-
-<br>
-
+<br><br>
 
 https://github.com/mishadovhiy/ios-assignment/assets/44978117/cfa70fcd-8937-42b9-b4d6-0de09662101a
 
