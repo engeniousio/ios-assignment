@@ -35,6 +35,10 @@
 		A3F988962B50477400DA2BAD /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F988952B50477400DA2BAD /* NetworkRequest.swift */; };
 		A3F988982B50483800DA2BAD /* NativeRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F988972B50483800DA2BAD /* NativeRequestable.swift */; };
 		A3F9889A2B5048E600DA2BAD /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F988992B5048E600DA2BAD /* RepositoryService.swift */; };
+		A3F988A02B504C0900DA2BAD /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9889F2B504C0900DA2BAD /* BaseViewModel.swift */; };
+		A3F988A22B504C4800DA2BAD /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F988A12B504C4800DA2BAD /* BaseController.swift */; };
+		A3F988A42B504C9B00DA2BAD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F988A32B504C9B00DA2BAD /* UIViewController+Extension.swift */; };
+		A3F988A82B504E2700DA2BAD /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F988A72B504E2700DA2BAD /* Toast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,10 @@
 		A3F988952B50477400DA2BAD /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		A3F988972B50483800DA2BAD /* NativeRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeRequestable.swift; sourceTree = "<group>"; };
 		A3F988992B5048E600DA2BAD /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
+		A3F9889F2B504C0900DA2BAD /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		A3F988A12B504C4800DA2BAD /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		A3F988A32B504C9B00DA2BAD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		A3F988A72B504E2700DA2BAD /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,11 +145,11 @@
 		20F3FA2F28379AE2008BFAF8 /* engenious-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				A3F9889B2B504B3D00DA2BAD /* UISupport */,
+				A3F9887C2B503EAB00DA2BAD /* Application */,
 				A3F988852B50442B00DA2BAD /* NetworkLayer */,
 				A3F988822B50434B00DA2BAD /* Domain */,
 				A3F9887D2B5042FA00DA2BAD /* Infrastructure */,
-				A3F9887C2B503EAB00DA2BAD /* Application */,
-				A38C15772B4EECE50054EA5D /* Helpers_tempname */,
 				A38C157C2B4EF1680054EA5D /* Dashboard */,
 				A38C157F2B4EF1BA0054EA5D /* RepositoryCell */,
 				A3F9887A2B5036F100DA2BAD /* NavigationBarAppearanceManager.swift */,
@@ -164,17 +172,6 @@
 				20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */,
 			);
 			path = "engenious-challengeUITests";
-			sourceTree = "<group>";
-		};
-		A38C15772B4EECE50054EA5D /* Helpers_tempname */ = {
-			isa = PBXGroup;
-			children = (
-				A3BA36FF2B4F2E09003DB304 /* UIView+Extension.swift */,
-				A38C15782B4EECFC0054EA5D /* AppColorName.swift */,
-				A38C157A2B4EEDC00054EA5D /* UIColor+Extension.swift */,
-				A3BA36FD2B4F2438003DB304 /* CALayer+Extension.swift */,
-			);
-			path = Helpers_tempname;
 			sourceTree = "<group>";
 		};
 		A38C157C2B4EF1680054EA5D /* Dashboard */ = {
@@ -278,6 +275,61 @@
 				A3F988992B5048E600DA2BAD /* RepositoryService.swift */,
 			);
 			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		A3F9889B2B504B3D00DA2BAD /* UISupport */ = {
+			isa = PBXGroup;
+			children = (
+				A3F988A52B504DF200DA2BAD /* Customisation */,
+				A3F9889E2B504BF600DA2BAD /* Core */,
+				A3F9889D2B504BC800DA2BAD /* ColorsConstants */,
+				A3F9889C2B504B5100DA2BAD /* Extensions */,
+			);
+			path = UISupport;
+			sourceTree = "<group>";
+		};
+		A3F9889C2B504B5100DA2BAD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A3BA36FD2B4F2438003DB304 /* CALayer+Extension.swift */,
+				A38C157A2B4EEDC00054EA5D /* UIColor+Extension.swift */,
+				A3BA36FF2B4F2E09003DB304 /* UIView+Extension.swift */,
+				A3F988A32B504C9B00DA2BAD /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A3F9889D2B504BC800DA2BAD /* ColorsConstants */ = {
+			isa = PBXGroup;
+			children = (
+				A38C15782B4EECFC0054EA5D /* AppColorName.swift */,
+			);
+			path = ColorsConstants;
+			sourceTree = "<group>";
+		};
+		A3F9889E2B504BF600DA2BAD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A3F9889F2B504C0900DA2BAD /* BaseViewModel.swift */,
+				A3F988A12B504C4800DA2BAD /* BaseController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A3F988A52B504DF200DA2BAD /* Customisation */ = {
+			isa = PBXGroup;
+			children = (
+				A3F988A62B504E0C00DA2BAD /* IndicatorView */,
+			);
+			path = Customisation;
+			sourceTree = "<group>";
+		};
+		A3F988A62B504E0C00DA2BAD /* IndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				A3F988A72B504E2700DA2BAD /* Toast.swift */,
+			);
+			path = IndicatorView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +464,7 @@
 			files = (
 				A3BA37002B4F2E09003DB304 /* UIView+Extension.swift in Sources */,
 				A3F988892B50448C00DA2BAD /* RepositoryDTO.swift in Sources */,
+				A3F988A22B504C4800DA2BAD /* BaseController.swift in Sources */,
 				A3F9887B2B5036F100DA2BAD /* NavigationBarAppearanceManager.swift in Sources */,
 				20F3FA3528379AE2008BFAF8 /* DashboardViewController.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,
@@ -423,6 +476,9 @@
 				A3F988902B50455A00DA2BAD /* Endpoints.swift in Sources */,
 				A38C157E2B4EF17E0054EA5D /* DashboardViewModel.swift in Sources */,
 				A3F9889A2B5048E600DA2BAD /* RepositoryService.swift in Sources */,
+				A3F988A42B504C9B00DA2BAD /* UIViewController+Extension.swift in Sources */,
+				A3F988A02B504C0900DA2BAD /* BaseViewModel.swift in Sources */,
+				A3F988A82B504E2700DA2BAD /* Toast.swift in Sources */,
 				20F3FA6128379F06008BFAF8 /* OldNetworkService.swift in Sources */,
 				A38C15792B4EECFC0054EA5D /* AppColorName.swift in Sources */,
 				20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */,
