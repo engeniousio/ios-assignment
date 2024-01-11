@@ -14,37 +14,22 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     let username: String = "Apple"
     var repoList: [Repo] = []
     
-    let tv = UITableView()
+    let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        let headerView = createTableHeaderView()
-        title = "\(username)'s repos"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        
-        tv.delegate = self
-        tv.dataSource = self
-        tv.register(RepositoryTableViewCell.self, forCellReuseIdentifier: String(describing: RepositoryTableViewCell.self))
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(tv)
-        tv.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tv.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tv.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        tv.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tv.separatorStyle = .none
-        tv.tableHeaderView = headerView
-        getRepos()
+        self.view.backgroundColor = .white
+        self.title = "\(username)'s repos"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.setupTableView()
+        self.getRepos()
     }
     
-    func createTableHeaderView() -> UIView {
+    private func createTableHeaderView() -> UIView {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 100)) // Adjust the height as needed
-        
-        // Customize your header view as per your design
         let headerLabel = UILabel()
         headerLabel.textColor = .listTitleColor
-        headerLabel.text = "Table View Header"
+        headerLabel.text = "Repositories"
         headerLabel.textAlignment = .left
         headerLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -59,11 +44,26 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         return headerView
     }
     
-    func getRepos() {
+    private func setupTableView() {
+        let headerView = createTableHeaderView()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(RepositoryTableViewCell.self, forCellReuseIdentifier: String(describing: RepositoryTableViewCell.self))
+        self.tableView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(tableView)
+        self.tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        self.tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        self.tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        self.tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        self.tableView.separatorStyle = .none
+        self.tableView.tableHeaderView = headerView
+    }
+    
+    private func getRepos() {
         repositoryService.getUserRepos(username: username) { value in
             DispatchQueue.main.async {
                 self.repoList = value
-                self.tv.reloadData()
+                self.tableView.reloadData()
             }
         }
     }
@@ -79,9 +79,5 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.captionLabel.text = repo.description
         return cell
     }
-    
-    
-    
-    
 }
 
