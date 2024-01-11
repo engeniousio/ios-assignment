@@ -9,7 +9,6 @@ import Foundation
 
 final class AppConfiguration {
         
-    // MARK: - Constants
     lazy var apiBaseURL: String = {
         return "https://api.github.com/"
     }()

@@ -11,44 +11,43 @@ enum Endpoints {
     
     case getUserRepos(request: RepositoryDTO)
     
-    var baseURL: String {
+    private var baseURL: String {
         return AppConfiguration().apiBaseURL
     }
     
-    var requestTimeOut: Int {
+    private var requestTimeOut: Int {
         return 30
     }
         
-    var path: String {
+    private var path: String {
         switch self {
         case .getUserRepos(let username):
             return "users/\(username)/repos"
         }
     }
     
-    var httpMethod: HTTPMethod {
+    private var httpMethod: HTTPMethod {
         switch self {
         case .getUserRepos:
             return .GET
         }
     }
     
-    var requestBody: Encodable? {
+    private var requestBody: Encodable? {
         switch self {
         case .getUserRepos(let request):
             return request
         }
     }
     
-    func getURL() -> String {
+    private func getURL() -> String {
         return self.baseURL + self.path
     }
     
     func createRequest() -> NetworkRequest {
-        
-        debugPrint("request: \(getURL())")
-        debugPrint("method: \(httpMethod)")
-        debugPrint("body: \(requestBody ?? "")")
+        printIfDebug("request: \(getURL())")
+        printIfDebug("method: \(httpMethod)")
+        printIfDebug("body: \(requestBody ?? "")")
         
         return NetworkRequest(url: getURL(),
                               headers: AppConfiguration().headers,
