@@ -10,9 +10,9 @@ import Combine
 
 class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let repositoryService: RepositoryService = RepositoryService()
+    let repositoryService: oldRepositoryService = oldRepositoryService()
     let username: String = "Apple"
-    var repoList: [Repo] = []
+    var repoList: [RepositoryResponse] = []
     
     let tableView = UITableView()
     
