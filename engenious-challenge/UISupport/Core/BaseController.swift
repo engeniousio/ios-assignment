@@ -48,6 +48,12 @@ class BaseController<T: BaseViewModel>: UIViewController {
                 if isLoading { self.startLoading() }
                 else { self.stopLoading() }
             }.store(in: &cancellable)
+       
+        self.viewModel.displayMessage
+            .sink { [weak self] message in
+                guard let self = self else { return }
+                self.displayAlertMessage(message: message)
+            }.store(in: &cancellable)
     }
 }
 

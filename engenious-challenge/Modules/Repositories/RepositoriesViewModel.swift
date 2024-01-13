@@ -12,20 +12,14 @@ protocol RepositoriesViewModelInputs {
     func getRepositories()
 }
 
-protocol RepositoriesViewModelOutputs {
-    var navigateToSomewhere: PassthroughSubject<Void, Never> { get }
-}
-
 protocol RepositoriesViewModelProtocol {
     var inputs: RepositoriesViewModelInputs { get set }
-    var outputs: RepositoriesViewModelOutputs { get }
 }
 
 // MARK: - ViewModel
 final class RepositoriesViewModel: BaseViewModel,
                                    RepositoriesViewModelProtocol,
-                                   RepositoriesViewModelInputs,
-                                   RepositoriesViewModelOutputs {
+                                   RepositoriesViewModelInputs {
    
     var inputs: RepositoriesViewModelInputs {
         get {
@@ -33,11 +27,7 @@ final class RepositoriesViewModel: BaseViewModel,
         }
         set {}
     }
-    
-    var outputs: RepositoriesViewModelOutputs {
-        return self
-    }
-   
+
     private var repositorysService: RepositoryServiceProtocol
    
     init(repositorysService: RepositoryServiceProtocol = RepositoryService()) {
@@ -46,13 +36,9 @@ final class RepositoriesViewModel: BaseViewModel,
     
     @Published var repositories: [Repository] = []
     
-    // MARK: - Outputs
-    var navigateToSomewhere = PassthroughSubject<Void, Never>()
-    
-   
     // MARK: - Inputs
     func getRepositories() {
-        isLoading.send(true)
+        self.isLoading.send(true)
         let repositoryDTO: RepositoryDTO = .init(username: "Apple")
         
         self.repositorysService.repositories(request: repositoryDTO)

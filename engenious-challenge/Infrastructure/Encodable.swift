@@ -8,7 +8,7 @@
 import Foundation
 
 extension Encodable {
-    func encode2() -> Data? {
+    func encode() -> Data? {
         do {
             return try JSONEncoder().encode(self)
         } catch {

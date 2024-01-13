@@ -22,7 +22,7 @@ public struct NetworkRequest {
                 httpMethod: HTTPMethod) {
         self.url = url
         self.headers = headers
-        self.body = reqBody?.encode2()
+        self.body = reqBody?.encode()
         self.requestTimeOut = reqTimeout
         self.httpMethod = httpMethod
     }

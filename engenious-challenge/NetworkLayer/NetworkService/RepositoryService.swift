@@ -17,8 +17,7 @@ class RepositoryService: RepositoryServiceProtocol {
         return self.networkRequest.request(request)
     }
    
-    // inject this for testability
-    init(networkRequest: Requestable = NativeRequestable()) {
+    init(networkRequest: Requestable = Request()) {
         self.networkRequest = networkRequest
     }
 }

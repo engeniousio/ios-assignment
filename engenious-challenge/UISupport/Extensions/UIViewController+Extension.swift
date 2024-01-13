@@ -16,8 +16,17 @@ extension UIViewController {
     }
     
     func stopLoading() {
-        //remove the spinner view controller
         self.view.removeSubviewWithTag(403415)
         self.view.hideToastActivity()
+    }
+    
+    func displayAlertMessage(message: String?) {
+        guard let message = message,
+              !message.isEmpty
+        else { return }
+        let model = NotificationBuilder()
+        model.setTitle("")
+            .setBody(message)
+            .bulid()
     }
 }

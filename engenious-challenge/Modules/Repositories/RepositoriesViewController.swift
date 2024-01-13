@@ -31,7 +31,7 @@ class RepositoriesViewController: BaseController<RepositoriesViewModel>, UITable
     
     // MARK: - Binding
     override func bind(viewModel: RepositoriesViewModel) {
-        viewModel.$repositories
+        self.viewModel.$repositories
             .sink { [weak self] repositories in
                 self?.cellViewModels = repositories.map { RepositoryCellViewModel(repository: $0) }
                 self?.tableView.reloadData()
@@ -64,7 +64,7 @@ class RepositoriesViewController: BaseController<RepositoriesViewModel>, UITable
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-
+    
     // MARK: - Header View Creation
     private func createTableHeaderView() -> UIView {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 100))

@@ -19,6 +19,8 @@
 		20F3FA6328379F1D008BFAF8 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6228379F1D008BFAF8 /* Repository.swift */; };
 		20F3FA652837D07F008BFAF8 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepositoryTableViewCell.swift */; };
 		A371FBE22B52E4F000E54DD0 /* RepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371FBE12B52E4F000E54DD0 /* RepositoryCellViewModel.swift */; };
+		A371FBE62B52EEAC00E54DD0 /* AlertFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371FBE52B52EEAC00E54DD0 /* AlertFacade.swift */; };
+		A371FBE82B52EEAF00E54DD0 /* NotificationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371FBE72B52EEAF00E54DD0 /* NotificationBuilder.swift */; };
 		A38C15792B4EECFC0054EA5D /* AppColorName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C15782B4EECFC0054EA5D /* AppColorName.swift */; };
 		A38C157B2B4EEDC00054EA5D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C157A2B4EEDC00054EA5D /* UIColor+Extension.swift */; };
 		A38C157E2B4EF17E0054EA5D /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C157D2B4EF17E0054EA5D /* RepositoriesViewModel.swift */; };
@@ -34,7 +36,7 @@
 		A3F988922B50458E00DA2BAD /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F988912B50458E00DA2BAD /* AppConfiguration.swift */; };
 		A3F988942B5046F500DA2BAD /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F988932B5046F500DA2BAD /* HTTPMethod.swift */; };
 		A3F988962B50477400DA2BAD /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F988952B50477400DA2BAD /* NetworkRequest.swift */; };
-		A3F988982B50483800DA2BAD /* NativeRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F988972B50483800DA2BAD /* NativeRequestable.swift */; };
+		A3F988982B50483800DA2BAD /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F988972B50483800DA2BAD /* Request.swift */; };
 		A3F9889A2B5048E600DA2BAD /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F988992B5048E600DA2BAD /* RepositoryService.swift */; };
 		A3F988A02B504C0900DA2BAD /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9889F2B504C0900DA2BAD /* BaseViewModel.swift */; };
 		A3F988A22B504C4800DA2BAD /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F988A12B504C4800DA2BAD /* BaseController.swift */; };
@@ -76,6 +78,8 @@
 		20F3FA6228379F1D008BFAF8 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		20F3FA642837D07F008BFAF8 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		A371FBE12B52E4F000E54DD0 /* RepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewModel.swift; sourceTree = "<group>"; };
+		A371FBE52B52EEAC00E54DD0 /* AlertFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFacade.swift; sourceTree = "<group>"; };
+		A371FBE72B52EEAF00E54DD0 /* NotificationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBuilder.swift; sourceTree = "<group>"; };
 		A38C15782B4EECFC0054EA5D /* AppColorName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorName.swift; sourceTree = "<group>"; };
 		A38C157A2B4EEDC00054EA5D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		A38C157D2B4EF17E0054EA5D /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
@@ -91,7 +95,7 @@
 		A3F988912B50458E00DA2BAD /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		A3F988932B5046F500DA2BAD /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		A3F988952B50477400DA2BAD /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
-		A3F988972B50483800DA2BAD /* NativeRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeRequestable.swift; sourceTree = "<group>"; };
+		A3F988972B50483800DA2BAD /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		A3F988992B5048E600DA2BAD /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
 		A3F9889F2B504C0900DA2BAD /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		A3F988A12B504C4800DA2BAD /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
@@ -172,6 +176,15 @@
 				20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */,
 			);
 			path = "engenious-challengeUITests";
+			sourceTree = "<group>";
+		};
+		A371FBE92B52EEDE00E54DD0 /* AlertBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				A371FBE52B52EEAC00E54DD0 /* AlertFacade.swift */,
+				A371FBE72B52EEAF00E54DD0 /* NotificationBuilder.swift */,
+			);
+			path = AlertBuilder;
 			sourceTree = "<group>";
 		};
 		A38C157C2B4EF1680054EA5D /* Repositories */ = {
@@ -266,7 +279,7 @@
 				A3F988932B5046F500DA2BAD /* HTTPMethod.swift */,
 				A3F988952B50477400DA2BAD /* NetworkRequest.swift */,
 				A3F988862B50443900DA2BAD /* NetworkError.swift */,
-				A3F988972B50483800DA2BAD /* NativeRequestable.swift */,
+				A3F988972B50483800DA2BAD /* Request.swift */,
 			);
 			path = NetworkConfig;
 			sourceTree = "<group>";
@@ -282,6 +295,7 @@
 		A3F9889B2B504B3D00DA2BAD /* UISupport */ = {
 			isa = PBXGroup;
 			children = (
+				A371FBE92B52EEDE00E54DD0 /* AlertBuilder */,
 				A3F988A52B504DF200DA2BAD /* Customisation */,
 				A3F9889E2B504BF600DA2BAD /* Core */,
 				A3F9889D2B504BC800DA2BAD /* ColorsConstants */,
@@ -484,13 +498,14 @@
 				A3F988962B50477400DA2BAD /* NetworkRequest.swift in Sources */,
 				A371FBE22B52E4F000E54DD0 /* RepositoryCellViewModel.swift in Sources */,
 				A3F988872B50443900DA2BAD /* NetworkError.swift in Sources */,
-				A3F988982B50483800DA2BAD /* NativeRequestable.swift in Sources */,
+				A3F988982B50483800DA2BAD /* Request.swift in Sources */,
 				A3F988902B50455A00DA2BAD /* Endpoints.swift in Sources */,
 				A38C157E2B4EF17E0054EA5D /* RepositoriesViewModel.swift in Sources */,
 				A3F9889A2B5048E600DA2BAD /* RepositoryService.swift in Sources */,
 				A3F988A42B504C9B00DA2BAD /* UIViewController+Extension.swift in Sources */,
 				A3F988A02B504C0900DA2BAD /* BaseViewModel.swift in Sources */,
 				A3F988A82B504E2700DA2BAD /* Toast.swift in Sources */,
+				A371FBE82B52EEAF00E54DD0 /* NotificationBuilder.swift in Sources */,
 				20F3FA6128379F06008BFAF8 /* OldNetworkService.swift in Sources */,
 				A38C15792B4EECFC0054EA5D /* AppColorName.swift in Sources */,
 				20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */,
@@ -500,6 +515,7 @@
 				A3F988922B50458E00DA2BAD /* AppConfiguration.swift in Sources */,
 				A3F9887F2B50431000DA2BAD /* Requestable.swift in Sources */,
 				A3BA36FE2B4F2438003DB304 /* CALayer+Extension.swift in Sources */,
+				A371FBE62B52EEAC00E54DD0 /* AlertFacade.swift in Sources */,
 				A38C157B2B4EEDC00054EA5D /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

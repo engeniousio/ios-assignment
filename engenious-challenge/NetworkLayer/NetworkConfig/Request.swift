@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-public class NativeRequestable: Requestable {
+public class Request: Requestable {
     public var requestTimeOut: Float = 30
 
     public func request<T>(_ req: NetworkRequest) -> AnyPublisher<T, NetworkError>
@@ -23,7 +23,7 @@ public class NativeRequestable: Requestable {
             )
         }
          
-        // We use the dataTaskPublisher from the URLSession which gives us a publisher to play around with.
+        // We use the dataTaskPublisher from the URLSession
         return URLSession.shared
             .dataTaskPublisher(for: req.buildURLRequest(with: url))
             .tryMap { output in
@@ -38,8 +38,7 @@ public class NativeRequestable: Requestable {
             }
             .decode(type: T.self, decoder: JSONDecoder())
             .mapError { error in
-                // return error if json decoding fails
-                NetworkError.invalidJSON(String(describing: error))
+                return NetworkError.invalidJSON(String(describing: error))
             }
             .eraseToAnyPublisher()
     }
