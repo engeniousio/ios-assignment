@@ -11,7 +11,7 @@ import Combine
 class RepositoryService: RepositoryServiceProtocol {
     private var networkRequest: Requestable
     
-    func repositories(request: RepositoryDTO) -> AnyPublisher<[RepositoryResponse], NetworkError> {
+    func repositories(request: RepositoryDTO) -> AnyPublisher<[Repository], NetworkError> {
         let endpoint = Endpoints.getUsersRepos(request: request)
         let request = endpoint.createRequest()
         return self.networkRequest.request(request)

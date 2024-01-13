@@ -44,7 +44,7 @@ final class RepositoriesViewModel: BaseViewModel,
         self.repositorysService = repositorysService
     }
     
-    @Published var repositories: [RepositoryResponse] = []
+    @Published var repositories: [Repository] = []
     
     // MARK: - Outputs
     var navigateToSomewhere = PassthroughSubject<Void, Never>()

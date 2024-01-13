@@ -9,6 +9,8 @@ import UIKit
 
 class RepositoryTableViewCell: UITableViewCell {
     
+    static let identifier = "RepositoryTableViewCell"
+    
     // MARK: - Properties
     private let gradientLabelsContainer: UIView = {
         let view = UIView()
@@ -59,6 +61,12 @@ class RepositoryTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Cell configuration
+    func configure(with viewModel: RepositoryCellViewModel) {
+        self.titleLabel.text = viewModel.repository.name
+        self.captionLabel.text = viewModel.repository.description
     }
     
     // MARK: - Subviews and Constraints

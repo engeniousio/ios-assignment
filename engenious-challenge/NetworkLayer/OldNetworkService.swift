@@ -10,7 +10,7 @@ import Combine
 
 struct oldRepositoryService {
 
-    func getUserRepos(username: String, completion: @escaping ([RepositoryResponse]) -> Void) {
+    func getUserRepos(username: String, completion: @escaping ([Repository]) -> Void) {
         guard let url = URL(string: "https://api.github.com/users/\(username)/repos") else {
             return completion([])
         }
@@ -27,7 +27,7 @@ struct oldRepositoryService {
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let response = try decoder.decode([RepositoryResponse].self, from: data)
+                let response = try decoder.decode([Repository].self, from: data)
                 completion(response)
             } catch {
 

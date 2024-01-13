@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol RepositoryServiceProtocol {
-    func repositories(request: RepositoryDTO) -> AnyPublisher<[RepositoryResponse], NetworkError>
+    func repositories(request: RepositoryDTO) -> AnyPublisher<[Repository], NetworkError>
 }

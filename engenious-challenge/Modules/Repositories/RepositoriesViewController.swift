@@ -8,22 +8,23 @@
 import UIKit
 import Combine
 
-class RepositoriesViewController: BaseController<RepositoriesViewModel>,
-                                  UITableViewDelegate,
-                                  UITableViewDataSource {
+class RepositoriesViewController: BaseController<RepositoriesViewModel>, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: - Properties
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
+        return tableView
+    }()
     
-    // MARK: - SubViews
-    private let tableView = UITableView()
     private let username: String = "Apple"
-    private var repoList: [RepositoryResponse] = []
+    private var cellViewModels: [RepositoryCellViewModel] = []
     
-    // MARK: - LifeCycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
-        self.title = "\(username)'s repos"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.setupUI()
         self.setupTableView()
         self.viewModel.getRepositories()
     }
@@ -31,22 +32,52 @@ class RepositoriesViewController: BaseController<RepositoriesViewModel>,
     // MARK: - Binding
     override func bind(viewModel: RepositoriesViewModel) {
         viewModel.$repositories
-                .sink { [weak self] repositories in
-                    self?.repoList = repositories
-                    self?.tableView.reloadData()
-                }
-                .store(in: &cancellable)
+            .sink { [weak self] repositories in
+                self?.cellViewModels = repositories.map { RepositoryCellViewModel(repository: $0) }
+                self?.tableView.reloadData()
+            }
+            .store(in: &cancellable)
     }
     
-    // MARK: - Methods
+    // MARK: - UI Setup
+    private func setupUI() {
+        self.view.backgroundColor = .white
+        self.title = "\(username)'s Repos"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    // MARK: - Table View Setup
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(RepositoryTableViewCell.self, forCellReuseIdentifier: RepositoryTableViewCell.identifier)
+        
+        let headerView = createTableHeaderView()
+        tableView.tableHeaderView = headerView
+        
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+
+    // MARK: - Header View Creation
     private func createTableHeaderView() -> UIView {
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 100)) // Adjust the height as needed
-        let headerLabel = UILabel()
-        headerLabel.textColor = .listTitleColor
-        headerLabel.text = "Repositories"
-        headerLabel.textAlignment = .left
-        headerLabel.font = .systemFont(ofSize: 20, weight: .semibold)
-        headerLabel.translatesAutoresizingMaskIntoConstraints = false
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 100))
+        
+        let headerLabel: UILabel = {
+            let label = UILabel()
+            label.textColor = .listTitleColor
+            label.text = "Repositories"
+            label.textAlignment = .left
+            label.font = .systemFont(ofSize: 20, weight: .semibold)
+            label.translatesAutoresizingMaskIntoConstraints = false
+            return label
+        }()
         
         headerView.addSubview(headerLabel)
         
@@ -57,33 +88,18 @@ class RepositoriesViewController: BaseController<RepositoriesViewModel>,
         
         return headerView
     }
-    
-    private func setupTableView() {
-        let headerView = createTableHeaderView()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.register(RepositoryTableViewCell.self, forCellReuseIdentifier: String(describing: RepositoryTableViewCell.self))
-        self.tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.view.addSubview(tableView)
-        self.tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        self.tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        self.tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        self.tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        self.tableView.separatorStyle = .none
-        self.tableView.tableHeaderView = headerView
-    }
 
+    // MARK: - Table View DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repoList.count
+        return cellViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RepositoryTableViewCell.self)) as? RepositoryTableViewCell else { return UITableViewCell() }
-        let repo = repoList[indexPath.row]
-        cell.titleLabel.text = repo.name
-        cell.captionLabel.text = repo.description
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryTableViewCell.identifier, for: indexPath) as? RepositoryTableViewCell else {
+            return UITableViewCell()
+        }
+        let viewModel = cellViewModels[indexPath.row]
+        cell.configure(with: viewModel)
         return cell
     }
 }
-
