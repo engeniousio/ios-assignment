@@ -13,11 +13,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var navigationBarAppearanceManager = NavigationBarAppearanceManager()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
+        guard let windowScene = scene as? UIWindowScene else { return }
+
         let window = UIWindow(windowScene: windowScene)
-        let nc = UINavigationController(rootViewController: DashboardViewController())
-        self.navigationBarAppearanceManager.setAppearance(for: nc)
-        window.rootViewController = nc
+        let rootViewController = RepositoriesViewController(viewModel: RepositoriesViewModel())
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+
+        self.navigationBarAppearanceManager.setAppearance(for: navigationController)
+
+        window.rootViewController = navigationController
         self.window = window
         window.makeKeyAndVisible()
     }

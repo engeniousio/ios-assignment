@@ -9,7 +9,7 @@ import Foundation
 
 enum Endpoints {
     
-    case getUserRepos(request: RepositoryDTO)
+    case getUsersRepos(request: RepositoryDTO)
     
     private var baseURL: String {
         return AppConfiguration().apiBaseURL
@@ -21,22 +21,22 @@ enum Endpoints {
         
     private var path: String {
         switch self {
-        case .getUserRepos(let username):
-            return "users/\(username)/repos"
+        case .getUsersRepos(let userDTO):
+            return "users/\(userDTO.username)/repos"
         }
     }
     
     private var httpMethod: HTTPMethod {
         switch self {
-        case .getUserRepos:
+        case .getUsersRepos:
             return .GET
         }
     }
     
     private var requestBody: Encodable? {
         switch self {
-        case .getUserRepos(let request):
-            return request
+        case .getUsersRepos:
+            return nil
         }
     }
     
@@ -47,13 +47,11 @@ enum Endpoints {
     func createRequest() -> NetworkRequest {
         printIfDebug("request: \(getURL())")
         printIfDebug("method: \(httpMethod)")
-        printIfDebug("body: \(requestBody ?? "")")
         
         return NetworkRequest(url: getURL(),
                               headers: AppConfiguration().headers,
-                              reqBody: requestBody,
+                              reqBody: nil,
                               httpMethod: httpMethod)
     }
-
 }
 

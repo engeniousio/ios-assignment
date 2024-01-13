@@ -8,23 +8,37 @@
 import UIKit
 import Combine
 
-class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RepositoriesViewController: BaseController<RepositoriesViewModel>,
+                                  UITableViewDelegate,
+                                  UITableViewDataSource {
     
-    let repositoryService: oldRepositoryService = oldRepositoryService()
-    let username: String = "Apple"
-    var repoList: [RepositoryResponse] = []
     
-    let tableView = UITableView()
+    // MARK: - SubViews
+    private let tableView = UITableView()
+    private let username: String = "Apple"
+    private var repoList: [RepositoryResponse] = []
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.title = "\(username)'s repos"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.setupTableView()
-        self.getRepos()
+        self.viewModel.getRepositories()
     }
     
+    // MARK: - Binding
+    override func bind(viewModel: RepositoriesViewModel) {
+        viewModel.$repositories
+                .sink { [weak self] repositories in
+                    self?.repoList = repositories
+                    self?.tableView.reloadData()
+                }
+                .store(in: &cancellable)
+    }
+    
+    // MARK: - Methods
     private func createTableHeaderView() -> UIView {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 100)) // Adjust the height as needed
         let headerLabel = UILabel()
@@ -50,6 +64,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         self.tableView.dataSource = self
         self.tableView.register(RepositoryTableViewCell.self, forCellReuseIdentifier: String(describing: RepositoryTableViewCell.self))
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
+        
         self.view.addSubview(tableView)
         self.tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         self.tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -58,16 +73,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         self.tableView.separatorStyle = .none
         self.tableView.tableHeaderView = headerView
     }
-    
-    private func getRepos() {
-        repositoryService.getUserRepos(username: username) { value in
-            DispatchQueue.main.async {
-                self.repoList = value
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repoList.count
     }

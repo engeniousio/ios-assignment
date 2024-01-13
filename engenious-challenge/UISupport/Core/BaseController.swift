@@ -13,7 +13,6 @@ class BaseController<T: BaseViewModel>: UIViewController {
     //MARK: - Properties
     var viewModel: T
     var hideNavigationBar: Bool = false
-
     
     lazy var cancellable: Set<AnyCancellable> = {
         return Set<AnyCancellable>()
@@ -23,7 +22,7 @@ class BaseController<T: BaseViewModel>: UIViewController {
     //MARK: - Init
     init(viewModel: T) {
         self.viewModel = viewModel
-        super.init(nibName: String(describing: type(of: self)), bundle: nil)
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -37,7 +36,6 @@ class BaseController<T: BaseViewModel>: UIViewController {
         self.bindStates()
     }
 
-    
     //MARK: - Methods
     func bind(viewModel: T){
         fatalError("Please override bind function")

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */; };
 		20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */; };
-		20F3FA3528379AE2008BFAF8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3428379AE2008BFAF8 /* DashboardViewController.swift */; };
+		20F3FA3528379AE2008BFAF8 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3428379AE2008BFAF8 /* RepositoriesViewController.swift */; };
 		20F3FA3A28379AE3008BFAF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20F3FA3928379AE3008BFAF8 /* Assets.xcassets */; };
 		20F3FA3D28379AE3008BFAF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20F3FA3B28379AE3008BFAF8 /* LaunchScreen.storyboard */; };
 		20F3FA4828379AE3008BFAF8 /* engenious_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA4728379AE3008BFAF8 /* engenious_challengeTests.swift */; };
@@ -20,7 +20,7 @@
 		20F3FA652837D07F008BFAF8 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepositoryTableViewCell.swift */; };
 		A38C15792B4EECFC0054EA5D /* AppColorName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C15782B4EECFC0054EA5D /* AppColorName.swift */; };
 		A38C157B2B4EEDC00054EA5D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C157A2B4EEDC00054EA5D /* UIColor+Extension.swift */; };
-		A38C157E2B4EF17E0054EA5D /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C157D2B4EF17E0054EA5D /* DashboardViewModel.swift */; };
+		A38C157E2B4EF17E0054EA5D /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C157D2B4EF17E0054EA5D /* RepositoriesViewModel.swift */; };
 		A3BA36FE2B4F2438003DB304 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA36FD2B4F2438003DB304 /* CALayer+Extension.swift */; };
 		A3BA37002B4F2E09003DB304 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA36FF2B4F2E09003DB304 /* UIView+Extension.swift */; };
 		A3F9887B2B5036F100DA2BAD /* NavigationBarAppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9887A2B5036F100DA2BAD /* NavigationBarAppearanceManager.swift */; };
@@ -62,7 +62,7 @@
 		20F3FA2D28379AE2008BFAF8 /* engenious-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "engenious-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		20F3FA3428379AE2008BFAF8 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		20F3FA3428379AE2008BFAF8 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		20F3FA3928379AE3008BFAF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20F3FA3C28379AE3008BFAF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20F3FA3E28379AE3008BFAF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "engenious-challenge/Application/Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -76,7 +76,7 @@
 		20F3FA642837D07F008BFAF8 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		A38C15782B4EECFC0054EA5D /* AppColorName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorName.swift; sourceTree = "<group>"; };
 		A38C157A2B4EEDC00054EA5D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		A38C157D2B4EF17E0054EA5D /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		A38C157D2B4EF17E0054EA5D /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
 		A3BA36FD2B4F2438003DB304 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		A3BA36FF2B4F2E09003DB304 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		A3F9887A2B5036F100DA2BAD /* NavigationBarAppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarAppearanceManager.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 				A3F988852B50442B00DA2BAD /* NetworkLayer */,
 				A3F988822B50434B00DA2BAD /* Domain */,
 				A3F9887D2B5042FA00DA2BAD /* Infrastructure */,
-				A38C157C2B4EF1680054EA5D /* Dashboard */,
+				A3F988B12B50518A00DA2BAD /* Modules */,
 				A38C157F2B4EF1BA0054EA5D /* RepositoryCell */,
 				A3F9887A2B5036F100DA2BAD /* NavigationBarAppearanceManager.swift */,
 			);
@@ -174,13 +174,13 @@
 			path = "engenious-challengeUITests";
 			sourceTree = "<group>";
 		};
-		A38C157C2B4EF1680054EA5D /* Dashboard */ = {
+		A38C157C2B4EF1680054EA5D /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				20F3FA3428379AE2008BFAF8 /* DashboardViewController.swift */,
-				A38C157D2B4EF17E0054EA5D /* DashboardViewModel.swift */,
+				20F3FA3428379AE2008BFAF8 /* RepositoriesViewController.swift */,
+				A38C157D2B4EF17E0054EA5D /* RepositoriesViewModel.swift */,
 			);
-			path = Dashboard;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		A38C157F2B4EF1BA0054EA5D /* RepositoryCell */ = {
@@ -332,6 +332,14 @@
 			path = IndicatorView;
 			sourceTree = "<group>";
 		};
+		A3F988B12B50518A00DA2BAD /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A38C157C2B4EF1680054EA5D /* Repositories */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -466,7 +474,7 @@
 				A3F988892B50448C00DA2BAD /* RepositoryDTO.swift in Sources */,
 				A3F988A22B504C4800DA2BAD /* BaseController.swift in Sources */,
 				A3F9887B2B5036F100DA2BAD /* NavigationBarAppearanceManager.swift in Sources */,
-				20F3FA3528379AE2008BFAF8 /* DashboardViewController.swift in Sources */,
+				20F3FA3528379AE2008BFAF8 /* RepositoriesViewController.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,
 				A3F988942B5046F500DA2BAD /* HTTPMethod.swift in Sources */,
 				20F3FA6328379F1D008BFAF8 /* RepositoryResponse.swift in Sources */,
@@ -474,7 +482,7 @@
 				A3F988872B50443900DA2BAD /* NetworkError.swift in Sources */,
 				A3F988982B50483800DA2BAD /* NativeRequestable.swift in Sources */,
 				A3F988902B50455A00DA2BAD /* Endpoints.swift in Sources */,
-				A38C157E2B4EF17E0054EA5D /* DashboardViewModel.swift in Sources */,
+				A38C157E2B4EF17E0054EA5D /* RepositoriesViewModel.swift in Sources */,
 				A3F9889A2B5048E600DA2BAD /* RepositoryService.swift in Sources */,
 				A3F988A42B504C9B00DA2BAD /* UIViewController+Extension.swift in Sources */,
 				A3F988A02B504C0900DA2BAD /* BaseViewModel.swift in Sources */,
