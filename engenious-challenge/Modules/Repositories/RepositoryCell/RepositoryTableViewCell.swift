@@ -63,6 +63,13 @@ class RepositoryTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Preparation for Reuse
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        titleLabel.text = nil
+        captionLabel.text = nil
+    }
+    
     // MARK: - Cell configuration
     func configure(with viewModel: RepositoryCellViewModel) {
         self.titleLabel.text = viewModel.repository.name
@@ -100,7 +107,9 @@ class RepositoryTableViewCell: UITableViewCell {
     // MARK: - Layout Sublayers
     override func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: gradientLabelsContainer.layer)
-        self.setupDecorationLayer()
+        DispatchQueue.main.async {
+            self.setupDecorationLayer()
+        }
     }
     
     // MARK: - Decoration Layer
