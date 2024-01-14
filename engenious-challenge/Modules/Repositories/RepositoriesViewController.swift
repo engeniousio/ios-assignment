@@ -88,7 +88,7 @@ class RepositoriesViewController: BaseController<RepositoriesViewModel>, UITable
         
         return headerView
     }
-
+    
     // MARK: - Table View DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellViewModels.count

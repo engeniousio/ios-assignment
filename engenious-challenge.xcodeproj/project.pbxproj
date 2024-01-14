@@ -15,7 +15,7 @@
 		20F3FA4828379AE3008BFAF8 /* engenious_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA4728379AE3008BFAF8 /* engenious_challengeTests.swift */; };
 		20F3FA5228379AE3008BFAF8 /* engenious_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */; };
 		20F3FA5428379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */; };
-		20F3FA6128379F06008BFAF8 /* OldNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* OldNetworkService.swift */; };
+		20F3FA6128379F06008BFAF8 /* OldRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* OldRepositoryService.swift */; };
 		20F3FA6328379F1D008BFAF8 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6228379F1D008BFAF8 /* Repository.swift */; };
 		20F3FA652837D07F008BFAF8 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepositoryTableViewCell.swift */; };
 		A371FBE22B52E4F000E54DD0 /* RepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371FBE12B52E4F000E54DD0 /* RepositoryCellViewModel.swift */; };
@@ -74,7 +74,7 @@
 		20F3FA4D28379AE3008BFAF8 /* engenious-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "engenious-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITests.swift; sourceTree = "<group>"; };
 		20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		20F3FA6028379F06008BFAF8 /* OldNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldNetworkService.swift; sourceTree = "<group>"; };
+		20F3FA6028379F06008BFAF8 /* OldRepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldRepositoryService.swift; sourceTree = "<group>"; };
 		20F3FA6228379F1D008BFAF8 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		20F3FA642837D07F008BFAF8 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		A371FBE12B52E4F000E54DD0 /* RepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewModel.swift; sourceTree = "<group>"; };
@@ -242,7 +242,6 @@
 				A3F9888C2B50450A00DA2BAD /* Endpoint */,
 				A3F9888D2B50452B00DA2BAD /* NetworkConfig */,
 				A3F9888E2B50453900DA2BAD /* NetworkService */,
-				20F3FA6028379F06008BFAF8 /* OldNetworkService.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -287,6 +286,7 @@
 		A3F9888E2B50453900DA2BAD /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				20F3FA6028379F06008BFAF8 /* OldRepositoryService.swift */,
 				A3F988992B5048E600DA2BAD /* RepositoryService.swift */,
 			);
 			path = NetworkService;
@@ -506,7 +506,7 @@
 				A3F988A02B504C0900DA2BAD /* BaseViewModel.swift in Sources */,
 				A3F988A82B504E2700DA2BAD /* Toast.swift in Sources */,
 				A371FBE82B52EEAF00E54DD0 /* NotificationBuilder.swift in Sources */,
-				20F3FA6128379F06008BFAF8 /* OldNetworkService.swift in Sources */,
+				20F3FA6128379F06008BFAF8 /* OldRepositoryService.swift in Sources */,
 				A38C15792B4EECFC0054EA5D /* AppColorName.swift in Sources */,
 				20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */,
 				A3F988812B50432B00DA2BAD /* Encodable.swift in Sources */,

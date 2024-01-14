@@ -11,3 +11,8 @@ import Combine
 protocol RepositoryServiceProtocol {
     func repositories(request: RepositoryDTO) -> AnyPublisher<[Repository], NetworkError>
 }
+
+protocol OldRepositoryServiceProtocol {
+    func repositories(repositoryDTO: RepositoryDTO,
+                      completion: @escaping (Result<[Repository], NetworkError>) -> Void)
+}
