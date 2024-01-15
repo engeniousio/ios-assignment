@@ -8,8 +8,9 @@
 import Foundation
 import Combine
 
-struct RepositoryService {
+struct NetworkService: NetworkingProtocol {
 
+    // reguest wihout Combine
     func getUserRepos(username: String, completion: @escaping ([Repo]) -> Void) {
         guard let url = URL(string: "https://api.github.com/users/\(username)/repos") else {
             return completion([])
@@ -36,4 +37,20 @@ struct RepositoryService {
         task.resume()
     }
 
+    
+    // reguest wih Combine
+    func getUserRepos(username: String) -> AnyPublisher<[Repo], Error> {
+        let url = URL(string: "https://api.github.com/users/\(username)/repos") ?? URL(fileURLWithPath: "")
+        let request = URLRequest(url: url)
+        
+        return URLSession.shared
+            .dataTaskPublisher(for: request)
+            .tryMap { result -> [Repo] in
+                let decoder = JSONDecoder()
+                let value = try decoder.decode([Repo].self, from: result.data)
+                return value
+            }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
 }

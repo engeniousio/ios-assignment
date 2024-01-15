@@ -6,36 +6,111 @@
 //
 
 import XCTest
+import Combine
+@testable import engenious_challenge
 
 class engenious_challengeUITests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
+    class MockNetworking: NetworkingProtocol{
+        var shouldReturnError = false
+        var mockedData: [Repo]?
+        
+        func getUserRepos(username: String, completion: @escaping ([engenious_challenge.Repo]) -> Void) {
+            if shouldReturnError {
+                completion([])
+            } else {
+                completion([Repo(name: "Name", description: "Description", url: "URL")])
             }
         }
+        
+        func getUserRepos(username: String) -> AnyPublisher<[engenious_challenge.Repo], Error> {
+            if shouldReturnError {
+                let error = NSError(domain:"https://api.github.com/users/\(username)/repos", code: 42, userInfo: nil)
+                return Fail(error: error)
+                    .eraseToAnyPublisher()
+                
+            } else {
+                guard let url = URL(string: "https://api.github.com/users/\(username)/repos") else {
+                    let error = NSError(domain: "https://api.github.com/users/\(username)/repos", code: 42, userInfo: nil)
+                    return Fail(error: error)
+                        .eraseToAnyPublisher()
+                }
+                
+                let request = URLRequest(url: url)
+                
+                return URLSession.shared
+                    .dataTaskPublisher(for: request)
+                    .tryMap { result -> [engenious_challenge.Repo] in
+                        let decoder = JSONDecoder()
+                        return try decoder.decode([engenious_challenge.Repo].self, from: result.data)
+                    }
+                    .eraseToAnyPublisher()
+            }
+        }
+    }
+    
+    var sut: NetworkService!
+    var mockNetworking: MockNetworking!
+    let username = "Apple"
+    var storage = Set<AnyCancellable>()
+    
+    override func setUp() {
+        super.setUp()
+        sut = NetworkService()
+        mockNetworking = MockNetworking()
+    }
+    
+    override func tearDown() {
+        sut = nil
+        mockNetworking = nil
+        super.tearDown()
+    }
+    
+    /// sinple request
+    func testFetchingDataSuccessfully() {
+        let expectedData = [Repo(name: "Name", description: "Description", url: "URL")]
+        mockNetworking.mockedData = expectedData
+        
+        var actualData: [Repo]?
+        sut.getUserRepos(username: username) { data in
+            actualData = data
+        }
+        
+        XCTAssertEqual(actualData, expectedData)
+    }
+    
+    func testFetchingDataWithError() {
+        mockNetworking.shouldReturnError = true
+        
+        var actualData: [Repo]?
+        sut.getUserRepos(username: username) { data in
+            actualData = data
+        }
+        
+        XCTAssertNotNil((actualData == nil))
+    }
+    
+    /// combine request
+    func testFetchingDataWithCombine() {
+        let expectedData = [Repo(name: "Name", description: "Description", url: "URL")]
+        mockNetworking.mockedData = expectedData
+        
+        var actualData: [Repo]?
+        var receivedError: Error?
+        sut.getUserRepos(username: username)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                    case .failure(let error):
+                        receivedError = error
+                    case .finished:
+                        break
+                    }},
+                receiveValue: { data in
+                    actualData = data
+                })
+            .store(in: &storage)
+        
+        XCTAssertEqual(actualData, expectedData)
+        XCTAssertNotNil(receivedError)
     }
 }
