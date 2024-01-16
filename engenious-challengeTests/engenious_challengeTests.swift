@@ -8,29 +8,64 @@
 import XCTest
 @testable import engenious_challenge
 
-class engenious_challengeTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+class RepositoryServiceMock: RepositoryServiceProtocol {
+    var getUserReposCalled = false
+    var completeWithSuccess: Bool = true
+    var reposToReturn: [RepositoryModel] = []
+    
+    func getUserRepos(username: String, completion: @escaping (Result<[engenious_challenge.RepositoryModel], engenious_challenge.ErrorTypes>) -> Void) {
+        getUserReposCalled = true
+        if completeWithSuccess {
+            completion(.success(reposToReturn))
+        } else {
+            completion(.failure(ErrorTypes.failureResponse("")))
         }
     }
+}
 
+class RepositoryViewModelTests: XCTestCase {
+
+    var viewModel: RepositoryViewModel!
+    var repositoryServiceMock: RepositoryServiceMock!
+
+    override func setUp() {
+        super.setUp()
+        repositoryServiceMock = RepositoryServiceMock()
+        viewModel = RepositoryViewModel(repositoryService: repositoryServiceMock)
+    }
+
+    override func tearDown() {
+        viewModel = nil
+        repositoryServiceMock = nil
+        super.tearDown()
+    }
+
+    func testGetReposSuccess() {
+        let expectedRepos = [RepositoryModel(name: "Repo1", description: "Description1", url: ""),
+                             RepositoryModel(name: "Repo2", description: "Description2", url: "")]
+        repositoryServiceMock.reposToReturn = expectedRepos
+
+        let expectation = XCTestExpectation(description: "reloadCompletion called")
+        
+        viewModel.getRepos(username: "testUser") {
+            XCTAssertEqual(self.viewModel.repoList, expectedRepos, "Repository list was not populated correctly on success")
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1.0)
+        XCTAssertTrue(repositoryServiceMock.getUserReposCalled, "The getUserRepos method was not called on the repository service")
+    }
+
+    func testGetReposFailure() {
+        repositoryServiceMock.completeWithSuccess = false
+
+        let expectation = XCTestExpectation(description: "reloadCompletion called")
+        
+        viewModel.getRepos(username: "testUser") {
+            XCTAssertTrue(self.viewModel.repoList.isEmpty, "Repository list should be empty on failure")
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1.0)
+    }
 }
