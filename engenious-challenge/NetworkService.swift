@@ -35,9 +35,5 @@ struct RepositoryService {
         })
         task.resume()
     }
-
-    func getData() {
-        
-    }
-
+    
 }
