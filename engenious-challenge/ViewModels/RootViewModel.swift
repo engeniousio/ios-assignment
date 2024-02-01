@@ -13,7 +13,7 @@ final class RootViewModel {
     private var repositoryService: RepositoryServiceProtocol
     private var repoList: [Repo] = []
     private(set) var error: RepositoryService.ServiceError?
-    var cancellables: Set<AnyCancellable> = []
+    private var cancellables: Set<AnyCancellable> = []
 
     init(repositoryService: RepositoryServiceProtocol = RepositoryService()) {
         self.repositoryService = repositoryService
