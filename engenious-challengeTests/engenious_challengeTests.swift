@@ -6,31 +6,96 @@
 //
 
 import XCTest
+import Combine
 @testable import engenious_challenge
 
-class engenious_challengeTests: XCTestCase {
+class RootViewModelTests: XCTestCase {
+    var repositoryServiceMock: RepositoryServiceMock!
+    var rootViewModel: RootViewModel!
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() {
+        super.setUp()
+        repositoryServiceMock = RepositoryServiceMock()
+        rootViewModel = RootViewModel(repositoryService: repositoryServiceMock)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        repositoryServiceMock = nil
+        rootViewModel = nil
+        super.tearDown()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testFetchReposSuccess() {
+        // When
+        var completionCalled = false
+        rootViewModel.fetchRepos(for: "test") {
+            completionCalled = true
         }
+
+        // Then
+        XCTAssertTrue(completionCalled)
+        XCTAssertEqual(rootViewModel.numberOfRepos, 2) // Assuming the mock returns 2 repos
     }
 
+    func testFetchReposFailure() {
+        // Given
+        repositoryServiceMock.shouldSucceed = false // Simulate failure
+
+        // When
+        var completionCalled = false
+        rootViewModel.fetchRepos(for: "test") {
+            completionCalled = true
+        }
+
+        // Then
+        XCTAssertTrue((rootViewModel.error != nil), "Error should be shown")
+        XCTAssertTrue(completionCalled, "Completion handler should be called even on failure")
+        XCTAssertEqual(rootViewModel.numberOfRepos, 0, "No repos should be added on failure")
+    }
+
+    func testFetchReposCombineSuccess() {
+        // Simulate Combine success
+        repositoryServiceMock.combinePublisher = Just([
+            Repo(name: "Repo1", description: "Description1", url: "URL1"),
+            Repo(name: "Repo2", description: "Description2", url: "URL2")
+        ])
+        .setFailureType(to: RepositoryService.ServiceError.self)
+        .eraseToAnyPublisher()
+
+        // When
+        let expectation = self.expectation(description: "Fetch Repos Combine")
+        rootViewModel.fetchReposCombine(for: "test") { result in
+            switch result {
+            case .success(let repos):
+                // Then
+                XCTAssertEqual(repos.count, 2)
+            case .failure:
+                XCTFail("Should not fail for this test case")
+            }
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+
+    func testFetchReposCombineFailure() {
+        // Simulate Combine failure
+        repositoryServiceMock.combinePublisher = Fail(error: RepositoryService.ServiceError.networkError)
+            .eraseToAnyPublisher()
+
+        // When
+        let expectation = self.expectation(description: "Fetch Repos Combine")
+        rootViewModel.fetchReposCombine(for: "test") { result in
+            switch result {
+            case .success:
+                XCTFail("Should not succeed for this test case")
+            case .failure(let error):
+                // Then
+                XCTAssertEqual(error, .networkError)
+            }
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
 }

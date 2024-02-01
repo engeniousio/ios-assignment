@@ -15,9 +15,21 @@
 		20F3FA4828379AE3008BFAF8 /* engenious_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA4728379AE3008BFAF8 /* engenious_challengeTests.swift */; };
 		20F3FA5228379AE3008BFAF8 /* engenious_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */; };
 		20F3FA5428379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */; };
-		20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* NetworkService.swift */; };
+		20F3FA6128379F06008BFAF8 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* RepositoryService.swift */; };
 		20F3FA6328379F1D008BFAF8 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6228379F1D008BFAF8 /* Repo.swift */; };
 		20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */; };
+		9EDEA54B2B6A85F0005CA304 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEA54A2B6A85F0005CA304 /* RootViewModel.swift */; };
+		9EDEA54C2B6A85F0005CA304 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEA54A2B6A85F0005CA304 /* RootViewModel.swift */; };
+		9EDEA54D2B6A85F0005CA304 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEA54A2B6A85F0005CA304 /* RootViewModel.swift */; };
+		9EDEA5542B6AA65D005CA304 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* RepositoryService.swift */; };
+		9EDEA5552B6AA670005CA304 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6228379F1D008BFAF8 /* Repo.swift */; };
+		9EDEA5572B6AA7C2005CA304 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* RepositoryService.swift */; };
+		9EDEA5582B6AA7CB005CA304 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6228379F1D008BFAF8 /* Repo.swift */; };
+		9EDEA5592B6AA7D0005CA304 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */; };
+		9EDEA55A2B6AA7EE005CA304 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3428379AE2008BFAF8 /* RootViewController.swift */; };
+		9EDEA55B2B6AA7F9005CA304 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */; };
+		9EDEA55E2B6AAB3B005CA304 /* RepositoryServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEA55D2B6AAB3B005CA304 /* RepositoryServiceMock.swift */; };
+		9EDEA5652B6ACD18005CA304 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEA5642B6ACD18005CA304 /* UIColorExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,9 +62,12 @@
 		20F3FA4D28379AE3008BFAF8 /* engenious-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "engenious-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITests.swift; sourceTree = "<group>"; };
 		20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		20F3FA6028379F06008BFAF8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		20F3FA6028379F06008BFAF8 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
 		20F3FA6228379F1D008BFAF8 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		9EDEA54A2B6A85F0005CA304 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		9EDEA55D2B6AAB3B005CA304 /* RepositoryServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryServiceMock.swift; sourceTree = "<group>"; };
+		9EDEA5642B6ACD18005CA304 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +118,16 @@
 		20F3FA2F28379AE2008BFAF8 /* engenious-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				9EDEA5632B6ACD01005CA304 /* Extensions */,
 				20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */,
-				20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */,
-				20F3FA3428379AE2008BFAF8 /* RootViewController.swift */,
-				20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */,
-				20F3FA6028379F06008BFAF8 /* NetworkService.swift */,
-				20F3FA6228379F1D008BFAF8 /* Repo.swift */,
 				20F3FA3928379AE3008BFAF8 /* Assets.xcassets */,
-				20F3FA3B28379AE3008BFAF8 /* LaunchScreen.storyboard */,
 				20F3FA3E28379AE3008BFAF8 /* Info.plist */,
+				20F3FA3B28379AE3008BFAF8 /* LaunchScreen.storyboard */,
+				9EDEA5482B6A85C0005CA304 /* Models */,
+				20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */,
+				9EDEA54F2B6A860C005CA304 /* Services */,
+				9EDEA5492B6A85D1005CA304 /* ViewModels */,
+				9EDEA54E2B6A85FB005CA304 /* Views */,
 			);
 			path = "engenious-challenge";
 			sourceTree = "<group>";
@@ -119,6 +135,7 @@
 		20F3FA4628379AE3008BFAF8 /* engenious-challengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				9EDEA55C2B6AAB30005CA304 /* Mocks */,
 				20F3FA4728379AE3008BFAF8 /* engenious_challengeTests.swift */,
 			);
 			path = "engenious-challengeTests";
@@ -131,6 +148,55 @@
 				20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */,
 			);
 			path = "engenious-challengeUITests";
+			sourceTree = "<group>";
+		};
+		9EDEA5482B6A85C0005CA304 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				20F3FA6228379F1D008BFAF8 /* Repo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9EDEA5492B6A85D1005CA304 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9EDEA54A2B6A85F0005CA304 /* RootViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9EDEA54E2B6A85FB005CA304 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				20F3FA3428379AE2008BFAF8 /* RootViewController.swift */,
+				20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9EDEA54F2B6A860C005CA304 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				20F3FA6028379F06008BFAF8 /* RepositoryService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9EDEA55C2B6AAB30005CA304 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				9EDEA55D2B6AAB3B005CA304 /* RepositoryServiceMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		9EDEA5632B6ACD01005CA304 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9EDEA5642B6ACD18005CA304 /* UIColorExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +263,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					20F3FA2C28379AE2008BFAF8 = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -264,9 +330,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F3FA3528379AE2008BFAF8 /* RootViewController.swift in Sources */,
+				9EDEA5652B6ACD18005CA304 /* UIColorExt.swift in Sources */,
+				9EDEA54B2B6A85F0005CA304 /* RootViewModel.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,
 				20F3FA6328379F1D008BFAF8 /* Repo.swift in Sources */,
-				20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */,
+				20F3FA6128379F06008BFAF8 /* RepositoryService.swift in Sources */,
 				20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */,
 				20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */,
 			);
@@ -276,7 +344,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EDEA5592B6AA7D0005CA304 /* SceneDelegate.swift in Sources */,
+				9EDEA55E2B6AAB3B005CA304 /* RepositoryServiceMock.swift in Sources */,
+				9EDEA54C2B6A85F0005CA304 /* RootViewModel.swift in Sources */,
+				9EDEA55A2B6AA7EE005CA304 /* RootViewController.swift in Sources */,
+				9EDEA55B2B6AA7F9005CA304 /* RepoTableViewCell.swift in Sources */,
+				9EDEA5542B6AA65D005CA304 /* RepositoryService.swift in Sources */,
 				20F3FA4828379AE3008BFAF8 /* engenious_challengeTests.swift in Sources */,
+				9EDEA5552B6AA670005CA304 /* Repo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +360,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F3FA5428379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift in Sources */,
+				9EDEA54D2B6A85F0005CA304 /* RootViewModel.swift in Sources */,
+				9EDEA5582B6AA7CB005CA304 /* Repo.swift in Sources */,
 				20F3FA5228379AE3008BFAF8 /* engenious_challengeUITests.swift in Sources */,
+				9EDEA5572B6AA7C2005CA304 /* RepositoryService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +430,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -412,6 +491,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
