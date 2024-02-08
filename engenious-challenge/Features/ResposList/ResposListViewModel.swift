@@ -35,10 +35,9 @@ class ResposListViewModel: ObservableObject {
     }
     
     func getRepos() {
-        repositoryService.getUserRepos(username: username) { value in
-            DispatchQueue.main.async {
-                self.repoList = value
-            }
-        }
+        repositoryService.getUserRepos(username: username)
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.repoList, on: self)
+            .store(in: &cancellables)
     }
 }

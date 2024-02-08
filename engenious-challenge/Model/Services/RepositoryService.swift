@@ -9,11 +9,21 @@ import Foundation
 import Combine
 
 protocol RepositoryServiceProtocol {
+    func getUserRepos(username: String) -> AnyPublisher<[Repo], Never>
     func getUserRepos(username: String, completion: @escaping ([Repo]) -> Void)
 }
 
 struct RepositoryService: RepositoryServiceProtocol {
 
+    func getUserRepos(username: String) -> AnyPublisher<[Repo], Never> {
+        return Future<[Repo], Never> { promise in
+            self.getUserRepos(username: username) { repos in
+                promise(.success(repos))
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+    
     func getUserRepos(username: String, completion: @escaping ([Repo]) -> Void) {
         guard let url = URL(string: "https://api.github.com/users/\(username)/repos") else {
             return completion([])
