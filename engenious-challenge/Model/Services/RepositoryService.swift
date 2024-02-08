@@ -8,7 +8,11 @@
 import Foundation
 import Combine
 
-struct RepositoryService {
+protocol RepositoryServiceProtocol {
+    func getUserRepos(username: String, completion: @escaping ([Repo]) -> Void)
+}
+
+struct RepositoryService: RepositoryServiceProtocol {
 
     func getUserRepos(username: String, completion: @escaping ([Repo]) -> Void) {
         guard let url = URL(string: "https://api.github.com/users/\(username)/repos") else {
