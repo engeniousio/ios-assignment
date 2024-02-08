@@ -30,9 +30,19 @@ class ResposListViewController: UIViewController {
         setupBinding()
         
         view.backgroundColor = .white
-
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor(
+            red: 6.0 / 255.0,
+            green: 55.0 / 255.0,
+            blue: 90.0 / 255.0,
+            alpha: 1.0
+        )]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
+        
         navigationController?.navigationBar.prefersLargeTitles = true
-
+        
+        tv.allowsSelection = false
+        tv.separatorStyle = .none
         tv.delegate = self
         tv.dataSource = self
         tv.register(RepoTableViewCell.self, forCellReuseIdentifier: String(describing: RepoTableViewCell.self))
@@ -76,7 +86,18 @@ extension ResposListViewController: UITableViewDelegate, UITableViewDataSource {
         let repo = viewModel.repoList[indexPath.row]
         
         cell.titleLabel.text = repo.name
+        cell.descriptionLabel.text = repo.description
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.sectionTitle
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.textColor = UIColor(red: 0, green: 106 / 255, blue: 183 / 255, alpha: 1.0)
+        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
     }
 }

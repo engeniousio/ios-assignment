@@ -15,6 +15,8 @@ class ResposListViewModel: ObservableObject {
     
     private var username: String = "Apple"
     
+    private(set) var sectionTitle = "Repositories"
+    
     var reposCount: Int {
         repoList.count
     }
