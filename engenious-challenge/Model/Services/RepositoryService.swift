@@ -1,5 +1,5 @@
 //
-//  NetworkService.swift
+//  RepositoryService.swift
 //  engenious-challenge
 //
 //  Created by Abdullah Atkaev on 20.05.2022.

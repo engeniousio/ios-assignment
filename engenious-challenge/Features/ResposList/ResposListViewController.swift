@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ResposListViewController.swift
 //  engenious-challenge
 //
 //  Created by Abdullah Atkaev on 20.05.2022.
@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ResposListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let repositoryService: RepositoryService = RepositoryService()
     let username: String = "Apple"
