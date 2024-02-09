@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RepoTableViewCell: UITableViewCell {
+final class RepoTableViewCell: UITableViewCell {
     
     // TODO: make it private
     let titleLabel: UILabel = .init()

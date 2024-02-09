@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RepositoryListViewController.swift
 //  engenious-challenge
 //
 //  Created by Abdullah Atkaev on 20.05.2022.
@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-final class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class RepositoryListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let repositoryService: RepositoryService = RepositoryService()
     let username: String = "Apple"
