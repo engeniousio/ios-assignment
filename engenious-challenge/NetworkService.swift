@@ -8,13 +8,16 @@
 import Foundation
 import Combine
 
-struct RepositoryService {
+protocol RepositoryServiceProtocol {
+    func getUserRepos(username: String, completion: @escaping ([RepoDataModel]) -> Void)
+}
 
-    func getUserRepos(username: String, completion: @escaping ([Repo]) -> Void) {
+final class RepositoryService: RepositoryServiceProtocol {
+    func getUserRepos(username: String, completion: @escaping ([RepoDataModel]) -> Void) {
         guard let url = URL(string: "https://api.github.com/users/\(username)/repos") else {
             return completion([])
         }
-
+        
         let session = URLSession.shared
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
@@ -27,13 +30,12 @@ struct RepositoryService {
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let response = try decoder.decode([Repo].self, from: data)
+                let response = try decoder.decode([RepoDataModel].self, from: data)
                 completion(response)
             } catch {
-
+                
             }
         })
         task.resume()
     }
-
 }

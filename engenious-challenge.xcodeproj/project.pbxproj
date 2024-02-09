@@ -16,7 +16,7 @@
 		20F3FA5228379AE3008BFAF8 /* engenious_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */; };
 		20F3FA5428379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */; };
 		20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* NetworkService.swift */; };
-		20F3FA6328379F1D008BFAF8 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6228379F1D008BFAF8 /* Repo.swift */; };
+		20F3FA6328379F1D008BFAF8 /* RepoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6228379F1D008BFAF8 /* RepoDataModel.swift */; };
 		20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +51,7 @@
 		20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITests.swift; sourceTree = "<group>"; };
 		20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		20F3FA6028379F06008BFAF8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		20F3FA6228379F1D008BFAF8 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		20F3FA6228379F1D008BFAF8 /* RepoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDataModel.swift; sourceTree = "<group>"; };
 		20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +108,7 @@
 				20F3FA3428379AE2008BFAF8 /* RootViewController.swift */,
 				20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */,
 				20F3FA6028379F06008BFAF8 /* NetworkService.swift */,
-				20F3FA6228379F1D008BFAF8 /* Repo.swift */,
+				20F3FA6228379F1D008BFAF8 /* RepoDataModel.swift */,
 				20F3FA3928379AE3008BFAF8 /* Assets.xcassets */,
 				20F3FA3B28379AE3008BFAF8 /* LaunchScreen.storyboard */,
 				20F3FA3E28379AE3008BFAF8 /* Info.plist */,
@@ -265,7 +265,7 @@
 			files = (
 				20F3FA3528379AE2008BFAF8 /* RootViewController.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,
-				20F3FA6328379F1D008BFAF8 /* Repo.swift in Sources */,
+				20F3FA6328379F1D008BFAF8 /* RepoDataModel.swift in Sources */,
 				20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */,
 				20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */,
 				20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */,
