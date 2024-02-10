@@ -15,9 +15,22 @@
 		20F3FA4828379AE3008BFAF8 /* engenious_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA4728379AE3008BFAF8 /* engenious_challengeTests.swift */; };
 		20F3FA5228379AE3008BFAF8 /* engenious_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */; };
 		20F3FA5428379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */; };
-		20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* NetworkService.swift */; };
+		20F3FA6128379F06008BFAF8 /* NetworkServiceCombine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* NetworkServiceCombine.swift */; };
 		20F3FA6328379F1D008BFAF8 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6228379F1D008BFAF8 /* Repo.swift */; };
 		20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */; };
+		6CDCFB342B77805D00FB4D5A /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCFB332B77805D00FB4D5A /* Services.swift */; };
+		6CDCFB372B7780DC00FB4D5A /* Services+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCFB362B7780DC00FB4D5A /* Services+init.swift */; };
+		6CDCFB392B77812000FB4D5A /* URLSession+NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCFB382B77812000FB4D5A /* URLSession+NetworkService.swift */; };
+		6CDCFB3C2B77816D00FB4D5A /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCFB3B2B77816D00FB4D5A /* Endpoints.swift */; };
+		6CDCFB3F2B77820700FB4D5A /* Endpoint+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCFB3E2B77820700FB4D5A /* Endpoint+Model.swift */; };
+		6CDCFB442B77833C00FB4D5A /* RootViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCFB432B77833C00FB4D5A /* RootViewViewModel.swift */; };
+		6CDCFB462B77873C00FB4D5A /* RepoTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCFB452B77873C00FB4D5A /* RepoTableViewCellViewModel.swift */; };
+		6CDCFB4B2B778D6100FB4D5A /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCFB4A2B778D6100FB4D5A /* UIView+Ext.swift */; };
+		6CDCFB562B77BD9B00FB4D5A /* NetworkServiceCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCFB552B77BD9B00FB4D5A /* NetworkServiceCallback.swift */; };
+		6CDCFB5C2B77D38900FB4D5A /* Services+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCFB5B2B77D38900FB4D5A /* Services+mock.swift */; };
+		6CDCFB5E2B77D3DE00FB4D5A /* MockFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCFB5D2B77D3DE00FB4D5A /* MockFixture.swift */; };
+		6CDCFB602B77D48B00FB4D5A /* Mock+NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCFB5F2B77D48B00FB4D5A /* Mock+NetworkService.swift */; };
+		6CDCFB622B77D63B00FB4D5A /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDCFB612B77D63B00FB4D5A /* NetworkServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,9 +63,22 @@
 		20F3FA4D28379AE3008BFAF8 /* engenious-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "engenious-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITests.swift; sourceTree = "<group>"; };
 		20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		20F3FA6028379F06008BFAF8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		20F3FA6028379F06008BFAF8 /* NetworkServiceCombine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceCombine.swift; sourceTree = "<group>"; };
 		20F3FA6228379F1D008BFAF8 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		6CDCFB332B77805D00FB4D5A /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		6CDCFB362B7780DC00FB4D5A /* Services+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Services+init.swift"; sourceTree = "<group>"; };
+		6CDCFB382B77812000FB4D5A /* URLSession+NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+NetworkService.swift"; sourceTree = "<group>"; };
+		6CDCFB3B2B77816D00FB4D5A /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		6CDCFB3E2B77820700FB4D5A /* Endpoint+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Model.swift"; sourceTree = "<group>"; };
+		6CDCFB432B77833C00FB4D5A /* RootViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewViewModel.swift; sourceTree = "<group>"; };
+		6CDCFB452B77873C00FB4D5A /* RepoTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		6CDCFB4A2B778D6100FB4D5A /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		6CDCFB552B77BD9B00FB4D5A /* NetworkServiceCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceCallback.swift; sourceTree = "<group>"; };
+		6CDCFB5B2B77D38900FB4D5A /* Services+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Services+mock.swift"; sourceTree = "<group>"; };
+		6CDCFB5D2B77D3DE00FB4D5A /* MockFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFixture.swift; sourceTree = "<group>"; };
+		6CDCFB5F2B77D48B00FB4D5A /* Mock+NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mock+NetworkService.swift"; sourceTree = "<group>"; };
+		6CDCFB612B77D63B00FB4D5A /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +131,13 @@
 			children = (
 				20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */,
 				20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */,
-				20F3FA3428379AE2008BFAF8 /* RootViewController.swift */,
-				20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */,
-				20F3FA6028379F06008BFAF8 /* NetworkService.swift */,
-				20F3FA6228379F1D008BFAF8 /* Repo.swift */,
+				6CDCFB322B77804600FB4D5A /* Services */,
+				6CDCFB352B7780C700FB4D5A /* ServicesImpl */,
+				6CDCFB572B77D1A500FB4D5A /* ServicesImpl+Moc */,
+				6CDCFB3A2B77815A00FB4D5A /* Endpoints */,
+				6CDCFB3D2B7781F800FB4D5A /* Model */,
+				6CDCFB402B7782A000FB4D5A /* Views */,
+				6CDCFB472B778CC200FB4D5A /* Extensions */,
 				20F3FA3928379AE3008BFAF8 /* Assets.xcassets */,
 				20F3FA3B28379AE3008BFAF8 /* LaunchScreen.storyboard */,
 				20F3FA3E28379AE3008BFAF8 /* Info.plist */,
@@ -120,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				20F3FA4728379AE3008BFAF8 /* engenious_challengeTests.swift */,
+				6CDCFB612B77D63B00FB4D5A /* NetworkServiceTests.swift */,
 			);
 			path = "engenious-challengeTests";
 			sourceTree = "<group>";
@@ -131,6 +161,87 @@
 				20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */,
 			);
 			path = "engenious-challengeUITests";
+			sourceTree = "<group>";
+		};
+		6CDCFB322B77804600FB4D5A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6CDCFB332B77805D00FB4D5A /* Services.swift */,
+				20F3FA6028379F06008BFAF8 /* NetworkServiceCombine.swift */,
+				6CDCFB552B77BD9B00FB4D5A /* NetworkServiceCallback.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6CDCFB352B7780C700FB4D5A /* ServicesImpl */ = {
+			isa = PBXGroup;
+			children = (
+				6CDCFB362B7780DC00FB4D5A /* Services+init.swift */,
+				6CDCFB382B77812000FB4D5A /* URLSession+NetworkService.swift */,
+			);
+			path = ServicesImpl;
+			sourceTree = "<group>";
+		};
+		6CDCFB3A2B77815A00FB4D5A /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				6CDCFB3B2B77816D00FB4D5A /* Endpoints.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		6CDCFB3D2B7781F800FB4D5A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6CDCFB3E2B77820700FB4D5A /* Endpoint+Model.swift */,
+				20F3FA6228379F1D008BFAF8 /* Repo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6CDCFB402B7782A000FB4D5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6CDCFB412B7782F600FB4D5A /* RootViewController */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6CDCFB412B7782F600FB4D5A /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6CDCFB422B7782FD00FB4D5A /* Cells */,
+				20F3FA3428379AE2008BFAF8 /* RootViewController.swift */,
+				6CDCFB432B77833C00FB4D5A /* RootViewViewModel.swift */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		6CDCFB422B7782FD00FB4D5A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */,
+				6CDCFB452B77873C00FB4D5A /* RepoTableViewCellViewModel.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6CDCFB472B778CC200FB4D5A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6CDCFB4A2B778D6100FB4D5A /* UIView+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6CDCFB572B77D1A500FB4D5A /* ServicesImpl+Moc */ = {
+			isa = PBXGroup;
+			children = (
+				6CDCFB5B2B77D38900FB4D5A /* Services+mock.swift */,
+				6CDCFB5D2B77D3DE00FB4D5A /* MockFixture.swift */,
+				6CDCFB5F2B77D48B00FB4D5A /* Mock+NetworkService.swift */,
+			);
+			path = "ServicesImpl+Moc";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,11 +375,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F3FA3528379AE2008BFAF8 /* RootViewController.swift in Sources */,
+				6CDCFB372B7780DC00FB4D5A /* Services+init.swift in Sources */,
+				6CDCFB602B77D48B00FB4D5A /* Mock+NetworkService.swift in Sources */,
+				6CDCFB4B2B778D6100FB4D5A /* UIView+Ext.swift in Sources */,
+				6CDCFB392B77812000FB4D5A /* URLSession+NetworkService.swift in Sources */,
+				6CDCFB5C2B77D38900FB4D5A /* Services+mock.swift in Sources */,
+				6CDCFB3F2B77820700FB4D5A /* Endpoint+Model.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,
+				6CDCFB442B77833C00FB4D5A /* RootViewViewModel.swift in Sources */,
+				6CDCFB462B77873C00FB4D5A /* RepoTableViewCellViewModel.swift in Sources */,
+				6CDCFB3C2B77816D00FB4D5A /* Endpoints.swift in Sources */,
 				20F3FA6328379F1D008BFAF8 /* Repo.swift in Sources */,
-				20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */,
+				6CDCFB342B77805D00FB4D5A /* Services.swift in Sources */,
+				20F3FA6128379F06008BFAF8 /* NetworkServiceCombine.swift in Sources */,
 				20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */,
+				6CDCFB562B77BD9B00FB4D5A /* NetworkServiceCallback.swift in Sources */,
 				20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */,
+				6CDCFB5E2B77D3DE00FB4D5A /* MockFixture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CDCFB622B77D63B00FB4D5A /* NetworkServiceTests.swift in Sources */,
 				20F3FA4828379AE3008BFAF8 /* engenious_challengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
