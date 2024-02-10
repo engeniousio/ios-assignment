@@ -13,11 +13,11 @@ final class RepositoryListViewController: UIViewController {
     // MARK: - Properties
     private var cancellable = Set<AnyCancellable>()
     private let viewModel: RepositoryListViewModel
+    private var cellViewModels: [RepoViewModel] = []
     
     // MARK: - Subviews
     private lazy var repoTableView: UITableView = {
         let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
@@ -60,10 +60,22 @@ final class RepositoryListViewController: UIViewController {
             }
             .store(in: &cancellable)
         
-        viewModel.$repoList
-            .receive(on: RunLoop.main)
-            .sink { [weak self] _ in
-                self?.repoTableView.reloadData()
+        viewModel.$listState
+            .sink { [weak self] state in
+                guard let self else { return }
+                switch state {
+                case .loaded(let models):
+                    self.cellViewModels = models
+                    self.repoTableView.reloadData()
+                case .loading:
+                    print("TODO: add loading")
+                case .failed:
+                    print("TODO: show error")
+                    self.cellViewModels = []
+                    self.repoTableView.reloadData()
+                default:
+                    break
+                }
             }
             .store(in: &cancellable)
     }
@@ -75,7 +87,7 @@ extension RepositoryListViewController: UITableViewDelegate, UITableViewDataSour
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return viewModel.repoList.count
+        cellViewModels.count
     }
     
     func tableView(
@@ -83,8 +95,8 @@ extension RepositoryListViewController: UITableViewDelegate, UITableViewDataSour
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RepoTableViewCell.self)) as? RepoTableViewCell else { return UITableViewCell() }
-        let repo = viewModel.repoList[indexPath.row]
-        cell.titleLabel.text = repo.name
+        let vm = cellViewModels[indexPath.row]
+        cell.configure(with: vm)
         return cell
     }
 }

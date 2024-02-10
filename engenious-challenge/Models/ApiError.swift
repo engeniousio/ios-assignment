@@ -10,4 +10,6 @@ import Foundation
 enum ApiError: Error {
     case invalidURL
     case decodingError(Error)
+    case networkError(Error)
+    case emptyResponse
 }

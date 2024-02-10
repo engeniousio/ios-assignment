@@ -15,7 +15,7 @@
 		20F3FA4828379AE3008BFAF8 /* engenious_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA4728379AE3008BFAF8 /* engenious_challengeTests.swift */; };
 		20F3FA5228379AE3008BFAF8 /* engenious_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */; };
 		20F3FA5428379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */; };
-		20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* NetworkService.swift */; };
+		20F3FA6128379F06008BFAF8 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* RepositoryService.swift */; };
 		20F3FA6328379F1D008BFAF8 /* RepoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6228379F1D008BFAF8 /* RepoDataModel.swift */; };
 		20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */; };
 		419609C62B766EC7006609BA /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609C52B766EC7006609BA /* AppColor.swift */; };
@@ -23,6 +23,7 @@
 		419609CE2B767AE2006609BA /* RepositoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609CD2B767AE2006609BA /* RepositoryListViewModel.swift */; };
 		419609D22B76AD1F006609BA /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609D12B76AD1F006609BA /* UIView+Constraints.swift */; };
 		419609D52B7787AF006609BA /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609D42B7787AF006609BA /* ApiError.swift */; };
+		419609D72B77A32A006609BA /* RepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609D62B77A32A006609BA /* RepoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +56,7 @@
 		20F3FA4D28379AE3008BFAF8 /* engenious-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "engenious-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITests.swift; sourceTree = "<group>"; };
 		20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		20F3FA6028379F06008BFAF8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		20F3FA6028379F06008BFAF8 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
 		20F3FA6228379F1D008BFAF8 /* RepoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDataModel.swift; sourceTree = "<group>"; };
 		20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 		419609C52B766EC7006609BA /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		419609CD2B767AE2006609BA /* RepositoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModel.swift; sourceTree = "<group>"; };
 		419609D12B76AD1F006609BA /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		419609D42B7787AF006609BA /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		419609D62B77A32A006609BA /* RepoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			children = (
 				20F3FA3428379AE2008BFAF8 /* RepositoryListViewController.swift */,
 				20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */,
+				419609D62B77A32A006609BA /* RepoViewModel.swift */,
 				419609CD2B767AE2006609BA /* RepositoryListViewModel.swift */,
 			);
 			path = RepositoryList;
@@ -178,7 +181,7 @@
 		419609CC2B767579006609BA /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				20F3FA6028379F06008BFAF8 /* NetworkService.swift */,
+				20F3FA6028379F06008BFAF8 /* RepositoryService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -334,13 +337,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				419609D72B77A32A006609BA /* RepoViewModel.swift in Sources */,
 				419609D52B7787AF006609BA /* ApiError.swift in Sources */,
 				419609C62B766EC7006609BA /* AppColor.swift in Sources */,
 				419609C92B766F6B006609BA /* UIColor+Hex.swift in Sources */,
 				20F3FA3528379AE2008BFAF8 /* RepositoryListViewController.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,
 				20F3FA6328379F1D008BFAF8 /* RepoDataModel.swift in Sources */,
-				20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */,
+				20F3FA6128379F06008BFAF8 /* RepositoryService.swift in Sources */,
 				419609CE2B767AE2006609BA /* RepositoryListViewModel.swift in Sources */,
 				419609D22B76AD1F006609BA /* UIView+Constraints.swift in Sources */,
 				20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */,
