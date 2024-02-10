@@ -1,5 +1,5 @@
 //
-//  RepoViewModel.swift
+//  RepoCellViewModel.swift
 //  engenious-challenge
 //
 //  Created by Volodymyr Mykhailiuk on 10.02.2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RepoViewModel {
+struct RepoCellViewModel {
     var name: String
     var description: String?
     var url: URL?

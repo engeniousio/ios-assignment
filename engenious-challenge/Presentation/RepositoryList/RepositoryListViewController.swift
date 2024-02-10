@@ -13,13 +13,14 @@ final class RepositoryListViewController: UIViewController {
     // MARK: - Properties
     private var cancellable = Set<AnyCancellable>()
     private let viewModel: RepositoryListViewModel
-    private var cellViewModels: [RepoViewModel] = []
+    private var cellViewModels: [RepoCellViewModel] = []
     
     // MARK: - Subviews
     private lazy var repoTableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         return tableView
     }()
     

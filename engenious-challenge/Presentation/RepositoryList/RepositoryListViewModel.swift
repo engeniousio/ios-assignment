@@ -12,7 +12,7 @@ final class RepositoryListViewModel {
     enum State {
         case initial
         case loading
-        case loaded([RepoViewModel])
+        case loaded([RepoCellViewModel])
         case failed(ApiError)
     }
     
@@ -44,7 +44,7 @@ final class RepositoryListViewModel {
                 }
             }, receiveValue: { [weak self] in
                 guard let self else { return }
-                self.listState = .loaded($0.map(RepoViewModel.init))
+                self.listState = .loaded($0.map(RepoCellViewModel.init))
             })
             .store(in: &cancellable)
     }

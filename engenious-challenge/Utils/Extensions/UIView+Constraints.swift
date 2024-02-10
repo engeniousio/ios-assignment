@@ -37,6 +37,13 @@ extension UIView {
             self.leading = leading
             self.trailing = trailing
         }
+        
+        init(all: CGFloat) {
+            self.top = all
+            self.bottom = all
+            self.leading = all
+            self.trailing = all
+        }
     }
 
     enum ViewPosition {
