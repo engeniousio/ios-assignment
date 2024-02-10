@@ -22,6 +22,7 @@
 		419609C92B766F6B006609BA /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609C82B766F6B006609BA /* UIColor+Hex.swift */; };
 		419609CE2B767AE2006609BA /* RepositoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609CD2B767AE2006609BA /* RepositoryListViewModel.swift */; };
 		419609D22B76AD1F006609BA /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609D12B76AD1F006609BA /* UIView+Constraints.swift */; };
+		419609D52B7787AF006609BA /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609D42B7787AF006609BA /* ApiError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		419609C82B766F6B006609BA /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		419609CD2B767AE2006609BA /* RepositoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModel.swift; sourceTree = "<group>"; };
 		419609D12B76AD1F006609BA /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		419609D42B7787AF006609BA /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,7 @@
 				419609C32B766EB0006609BA /* Utils */,
 				419609D02B767F62006609BA /* SupportingFiles */,
 				419609CC2B767579006609BA /* Services */,
-				20F3FA6228379F1D008BFAF8 /* RepoDataModel.swift */,
+				419609D32B77878C006609BA /* Models */,
 			);
 			path = "engenious-challenge";
 			sourceTree = "<group>";
@@ -191,6 +193,15 @@
 				20F3FA3E28379AE3008BFAF8 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		419609D32B77878C006609BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				20F3FA6228379F1D008BFAF8 /* RepoDataModel.swift */,
+				419609D42B7787AF006609BA /* ApiError.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				419609D52B7787AF006609BA /* ApiError.swift in Sources */,
 				419609C62B766EC7006609BA /* AppColor.swift in Sources */,
 				419609C92B766F6B006609BA /* UIColor+Hex.swift in Sources */,
 				20F3FA3528379AE2008BFAF8 /* RepositoryListViewController.swift in Sources */,

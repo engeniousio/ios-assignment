@@ -8,53 +8,82 @@
 import UIKit
 import Combine
 
-final class RepositoryListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class RepositoryListViewController: UIViewController {
     
-    let repositoryService: RepositoryService = RepositoryService()
-    let username: String = "Apple"
-    var repoList: [RepoDataModel] = []
+    // MARK: - Properties
+    private var cancellable = Set<AnyCancellable>()
+    private let viewModel: RepositoryListViewModel
     
-    let repoTableView = UITableView()
+    // MARK: - Subviews
+    private lazy var repoTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.delegate = self
+        tableView.dataSource = self
+        return tableView
+    }()
+    
+    // MARK: - Lifecycle
+    init(viewModel: RepositoryListViewModel = .init()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        title = "\(username)'s repos"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        repoTableView.delegate = self
-        repoTableView.dataSource = self
         repoTableView.register(
             RepoTableViewCell.self,
             forCellReuseIdentifier: String(describing: RepoTableViewCell.self)
         )
-        repoTableView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(repoTableView)
-        repoTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        repoTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        repoTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        repoTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        layoutSubviews()
+        setupBindings()
         
-        getRepos()
+        viewModel.setup()
     }
     
-    func getRepos() {
-        repositoryService.getUserRepos(username: username) { value in
-            DispatchQueue.main.async {
-                self.repoList = value
-                self.repoTableView.reloadData()
+    private func layoutSubviews() {
+        view.addSubview(repoTableView, withConstraints: .zero)
+    }
+    
+    private func setupBindings() {
+        viewModel.$navigationTitle
+            .sink { [weak self] in
+                self?.title = $0
             }
-        }
+            .store(in: &cancellable)
+        
+        viewModel.$repoList
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _ in
+                self?.repoTableView.reloadData()
+            }
+            .store(in: &cancellable)
+    }
+}
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
+extension RepositoryListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
+        return viewModel.repoList.count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repoList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RepoTableViewCell.self)) as? RepoTableViewCell else { return UITableViewCell() }
-        let repo = repoList[indexPath.row]
+        let repo = viewModel.repoList[indexPath.row]
         cell.titleLabel.text = repo.name
         return cell
     }
