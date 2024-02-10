@@ -17,45 +17,27 @@ protocol RepositoryServiceProtocol {
 }
 
 final class RepositoryService: RepositoryServiceProtocol {
+    
+    let networkLayer = NetworkLayer(urlsession: URLSession.shared)
+    
     func getUserRepos(username: String) -> AnyPublisher<[RepoDataModel], ApiError> {
-        Future { promise in
-            self.getUserRepos(username: username) { result in
-                switch result {
-                case .success(let response):
-                    promise(.success(response))
-                case .failure(let error):
-                    promise(.failure(error))
-                }
-            }
-        }.eraseToAnyPublisher()
+        let config = RequestConfig(endpoint: "users/\(username)/repos")
+        return networkLayer.fetch(config: config)
     }
     
     func getUserRepos(
         username: String,
         completion: @escaping (Result<[RepoDataModel], ApiError>) -> Void
     ) {
-        guard let url = URL(string: "https://api.github.com/users/\(username)/repos") else {
-            return completion(.failure(.invalidURL))
-        }
+        let config = RequestConfig(baseURL: "https://api.github.com", endpoint: "users/\(username)/repos")
         
-        let session = URLSession.shared
-        let request = URLRequest(url: url)
-        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
-            if let error {
-                return completion(.failure(.networkError(error)))
+        networkLayer.fetch(config: config) { (result: Result<[RepoDataModel], ApiError>) in
+            switch result {
+            case .success(let repos):
+                completion(.success(repos))
+            case .failure(let error):
+                completion(.failure(error))
             }
-            guard let data else {
-                return completion(.failure(.emptyResponse))
-            }
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let response = try decoder.decode([RepoDataModel].self, from: data)
-                completion(.success(response))
-            } catch let error {
-                return completion(.failure(.decodingError(error)))
-            }
-        })
-        task.resume()
+        }
     }
 }

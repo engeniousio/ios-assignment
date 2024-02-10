@@ -12,9 +12,6 @@
 		20F3FA3528379AE2008BFAF8 /* RepositoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3428379AE2008BFAF8 /* RepositoryListViewController.swift */; };
 		20F3FA3A28379AE3008BFAF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20F3FA3928379AE3008BFAF8 /* Assets.xcassets */; };
 		20F3FA3D28379AE3008BFAF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20F3FA3B28379AE3008BFAF8 /* LaunchScreen.storyboard */; };
-		20F3FA4828379AE3008BFAF8 /* engenious_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA4728379AE3008BFAF8 /* engenious_challengeTests.swift */; };
-		20F3FA5228379AE3008BFAF8 /* engenious_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */; };
-		20F3FA5428379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */; };
 		20F3FA6128379F06008BFAF8 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* RepositoryService.swift */; };
 		20F3FA6328379F1D008BFAF8 /* RepoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6228379F1D008BFAF8 /* RepoDataModel.swift */; };
 		20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */; };
@@ -25,6 +22,11 @@
 		419609D52B7787AF006609BA /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609D42B7787AF006609BA /* ApiError.swift */; };
 		419609D72B77A32A006609BA /* RepoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609D62B77A32A006609BA /* RepoCellViewModel.swift */; };
 		419609DC2B77DF59006609BA /* RepoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609DB2B77DF59006609BA /* RepoHeaderView.swift */; };
+		419609DE2B77E804006609BA /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609DD2B77E804006609BA /* NetworkLayer.swift */; };
+		419609E02B7802F9006609BA /* NetworkLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609DF2B7802F9006609BA /* NetworkLayerTests.swift */; };
+		419609E52B78039C006609BA /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609E42B78039C006609BA /* MockURLProtocol.swift */; };
+		41B2AEC72B780947004FBD24 /* engenious_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B2AEC32B780911004FBD24 /* engenious_challengeUITestsLaunchTests.swift */; };
+		41B2AEC82B78094A004FBD24 /* engenious_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B2AEC42B780911004FBD24 /* engenious_challengeUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +55,7 @@
 		20F3FA3C28379AE3008BFAF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20F3FA3E28379AE3008BFAF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20F3FA4328379AE3008BFAF8 /* engenious-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "engenious-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		20F3FA4728379AE3008BFAF8 /* engenious_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeTests.swift; sourceTree = "<group>"; };
 		20F3FA4D28379AE3008BFAF8 /* engenious-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "engenious-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITests.swift; sourceTree = "<group>"; };
-		20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		20F3FA6028379F06008BFAF8 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
 		20F3FA6228379F1D008BFAF8 /* RepoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDataModel.swift; sourceTree = "<group>"; };
 		20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
@@ -67,6 +66,11 @@
 		419609D42B7787AF006609BA /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		419609D62B77A32A006609BA /* RepoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCellViewModel.swift; sourceTree = "<group>"; };
 		419609DB2B77DF59006609BA /* RepoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoHeaderView.swift; sourceTree = "<group>"; };
+		419609DD2B77E804006609BA /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		419609DF2B7802F9006609BA /* NetworkLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayerTests.swift; sourceTree = "<group>"; };
+		419609E42B78039C006609BA /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		41B2AEC32B780911004FBD24 /* engenious_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = engenious_challengeUITestsLaunchTests.swift; path = "engenious-challengeUITests/engenious_challengeUITestsLaunchTests.swift"; sourceTree = SOURCE_ROOT; };
+		41B2AEC42B780911004FBD24 /* engenious_challengeUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = engenious_challengeUITests.swift; path = "engenious-challengeUITests/engenious_challengeUITests.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +103,7 @@
 			children = (
 				20F3FA2F28379AE2008BFAF8 /* engenious-challenge */,
 				20F3FA4628379AE3008BFAF8 /* engenious-challengeTests */,
-				20F3FA5028379AE3008BFAF8 /* engenious-challengeUITests */,
+				41B2AEBE2B7808EF004FBD24 /* engenious-challengeUITests */,
 				20F3FA2E28379AE2008BFAF8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,8 +123,8 @@
 			children = (
 				419609CA2B767551006609BA /* Presentation */,
 				419609C32B766EB0006609BA /* Utils */,
-				419609D02B767F62006609BA /* SupportingFiles */,
 				419609CC2B767579006609BA /* Services */,
+				419609D02B767F62006609BA /* SupportingFiles */,
 				419609D32B77878C006609BA /* Models */,
 			);
 			path = "engenious-challenge";
@@ -129,18 +133,10 @@
 		20F3FA4628379AE3008BFAF8 /* engenious-challengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				20F3FA4728379AE3008BFAF8 /* engenious_challengeTests.swift */,
+				419609E32B780392006609BA /* Mocks */,
+				419609DF2B7802F9006609BA /* NetworkLayerTests.swift */,
 			);
 			path = "engenious-challengeTests";
-			sourceTree = "<group>";
-		};
-		20F3FA5028379AE3008BFAF8 /* engenious-challengeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */,
-				20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */,
-			);
-			path = "engenious-challengeUITests";
 			sourceTree = "<group>";
 		};
 		419609C32B766EB0006609BA /* Utils */ = {
@@ -183,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				20F3FA6028379F06008BFAF8 /* RepositoryService.swift */,
+				419609DD2B77E804006609BA /* NetworkLayer.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -216,6 +213,23 @@
 				419609DB2B77DF59006609BA /* RepoHeaderView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		419609E32B780392006609BA /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				419609E42B78039C006609BA /* MockURLProtocol.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		41B2AEBE2B7808EF004FBD24 /* engenious-challengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				41B2AEC42B780911004FBD24 /* engenious_challengeUITests.swift */,
+				41B2AEC32B780911004FBD24 /* engenious_challengeUITestsLaunchTests.swift */,
+			);
+			path = "engenious-challengeUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				419609DE2B77E804006609BA /* NetworkLayer.swift in Sources */,
 				419609D72B77A32A006609BA /* RepoCellViewModel.swift in Sources */,
 				419609D52B7787AF006609BA /* ApiError.swift in Sources */,
 				419609DC2B77DF59006609BA /* RepoHeaderView.swift in Sources */,
@@ -368,7 +383,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20F3FA4828379AE3008BFAF8 /* engenious_challengeTests.swift in Sources */,
+				419609E02B7802F9006609BA /* NetworkLayerTests.swift in Sources */,
+				419609E52B78039C006609BA /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,8 +392,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20F3FA5428379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift in Sources */,
-				20F3FA5228379AE3008BFAF8 /* engenious_challengeUITests.swift in Sources */,
+				41B2AEC82B78094A004FBD24 /* engenious_challengeUITests.swift in Sources */,
+				41B2AEC72B780947004FBD24 /* engenious_challengeUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
