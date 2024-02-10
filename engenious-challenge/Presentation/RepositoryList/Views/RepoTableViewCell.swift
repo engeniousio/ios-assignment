@@ -14,7 +14,8 @@ final class RepoTableViewCell: UITableViewCell {
     }
     
     // MARK: - Subviews
-    private lazy var containerView = UIView()
+    private lazy var gradientContainerView = UIView()
+    private lazy var shadowContainerView = UIView()
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -58,25 +59,50 @@ final class RepoTableViewCell: UITableViewCell {
         super.layoutSubviews()
         
         addLinearGradient()
-        containerView.layer.cornerRadius = 10
-        containerView.layer.masksToBounds = true
+        gradientContainerView.layer.cornerRadius = 10
+        gradientContainerView.layer.masksToBounds = true
+        shadowContainerView.layer.cornerRadius = 10
+        shadowContainerView.layer.masksToBounds = false
+        
+        shadowContainerView.layer.cornerRadius = 10
+        // TODO: Setup correct shadow
+        shadowContainerView.layer.shadowColor = AppColor.headerTextColor.cgColor
+        shadowContainerView.layer.shadowOpacity = 0.1
+        shadowContainerView.layer.shadowOffset = CGSize(width: 0, height: 6)
+        shadowContainerView.layer.shadowRadius = 10
     }
+    
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+        print("+_+_+_")
+    }
+    
     
     private func layoutAllSubviews() {
         containerStackView.addArrangedSubview(titleLabel)
         containerStackView.addArrangedSubview(descriptionLabel)
-        containerView.addSubview(
+        gradientContainerView.addSubview(
             containerStackView,
             withConstraints: .init(all: 16)
         )
+        shadowContainerView.addSubview(
+            gradientContainerView,
+            withConstraints: .zero
+        )
+        
         contentView.addSubview(
-            containerView,
+            shadowContainerView,
             withConstraints: .init(top: 8, bottom: 8, leading: 20, trailing: 20)
         )
     }
     
     private func setupStyles() {
         selectionStyle = .none
+        contentView.backgroundColor = .clear
+        contentView.layer.backgroundColor = UIColor.clear.cgColor
+        gradientContainerView.layer.backgroundColor = UIColor.clear.cgColor
+        gradientContainerView.backgroundColor = .clear
+        shadowContainerView.backgroundColor = .clear
     }
     
     private func addLinearGradient() {
@@ -89,7 +115,7 @@ final class RepoTableViewCell: UITableViewCell {
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
         
-        containerView.layer.insertSublayer(gradientLayer, at: 0)
+        gradientContainerView.layer.insertSublayer(gradientLayer, at: 0)
         
         gradientLayer.frame = contentView.bounds
     }

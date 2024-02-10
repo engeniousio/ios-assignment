@@ -100,4 +100,13 @@ extension RepositoryListViewController: UITableViewDelegate, UITableViewDataSour
         cell.configure(with: vm)
         return cell
     }
+    
+    func tableView(
+        _ tableView: UITableView,
+        viewForHeaderInSection section: Int
+    ) -> UIView? {
+        let view = RepoHeaderView()
+        view.setup(with: "Repositories")
+        return view
+    }
 }
