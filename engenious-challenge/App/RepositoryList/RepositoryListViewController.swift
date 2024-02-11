@@ -12,14 +12,24 @@ final class RepositoryListViewController: UIViewController {
     enum Constants {
         static let tableViewHeaderText = "Repositories"
         static let retryActionText = "Retry"
-        static let okActionText = "Ok"
+        static let okActionText = "OK"
         static let repoCellReuseId = String(describing: RepoTableViewCell.self)
+        static let bgColor = AppColor.bgColor
+        static let navigationTitleTextColor = AppColor.navigationTitleTextColor
+        static let progressColor = AppColor.blueColor
     }
     
     // MARK: - Properties
     private var cancellable = Set<AnyCancellable>()
     private let viewModel: RepositoryListViewModel
     private var cellViewModels: [RepoCellViewModel] = []
+    private lazy var navBarShadow: NSShadow = {
+        let shadow = NSShadow()
+        shadow.shadowColor = UIColor.black.withAlphaComponent(0.3)
+        shadow.shadowBlurRadius = 4
+        shadow.shadowOffset = CGSize(width: 1, height: 5)
+        return shadow
+    }()
     
     // MARK: - Subviews
     private let refreshControl = UIRefreshControl()
@@ -27,14 +37,16 @@ final class RepositoryListViewController: UIViewController {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .none
         tableView.refreshControl = refreshControl
+        tableView.register(
+            RepoTableViewCell.self,
+            forCellReuseIdentifier: Constants.repoCellReuseId
+        )
         return tableView
     }()
     
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .large)
-        indicator.color = .gray
         indicator.hidesWhenStopped = true
         indicator.isHidden = true
         return indicator
@@ -52,15 +64,9 @@ final class RepositoryListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        repoTableView.register(
-            RepoTableViewCell.self,
-            forCellReuseIdentifier: Constants.repoCellReuseId
-        )
         layoutSubviews()
+        setupStyles()
         setupBindings()
         setupRefreshControl()
         
@@ -77,6 +83,20 @@ final class RepositoryListViewController: UIViewController {
             activityIndicator,
             withPosition: .center(width: 60, height: 60)
         )
+    }
+    
+    private func setupStyles() {
+        view.backgroundColor = Constants.bgColor
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.applyAttributes([
+            NSAttributedString.Key.foregroundColor: Constants.navigationTitleTextColor,
+            NSAttributedString.Key.shadow: navBarShadow
+        ])
+        
+        activityIndicator.color = Constants.progressColor
+        refreshControl.tintColor = Constants.progressColor
+        repoTableView.separatorStyle = .none
     }
     
     private func setupBindings() {

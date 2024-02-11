@@ -13,7 +13,7 @@ final class NetworkLayerTests: XCTestCase {
     
     var urlSession: URLSession!
     var networkLayer: NetworkLayerProtocol!
-    let reqURL = URL(string: "https://api.thecatapi.com/v1/images/search")!
+    let reqURL = URL(string: "https://apple.com/users/apple/repos")!
     private var cancelable = Set<AnyCancellable>()
     
     private lazy var mockData: Data = {
@@ -41,7 +41,7 @@ final class NetworkLayerTests: XCTestCase {
         networkLayer = NetworkLayer(urlsession: urlSession)
     }
     
-    func testFetchSuccess() throws {
+    func testFetchSuccess() {
         // Given
         let response = HTTPURLResponse(
             url: reqURL,
@@ -78,7 +78,7 @@ final class NetworkLayerTests: XCTestCase {
         wait(for: [expectation], timeout: 2)
     }
     
-    func testFetchBadRequest() throws {
+    func testFetchBadRequest() {
         let response = HTTPURLResponse(
             url: reqURL,
             statusCode: 400,

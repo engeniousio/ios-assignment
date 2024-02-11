@@ -32,6 +32,7 @@
 		41C471692B7923AD00D647A9 /* RepositoryListAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C471682B7923AD00D647A9 /* RepositoryListAssembler.swift */; };
 		41C4716D2B7929A900D647A9 /* MockRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C4716C2B7929A900D647A9 /* MockRepositoryService.swift */; };
 		41C4716F2B792A8900D647A9 /* RepositoryListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C4716E2B792A8900D647A9 /* RepositoryListViewModelTests.swift */; };
+		41C471712B793D5500D647A9 /* UINavigationBar+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C471702B793D5400D647A9 /* UINavigationBar+Attributes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		41C471682B7923AD00D647A9 /* RepositoryListAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListAssembler.swift; sourceTree = "<group>"; };
 		41C4716C2B7929A900D647A9 /* MockRepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepositoryService.swift; sourceTree = "<group>"; };
 		41C4716E2B792A8900D647A9 /* RepositoryListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModelTests.swift; sourceTree = "<group>"; };
+		41C471702B793D5400D647A9 /* UINavigationBar+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Attributes.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				419609C82B766F6B006609BA /* UIColor+Hex.swift */,
 				419609D12B76AD1F006609BA /* UIView+Constraints.swift */,
 				41C471642B790CB300D647A9 /* CALayer+Shadow.swift */,
+				41C471702B793D5400D647A9 /* UINavigationBar+Attributes.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				20F3FA3528379AE2008BFAF8 /* RepositoryListViewController.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,
 				20F3FA6328379F1D008BFAF8 /* RepoDataModel.swift in Sources */,
+				41C471712B793D5500D647A9 /* UINavigationBar+Attributes.swift in Sources */,
 				20F3FA6128379F06008BFAF8 /* RepositoryService.swift in Sources */,
 				419609CE2B767AE2006609BA /* RepositoryListViewModel.swift in Sources */,
 				419609D22B76AD1F006609BA /* UIView+Constraints.swift in Sources */,
@@ -581,6 +585,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N2TQR994GB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "engenious-challenge/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -593,7 +598,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.engenious.engenious-challenge";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.engenious1.engenious-challenge12";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -608,6 +613,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N2TQR994GB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "engenious-challenge/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -620,7 +626,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.engenious.engenious-challenge";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.engenious1.engenious-challenge12";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

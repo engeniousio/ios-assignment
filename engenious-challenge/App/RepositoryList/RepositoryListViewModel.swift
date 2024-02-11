@@ -29,13 +29,17 @@ final class RepositoryListViewModel {
     @Published private(set) var navigationTitle = ""
     @Published private(set) var listState: State = .initial
     
-    let username: String = "Apple"
+    let username: String
     private let repositoryService: RepositoryServiceProtocol
     private var cancellable = Set<AnyCancellable>()
     
     // MARK: - Lifecycle
-    init(repositoryService: RepositoryServiceProtocol) {
+    init(
+        repositoryService: RepositoryServiceProtocol,
+        username: String = "Apple"
+    ) {
         self.repositoryService = repositoryService
+        self.username = username
     }
     
     // MARK: - Public
