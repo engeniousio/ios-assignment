@@ -17,11 +17,17 @@ protocol RepositoryServiceProtocol {
 }
 
 final class RepositoryService: RepositoryServiceProtocol {
+    let networkLayer: NetworkLayerProtocol
     
-    let networkLayer = NetworkLayer(urlsession: URLSession.shared)
+    init(networkLayer: NetworkLayerProtocol) {
+        self.networkLayer = networkLayer
+    }
     
     func getUserRepos(username: String) -> AnyPublisher<[RepoDataModel], ApiError> {
-        let config = RequestConfig(endpoint: "users/\(username)/repos")
+        let config = RequestConfig(
+            endpoint: "users/\(username)/repos",
+            httpMethod: .get
+        )
         return networkLayer.fetch(config: config)
     }
     
@@ -29,7 +35,10 @@ final class RepositoryService: RepositoryServiceProtocol {
         username: String,
         completion: @escaping (Result<[RepoDataModel], ApiError>) -> Void
     ) {
-        let config = RequestConfig(baseURL: "https://api.github.com", endpoint: "users/\(username)/repos")
+        let config = RequestConfig(
+            endpoint: "users/\(username)/repos",
+            httpMethod: .get
+        )
         
         networkLayer.fetch(config: config) { (result: Result<[RepoDataModel], ApiError>) in
             switch result {

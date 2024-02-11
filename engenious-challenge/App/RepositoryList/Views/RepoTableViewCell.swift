@@ -8,42 +8,26 @@
 import UIKit
 
 final class RepoTableViewCell: UITableViewCell {
-    
     enum Constants {
         static let cornerRadius: CGFloat = 10
         static let gradientFromColor: CGColor = AppColor.gradientFromColor.cgColor
         static let gradientToColor: CGColor = AppColor.gradientToColor.cgColor
         static let bgColor: UIColor = AppColor.bgColor
+        static let headerTextColor = AppColor.headerTextColor
+        static let subtitleTextColor = AppColor.subtitleTextColor
+        static let contentViewInsets = FrameConstraints(
+            horizontal: 20,
+            vertical: 8
+        )
     }
     
     // MARK: - Subviews
     private lazy var gradientContainerView = UIView()
     private lazy var shadowView = UIView()
     private lazy var gradientLayer = CAGradientLayer()
-    
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 22, weight: .bold)
-        label.textColor = AppColor.headerTextColor
-        label.numberOfLines = .zero
-        return label
-    }()
-    
-    private lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 16, weight: .medium)
-        label.textColor = AppColor.subtitleTextColor
-        label.numberOfLines = .zero
-        return label
-    }()
-    
-    private lazy var containerStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.spacing = Constants.cornerRadius
-        return stackView
-    }()
+    private lazy var titleLabel = UILabel()
+    private lazy var descriptionLabel = UILabel()
+    private lazy var containerStackView = UIStackView()
     
     // MARK: - Lifecycle
     override init(
@@ -53,8 +37,6 @@ final class RepoTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         layoutAllSubviews()
         setupStyles()
-        addLinearGradient()
-        applyShadow()
     }
     
     required init?(coder: NSCoder) {
@@ -64,7 +46,7 @@ final class RepoTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        gradientLayer.frame = contentView.frame
+        adjustGradientLayerFrame()
     }
     
     // MARK: - UI Configuration
@@ -77,11 +59,11 @@ final class RepoTableViewCell: UITableViewCell {
         )
         contentView.addSubview(
             shadowView,
-            withConstraints: .init(top: 8, bottom: 8, leading: 20, trailing: 20)
+            withConstraints: Constants.contentViewInsets
         )
         contentView.addSubview(
             gradientContainerView,
-            withConstraints: .init(top: 8, bottom: 8, leading: 20, trailing: 20)
+            withConstraints: Constants.contentViewInsets
         )
     }
     
@@ -89,12 +71,20 @@ final class RepoTableViewCell: UITableViewCell {
         selectionStyle = .none
         backgroundColor = .clear
         
+        titleLabel.font = .systemFont(ofSize: 22, weight: .bold)
+        titleLabel.textColor = Constants.headerTextColor
+        titleLabel.numberOfLines = .zero
+        
+        descriptionLabel.font = .systemFont(ofSize: 16, weight: .medium)
+        descriptionLabel.textColor = Constants.subtitleTextColor
+        descriptionLabel.numberOfLines = .zero
+        
+        containerStackView.axis = .vertical
+        containerStackView.distribution = .fill
+        containerStackView.spacing = Constants.cornerRadius
+        
         gradientContainerView.layer.cornerRadius = Constants.cornerRadius
         gradientContainerView.layer.masksToBounds = true
-    }
-    
-    private func addLinearGradient() {
-        gradientLayer.frame = contentView.bounds
         gradientLayer.colors = [
             Constants.gradientFromColor,
             Constants.gradientToColor
@@ -102,12 +92,14 @@ final class RepoTableViewCell: UITableViewCell {
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
         gradientContainerView.layer.insertSublayer(gradientLayer, at: 0)
-    }
-    
-    private func applyShadow() {
+        
         shadowView.layer.cornerRadius = Constants.cornerRadius
         shadowView.backgroundColor = Constants.bgColor
         shadowView.layer.shadow(config: .repoCellDropShadow)
+    }
+    
+    private func adjustGradientLayerFrame() {
+        gradientLayer.frame = contentView.bounds
     }
 }
 
@@ -117,6 +109,6 @@ extension RepoTableViewCell {
         titleLabel.text = vm.name
         descriptionLabel.text = vm.description
         descriptionLabel.isHidden = vm.description == nil
-        gradientLayer.frame = contentView.frame
+        adjustGradientLayerFrame()
     }
 }

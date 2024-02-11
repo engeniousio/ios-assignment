@@ -25,18 +25,20 @@ final class RepositoryListViewModel {
         case failed(ApiError)
     }
     
-    private let username: String = "Apple"
-    private let repositoryService: RepositoryServiceProtocol
-    
+    // MARK: - Properties
     @Published private(set) var navigationTitle = ""
     @Published private(set) var listState: State = .initial
     
+    private let username: String = "Apple"
+    private let repositoryService: RepositoryServiceProtocol
     private var cancellable = Set<AnyCancellable>()
     
-    init(repositoryService: RepositoryServiceProtocol = RepositoryService()) {
+    // MARK: - Lifecycle
+    init(repositoryService: RepositoryServiceProtocol) {
         self.repositoryService = repositoryService
     }
     
+    // MARK: - Public
     func setup() {
         navigationTitle = "\(username)'s repos"
         listState = .loading
@@ -48,6 +50,7 @@ final class RepositoryListViewModel {
         loadRepos()
     }
     
+    // MARK: - Private
     private func loadRepos() {
         repositoryService.getUserRepos(username: username)
             .receive(on: DispatchQueue.main)

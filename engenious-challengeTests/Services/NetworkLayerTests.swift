@@ -53,7 +53,7 @@ final class NetworkLayerTests: XCTestCase {
             return (response, self.mockData)
         }
         let expectation = XCTestExpectation(description: "response")
-        let publisher: AnyPublisher<[RepoDataModel], ApiError> = networkLayer.fetch(config: .init(endpoint: "users/apple/repos"))
+        let publisher: AnyPublisher<[RepoDataModel], ApiError> = networkLayer.fetch(config: .init(endpoint: "users/apple/repos", httpMethod: .get))
         
         // When
         publisher.sink { value in
@@ -90,7 +90,7 @@ final class NetworkLayerTests: XCTestCase {
             return (response, self.mockData)
         }
         let expectation = XCTestExpectation(description: "response")
-        let publisher: AnyPublisher<[RepoDataModel], ApiError> = networkLayer.fetch(config: .init(endpoint: "users/apple/repos"))
+        let publisher: AnyPublisher<[RepoDataModel], ApiError> = networkLayer.fetch(config: .init(endpoint: "users/apple/repos", httpMethod: .get))
         
         // When
         publisher.sink { value in

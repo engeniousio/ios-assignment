@@ -9,6 +9,12 @@ import UIKit
 import Combine
 
 final class RepositoryListViewController: UIViewController {
+    enum Constants {
+        static let tableViewHeaderText = "Repositories"
+        static let retryActionText = "Retry"
+        static let okActionText = "Ok"
+        static let repoCellReuseId = String(describing: RepoTableViewCell.self)
+    }
     
     // MARK: - Properties
     private var cancellable = Set<AnyCancellable>()
@@ -35,7 +41,7 @@ final class RepositoryListViewController: UIViewController {
     }()
     
     // MARK: - Lifecycle
-    init(viewModel: RepositoryListViewModel = .init()) {
+    init(viewModel: RepositoryListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -52,7 +58,7 @@ final class RepositoryListViewController: UIViewController {
         
         repoTableView.register(
             RepoTableViewCell.self,
-            forCellReuseIdentifier: String(describing: RepoTableViewCell.self)
+            forCellReuseIdentifier: Constants.repoCellReuseId
         )
         layoutSubviews()
         setupBindings()
@@ -61,9 +67,16 @@ final class RepositoryListViewController: UIViewController {
         viewModel.setup()
     }
     
+    // MARK: - UI Configurations
     private func layoutSubviews() {
-        view.addSubview(repoTableView, withConstraints: .zero)
-        view.addSubview(activityIndicator, withPosition: .center(width: 60, height: 60))
+        view.addSubview(
+            repoTableView, 
+            withConstraints: .zero
+        )
+        view.addSubview(
+            activityIndicator,
+            withPosition: .center(width: 60, height: 60)
+        )
     }
     
     private func setupBindings() {
@@ -112,6 +125,7 @@ final class RepositoryListViewController: UIViewController {
         )
     }
     
+    // MARK: - Actions
     @objc private func refreshData() {
         self.viewModel.refresh(refreshControl: true)
     }
@@ -126,12 +140,12 @@ fileprivate extension RepositoryListViewController {
             preferredStyle: .alert
         )
         let retryAction = UIAlertAction(
-            title: "Retry",
+            title: Constants.retryActionText,
             style: .default
         ) { _ in
             self.viewModel.refresh(refreshControl: false)
         }
-        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let okAction = UIAlertAction(title: Constants.okActionText, style: .cancel, handler: nil)
         alert.addAction(retryAction)
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
@@ -152,7 +166,7 @@ extension RepositoryListViewController: UITableViewDelegate, UITableViewDataSour
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: String(describing: RepoTableViewCell.self)
+            withIdentifier: Constants.repoCellReuseId
         ) as? RepoTableViewCell else {
             return UITableViewCell()
         }
@@ -166,7 +180,7 @@ extension RepositoryListViewController: UITableViewDelegate, UITableViewDataSour
         viewForHeaderInSection section: Int
     ) -> UIView? {
         let view = RepoHeaderView()
-        view.setup(with: "Repositories")
+        view.setup(with: Constants.tableViewHeaderText)
         return view
     }
 }

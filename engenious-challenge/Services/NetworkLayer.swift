@@ -9,10 +9,19 @@ import Foundation
 import Combine
 
 protocol NetworkLayerProtocol {
+    /// Fetches data from the server using the provided request configuration and invokes the completion handler with the result.
+    ///
+    /// - Parameters:
+    ///   - config: The request configuration specifying the base URL and endpoint.
+    ///   - completion: The completion handler to be called when the request is completed, containing a result with either an array of decoded objects or an ApiError.
     func fetch<T: Codable>(
         config: RequestConfig,
         completion: @escaping (Result<[T], ApiError>) -> Void
     )
+    /// Fetches data from the server using the provided request configuration and returns a publisher emitting the decoded objects or an error.
+    ///
+    /// - Parameter config: The request configuration specifying the base URL and endpoint.
+    /// - Returns: A publisher emitting the decoded objects or an ApiError.
     func fetch<T: Decodable>(config: RequestConfig) -> AnyPublisher<[T], ApiError>
 }
 
@@ -35,7 +44,8 @@ final class NetworkLayer: NetworkLayerProtocol {
             return completion(.failure(.invalidURL))
         }
         
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.httpMethod = config.httpMethod.rawValue
         let task = urlSession.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             if let error {
                 completion(.failure(.networkError(error)))
@@ -63,7 +73,8 @@ final class NetworkLayer: NetworkLayerProtocol {
                 .eraseToAnyPublisher()
         }
         
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.httpMethod = config.httpMethod.rawValue
         return urlSession.dataTaskPublisher(for: request)
             .mapError { error in
                 ApiError.networkError(error)
@@ -94,15 +105,22 @@ final class NetworkLayer: NetworkLayerProtocol {
 
 
 struct RequestConfig {
+    enum HTTPMethod: String {
+        case get = "GET"
+    }
+    
     let baseURL: String
     let endpoint: String
+    let httpMethod: HTTPMethod
     
     init(
-        baseURL: String = "https://api.github.com",
-        endpoint: String
+        baseURL: String = AppConstants.baseURL,
+        endpoint: String,
+        httpMethod: HTTPMethod
     ) {
         self.baseURL = baseURL
         self.endpoint = endpoint
+        self.httpMethod = httpMethod
     }
     
     var urlString: String {

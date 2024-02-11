@@ -38,6 +38,13 @@ extension UIView {
             self.trailing = trailing
         }
         
+        init(horizontal: CGFloat?, vertical: CGFloat?) {
+            self.top = vertical
+            self.bottom = vertical
+            self.leading = horizontal
+            self.trailing = horizontal
+        }
+        
         init(all: CGFloat) {
             self.top = all
             self.bottom = all

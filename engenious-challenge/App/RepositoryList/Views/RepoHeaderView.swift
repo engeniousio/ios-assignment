@@ -8,6 +8,14 @@
 import UIKit
 
 final class RepoHeaderView: UIView {
+    enum Constants {
+        static let bgColor = AppColor.bgColor
+        static let textColor = AppColor.headerTextColor
+        static let viewInsets = FrameConstraints(
+            horizontal: 20,
+            vertical: 8
+        )
+    }
     
     // MARK: - Subviews
     private lazy var labelView = UILabel()
@@ -28,13 +36,13 @@ final class RepoHeaderView: UIView {
     private func layoutAllSubviews() {
         addSubview(
             labelView,
-            withConstraints: .init(top: 8, bottom: 8, leading: 20, trailing: 20)
+            withConstraints: Constants.viewInsets
         )
     }
     
     private func setupStyles() {
-        backgroundColor = .white
-        labelView.textColor = AppColor.headerTextColor
+        backgroundColor = Constants.bgColor
+        labelView.textColor = Constants.textColor
         labelView.font = .systemFont(ofSize: 24, weight: .semibold)
     }
 }
