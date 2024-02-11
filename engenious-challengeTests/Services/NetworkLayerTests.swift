@@ -41,7 +41,7 @@ final class NetworkLayerTests: XCTestCase {
         networkLayer = NetworkLayer(urlsession: urlSession)
     }
     
-    func test_Fetch_Success() throws {
+    func testFetchSuccess() throws {
         // Given
         let response = HTTPURLResponse(
             url: reqURL,
@@ -78,7 +78,7 @@ final class NetworkLayerTests: XCTestCase {
         wait(for: [expectation], timeout: 2)
     }
     
-    func test_GetCat_BadRequest() throws {
+    func testFetchBadRequest() throws {
         let response = HTTPURLResponse(
             url: reqURL,
             statusCode: 400,

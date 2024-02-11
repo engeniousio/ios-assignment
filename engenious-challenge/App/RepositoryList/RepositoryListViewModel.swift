@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final class RepositoryListViewModel {
-    enum State {
+    enum State: Equatable {
         /// Initial state
         case initial
         /// The state used to indicate that reload is from refresh control
@@ -29,7 +29,7 @@ final class RepositoryListViewModel {
     @Published private(set) var navigationTitle = ""
     @Published private(set) var listState: State = .initial
     
-    private let username: String = "Apple"
+    let username: String = "Apple"
     private let repositoryService: RepositoryServiceProtocol
     private var cancellable = Set<AnyCancellable>()
     

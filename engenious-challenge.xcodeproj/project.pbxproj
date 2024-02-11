@@ -30,6 +30,8 @@
 		41C471652B790CB300D647A9 /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C471642B790CB300D647A9 /* CALayer+Shadow.swift */; };
 		41C471672B79227100D647A9 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C471662B79227100D647A9 /* AppConstants.swift */; };
 		41C471692B7923AD00D647A9 /* RepositoryListAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C471682B7923AD00D647A9 /* RepositoryListAssembler.swift */; };
+		41C4716D2B7929A900D647A9 /* MockRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C4716C2B7929A900D647A9 /* MockRepositoryService.swift */; };
+		41C4716F2B792A8900D647A9 /* RepositoryListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C4716E2B792A8900D647A9 /* RepositoryListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		41C471642B790CB300D647A9 /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
 		41C471662B79227100D647A9 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		41C471682B7923AD00D647A9 /* RepositoryListAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListAssembler.swift; sourceTree = "<group>"; };
+		41C4716C2B7929A900D647A9 /* MockRepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepositoryService.swift; sourceTree = "<group>"; };
+		41C4716E2B792A8900D647A9 /* RepositoryListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 		20F3FA4628379AE3008BFAF8 /* engenious-challengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				41C4716B2B79299000D647A9 /* App */,
 				419609E32B780392006609BA /* Mocks */,
 				41C4716A2B79292600D647A9 /* Services */,
 			);
@@ -228,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				419609E42B78039C006609BA /* MockURLProtocol.swift */,
+				41C4716C2B7929A900D647A9 /* MockRepositoryService.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -247,6 +253,14 @@
 				419609DF2B7802F9006609BA /* NetworkLayerTests.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		41C4716B2B79299000D647A9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				41C4716E2B792A8900D647A9 /* RepositoryListViewModelTests.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,8 +417,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C4716F2B792A8900D647A9 /* RepositoryListViewModelTests.swift in Sources */,
 				419609E02B7802F9006609BA /* NetworkLayerTests.swift in Sources */,
 				419609E52B78039C006609BA /* MockURLProtocol.swift in Sources */,
+				41C4716D2B7929A900D647A9 /* MockRepositoryService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

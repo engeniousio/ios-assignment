@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RepoCellViewModel {
+struct RepoCellViewModel: Equatable {
     var name: String
     var description: String?
     var url: URL?
