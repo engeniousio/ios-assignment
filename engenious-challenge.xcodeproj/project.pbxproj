@@ -27,6 +27,7 @@
 		419609E52B78039C006609BA /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419609E42B78039C006609BA /* MockURLProtocol.swift */; };
 		41B2AEC72B780947004FBD24 /* engenious_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B2AEC32B780911004FBD24 /* engenious_challengeUITestsLaunchTests.swift */; };
 		41B2AEC82B78094A004FBD24 /* engenious_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B2AEC42B780911004FBD24 /* engenious_challengeUITests.swift */; };
+		41C471652B790CB300D647A9 /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C471642B790CB300D647A9 /* CALayer+Shadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		419609E42B78039C006609BA /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		41B2AEC32B780911004FBD24 /* engenious_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = engenious_challengeUITestsLaunchTests.swift; path = "engenious-challengeUITests/engenious_challengeUITestsLaunchTests.swift"; sourceTree = SOURCE_ROOT; };
 		41B2AEC42B780911004FBD24 /* engenious_challengeUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = engenious_challengeUITests.swift; path = "engenious-challengeUITests/engenious_challengeUITests.swift"; sourceTree = SOURCE_ROOT; };
+		41C471642B790CB300D647A9 /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			children = (
 				419609C82B766F6B006609BA /* UIColor+Hex.swift */,
 				419609D12B76AD1F006609BA /* UIView+Constraints.swift */,
+				41C471642B790CB300D647A9 /* CALayer+Shadow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 			files = (
 				419609DE2B77E804006609BA /* NetworkLayer.swift in Sources */,
 				419609D72B77A32A006609BA /* RepoCellViewModel.swift in Sources */,
+				41C471652B790CB300D647A9 /* CALayer+Shadow.swift in Sources */,
 				419609D52B7787AF006609BA /* ApiError.swift in Sources */,
 				419609DC2B77DF59006609BA /* RepoHeaderView.swift in Sources */,
 				419609C62B766EC7006609BA /* AppColor.swift in Sources */,

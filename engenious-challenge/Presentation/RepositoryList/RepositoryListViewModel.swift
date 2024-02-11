@@ -10,9 +10,18 @@ import Combine
 
 final class RepositoryListViewModel {
     enum State {
+        /// Initial state
         case initial
+        /// The state used to indicate that reload is from refresh control
+        case refreshing
+        /// The state used to indicate that reload this is initial reload or reload from retry
+        /// You should show activiti indicator in this case
         case loading
+        /// The state used to indicate that data loaded
+        ///`[RepoCellViewModel]` - list of models with information about repository
         case loaded([RepoCellViewModel])
+        /// The state used to indicate that loading failed
+        ///`ApiError` - type that represents error received from `NetworkLayer`
         case failed(ApiError)
     }
     
@@ -31,7 +40,15 @@ final class RepositoryListViewModel {
     func setup() {
         navigationTitle = "\(username)'s repos"
         listState = .loading
-        
+        loadRepos()
+    }
+    
+    func refresh(refreshControl: Bool) {
+        listState = refreshControl ? .refreshing : .loading
+        loadRepos()
+    }
+    
+    private func loadRepos() {
         repositoryService.getUserRepos(username: username)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in

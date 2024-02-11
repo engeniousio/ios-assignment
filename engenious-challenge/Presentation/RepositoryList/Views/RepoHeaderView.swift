@@ -24,6 +24,7 @@ final class RepoHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - UI Configuration
     private func layoutAllSubviews() {
         addSubview(
             labelView,
@@ -41,7 +42,6 @@ final class RepoHeaderView: UIView {
 // MARK: - Setup
 extension RepoHeaderView {
     func setup(with name: String) {
-        labelView.text = "Repositories"
+        labelView.text = name
     }
 }
-

@@ -16,12 +16,22 @@ final class RepositoryListViewController: UIViewController {
     private var cellViewModels: [RepoCellViewModel] = []
     
     // MARK: - Subviews
+    private let refreshControl = UIRefreshControl()
     private lazy var repoTableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.refreshControl = refreshControl
         return tableView
+    }()
+    
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.color = .gray
+        indicator.hidesWhenStopped = true
+        indicator.isHidden = true
+        return indicator
     }()
     
     // MARK: - Lifecycle
@@ -46,12 +56,14 @@ final class RepositoryListViewController: UIViewController {
         )
         layoutSubviews()
         setupBindings()
+        setupRefreshControl()
         
         viewModel.setup()
     }
     
     private func layoutSubviews() {
         view.addSubview(repoTableView, withConstraints: .zero)
+        view.addSubview(activityIndicator, withPosition: .center(width: 60, height: 60))
     }
     
     private func setupBindings() {
@@ -66,19 +78,63 @@ final class RepositoryListViewController: UIViewController {
                 guard let self else { return }
                 switch state {
                 case .loaded(let models):
+                    repoTableView.isHidden = false
+                    activityIndicator.isHidden = true
+                    activityIndicator.stopAnimating()
                     self.cellViewModels = models
+                    self.refreshControl.endRefreshing()
                     self.repoTableView.reloadData()
                 case .loading:
-                    print("TODO: add loading")
-                case .failed:
-                    print("TODO: show error")
-                    self.cellViewModels = []
+                    repoTableView.isHidden = true
+                    activityIndicator.isHidden = false
+                    activityIndicator.startAnimating()
+                case .failed(let error):
+                    repoTableView.isHidden = false
+                    activityIndicator.isHidden = true
+                    activityIndicator.stopAnimating()
                     self.repoTableView.reloadData()
+                    self.refreshControl.endRefreshing()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        self.showError(error)
+                    }
                 default:
                     break
                 }
             }
             .store(in: &cancellable)
+    }
+    
+    private func setupRefreshControl() {
+        refreshControl.addTarget(
+            self,
+            action: #selector(refreshData),
+            for: .valueChanged
+        )
+    }
+    
+    @objc private func refreshData() {
+        self.viewModel.refresh(refreshControl: true)
+    }
+}
+
+// MARK: - Alert
+fileprivate extension RepositoryListViewController {
+    func showError(_ error: ApiError) {
+        let alert = UIAlertController(
+            title: error.alertTitle,
+            message: error.alertMessage,
+            preferredStyle: .alert
+        )
+        let retryAction = UIAlertAction(
+            title: "Retry",
+            style: .default
+        ) { _ in
+            self.viewModel.refresh(refreshControl: false)
+        }
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(retryAction)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -95,7 +151,11 @@ extension RepositoryListViewController: UITableViewDelegate, UITableViewDataSour
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RepoTableViewCell.self)) as? RepoTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: String(describing: RepoTableViewCell.self)
+        ) as? RepoTableViewCell else {
+            return UITableViewCell()
+        }
         let vm = cellViewModels[indexPath.row]
         cell.configure(with: vm)
         return cell
