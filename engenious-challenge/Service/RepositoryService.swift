@@ -52,7 +52,7 @@ struct RepositoryService: RepositoryServiceProtocol {
         task.resume()
     }
 
-    private func makeURL(forUsername username: String) -> URL? {
+    func makeURL(forUsername username: String) -> URL? {
         return URL(string: "https://api.github.com/users/\(username)/repos")
     }
 

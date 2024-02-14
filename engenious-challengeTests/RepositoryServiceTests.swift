@@ -57,4 +57,57 @@ class RepositoryServiceTests: XCTestCase {
             XCTAssertTrue(repos.isEmpty)
         }
     }
+
+    func testMakeURLForUsername() {
+        // Arrange
+        let service = RepositoryService()
+        let username = "testuser"
+
+        // Act
+        let url = service.makeURL(forUsername: username)
+
+        // Assert
+        XCTAssertEqual(url?.absoluteString, "https://api.github.com/users/testuser/repos")
+    }
+
+    func testGetUserReposWithEmptyUsername() {
+        // Arrange
+        let service = MockRepositoryService(result: .success([])) // Assuming success but empty result
+        let expectation = XCTestExpectation(description: "Handle empty username")
+
+        // Act
+        service.getUserRepos(username: "") { repos in
+            // Assert
+            XCTAssertTrue(repos.isEmpty)
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testGetUserReposWithInvalidJSON() {
+        // Arrange
+        let service = MockRepositoryService(result: .failure(DecodingError.dataCorrupted(DecodingError.Context(codingPath: [], debugDescription: "The data couldn’t be read because it isn’t in the correct format."))))
+        let expectation = XCTestExpectation(description: "Fetch user repos with invalid JSON")
+
+        // Act
+        service.getUserRepos(username: "testuser")
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    XCTFail("Expected failure but got success")
+                case .failure(let error):
+                    // Assert
+                    guard case DecodingError.dataCorrupted(_) = error else {
+                        return XCTFail("Expected decoding error")
+                    }
+                }
+                expectation.fulfill()
+            }, receiveValue: { _ in
+                XCTFail("Expected to fail but succeeded")
+            })
+            .store(in: &cancellables)
+
+        wait(for: [expectation], timeout: 1.0)
+    }
 }
