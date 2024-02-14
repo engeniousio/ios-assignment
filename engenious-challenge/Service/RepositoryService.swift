@@ -15,7 +15,7 @@ protocol RepositoryServiceProtocol {
 
 struct RepositoryService: RepositoryServiceProtocol {
     func getUserRepos(username: String) -> AnyPublisher<[Repo], Error> {
-        guard let url = URL(string: "https://api.github.com/users/\(username)/repos") else {
+        guard let url = makeURL(forUsername: username) else {
             return Fail(error: URLError(.badURL))
                 .eraseToAnyPublisher()
         }
@@ -28,7 +28,7 @@ struct RepositoryService: RepositoryServiceProtocol {
     }
 
     func getUserRepos(username: String, completion: @escaping ([Repo]) -> Void) {
-        guard let url = URL(string: "https://api.github.com/users/\(username)/repos") else {
+        guard let url = makeURL(forUsername: username) else {
             return completion([])
         }
         let session = URLSession.shared
@@ -51,4 +51,9 @@ struct RepositoryService: RepositoryServiceProtocol {
         })
         task.resume()
     }
+
+    private func makeURL(forUsername username: String) -> URL? {
+        return URL(string: "https://api.github.com/users/\(username)/repos")
+    }
+
 }

@@ -9,15 +9,26 @@ import Foundation
 import Combine
 
 class RepoListViewModel {
-    @Published var repoList = [Repo]()
+    private(set) var sectionTitle = "Repositories"
+    private(set) var username = "apple" // empty state- stonean
+
     private var cancellables = Set<AnyCancellable>()
-    private let repositoryService = RepositoryService()
+    private let repositoryService: RepositoryService
 
-    // Error handling
+    @Published var repoList = [Repo]()
+    @Published private(set) var viewControllerTitle: String
     @Published var errorMessage: String?
-    var useCombine: Bool = true
 
-    func fetchRepos(username: String) {
+    var useCombine: Bool = false
+
+    init(repositoryService: RepositoryService) {
+        self.repositoryService = repositoryService
+        viewControllerTitle = "\(username)'s repos"
+
+        fetchRepos()
+    }
+    
+    func fetchRepos() {
         if useCombine {
             // Combine approach
             repositoryService.getUserRepos(username: username)
