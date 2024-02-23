@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0926C92B7D076E008D7F8B /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0926C82B7D076E008D7F8B /* RepoListViewModel.swift */; };
+		0A0926CB2B7D2059008D7F8B /* MockRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0926CA2B7D2059008D7F8B /* MockRepositoryService.swift */; };
+		0A0926CD2B7D206F008D7F8B /* RepositoryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0926CC2B7D206F008D7F8B /* RepositoryServiceTests.swift */; };
 		20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */; };
 		20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */; };
-		20F3FA3528379AE2008BFAF8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3428379AE2008BFAF8 /* RootViewController.swift */; };
+		20F3FA3528379AE2008BFAF8 /* RepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA3428379AE2008BFAF8 /* RepoListViewController.swift */; };
 		20F3FA3A28379AE3008BFAF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20F3FA3928379AE3008BFAF8 /* Assets.xcassets */; };
 		20F3FA3D28379AE3008BFAF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20F3FA3B28379AE3008BFAF8 /* LaunchScreen.storyboard */; };
 		20F3FA4828379AE3008BFAF8 /* engenious_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA4728379AE3008BFAF8 /* engenious_challengeTests.swift */; };
 		20F3FA5228379AE3008BFAF8 /* engenious_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */; };
 		20F3FA5428379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */; };
-		20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* NetworkService.swift */; };
+		20F3FA6128379F06008BFAF8 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6028379F06008BFAF8 /* RepositoryService.swift */; };
 		20F3FA6328379F1D008BFAF8 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA6228379F1D008BFAF8 /* Repo.swift */; };
 		20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -38,10 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A0926C82B7D076E008D7F8B /* RepoListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
+		0A0926CA2B7D2059008D7F8B /* MockRepositoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRepositoryService.swift; sourceTree = "<group>"; };
+		0A0926CC2B7D206F008D7F8B /* RepositoryServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryServiceTests.swift; sourceTree = "<group>"; };
 		20F3FA2D28379AE2008BFAF8 /* engenious-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "engenious-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		20F3FA3428379AE2008BFAF8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		20F3FA3428379AE2008BFAF8 /* RepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewController.swift; sourceTree = "<group>"; };
 		20F3FA3928379AE3008BFAF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20F3FA3C28379AE3008BFAF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20F3FA3E28379AE3008BFAF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,7 +56,7 @@
 		20F3FA4D28379AE3008BFAF8 /* engenious-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "engenious-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20F3FA5128379AE3008BFAF8 /* engenious_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITests.swift; sourceTree = "<group>"; };
 		20F3FA5328379AE3008BFAF8 /* engenious_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = engenious_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		20F3FA6028379F06008BFAF8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		20F3FA6028379F06008BFAF8 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
 		20F3FA6228379F1D008BFAF8 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +86,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A0926C12B7D06AE008D7F8B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A0926C82B7D076E008D7F8B /* RepoListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A0926C32B7D06AE008D7F8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A0926C72B7D06CF008D7F8B /* RepoList */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A0926C42B7D06AE008D7F8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20F3FA6228379F1D008BFAF8 /* Repo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A0926C52B7D06AE008D7F8B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0A0926CA2B7D2059008D7F8B /* MockRepositoryService.swift */,
+				20F3FA6028379F06008BFAF8 /* RepositoryService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0A0926C72B7D06CF008D7F8B /* RepoList */ = {
+			isa = PBXGroup;
+			children = (
+				20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */,
+				20F3FA3428379AE2008BFAF8 /* RepoListViewController.swift */,
+			);
+			path = RepoList;
+			sourceTree = "<group>";
+		};
 		20F3FA2428379AE2008BFAF8 = {
 			isa = PBXGroup;
 			children = (
@@ -103,12 +151,12 @@
 		20F3FA2F28379AE2008BFAF8 /* engenious-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				0A0926C42B7D06AE008D7F8B /* Model */,
+				0A0926C32B7D06AE008D7F8B /* View */,
+				0A0926C12B7D06AE008D7F8B /* ViewModel */,
+				0A0926C52B7D06AE008D7F8B /* Service */,
 				20F3FA3028379AE2008BFAF8 /* AppDelegate.swift */,
 				20F3FA3228379AE2008BFAF8 /* SceneDelegate.swift */,
-				20F3FA3428379AE2008BFAF8 /* RootViewController.swift */,
-				20F3FA642837D07F008BFAF8 /* RepoTableViewCell.swift */,
-				20F3FA6028379F06008BFAF8 /* NetworkService.swift */,
-				20F3FA6228379F1D008BFAF8 /* Repo.swift */,
 				20F3FA3928379AE3008BFAF8 /* Assets.xcassets */,
 				20F3FA3B28379AE3008BFAF8 /* LaunchScreen.storyboard */,
 				20F3FA3E28379AE3008BFAF8 /* Info.plist */,
@@ -119,6 +167,7 @@
 		20F3FA4628379AE3008BFAF8 /* engenious-challengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				0A0926CC2B7D206F008D7F8B /* RepositoryServiceTests.swift */,
 				20F3FA4728379AE3008BFAF8 /* engenious_challengeTests.swift */,
 			);
 			path = "engenious-challengeTests";
@@ -263,10 +312,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20F3FA3528379AE2008BFAF8 /* RootViewController.swift in Sources */,
+				20F3FA3528379AE2008BFAF8 /* RepoListViewController.swift in Sources */,
+				0A0926CB2B7D2059008D7F8B /* MockRepositoryService.swift in Sources */,
+				0A0926C92B7D076E008D7F8B /* RepoListViewModel.swift in Sources */,
 				20F3FA3128379AE2008BFAF8 /* AppDelegate.swift in Sources */,
 				20F3FA6328379F1D008BFAF8 /* Repo.swift in Sources */,
-				20F3FA6128379F06008BFAF8 /* NetworkService.swift in Sources */,
+				20F3FA6128379F06008BFAF8 /* RepositoryService.swift in Sources */,
 				20F3FA3328379AE2008BFAF8 /* SceneDelegate.swift in Sources */,
 				20F3FA652837D07F008BFAF8 /* RepoTableViewCell.swift in Sources */,
 			);
@@ -277,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F3FA4828379AE3008BFAF8 /* engenious_challengeTests.swift in Sources */,
+				0A0926CD2B7D206F008D7F8B /* RepositoryServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
