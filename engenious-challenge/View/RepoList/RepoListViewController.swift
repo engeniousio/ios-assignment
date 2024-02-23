@@ -12,7 +12,8 @@ class RepoListViewController: UIViewController {
 
     private var viewModel: RepoListViewModel
     private var cancellables = Set<AnyCancellable>()
-    let tv = UITableView()
+    private let tv = UITableView()
+    lazy var searchBar: UISearchBar = UISearchBar()
 
     init(viewModel: RepoListViewModel) {
         self.viewModel = viewModel
@@ -28,7 +29,7 @@ class RepoListViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         setupBindings()
-    }
+     }
 
     private func configureUI() {
         view.backgroundColor = .white
@@ -46,6 +47,17 @@ class RepoListViewController: UIViewController {
         title = "\(viewModel.username)'s repos"
         navigationController?.navigationBar.prefersLargeTitles = true
         setupTableView()
+        setupSearchBar()
+    }
+
+    private func setupSearchBar() {
+        searchBar.searchBarStyle = UISearchBar.Style.default
+        searchBar.placeholder = " Search..."
+        searchBar.sizeToFit()
+        searchBar.isTranslucent = false
+        searchBar.backgroundImage = UIImage()
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
     }
 
     private func setupTableView() {
@@ -131,5 +143,11 @@ extension RepoListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.descriptionLabel.text = repo.description
 
         return cell
+    }
+}
+
+extension RepoListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange textSearched: String){
+        viewModel.searchTerm = textSearched
     }
 }

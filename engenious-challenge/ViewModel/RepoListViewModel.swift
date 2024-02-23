@@ -10,7 +10,7 @@ import Combine
 
 class RepoListViewModel {
     private(set) var sectionTitle = "Repositories"
-    private(set) var username = "apple" // empty state- stonean
+    private(set) var username = "apple" // Default username; consider allowing this to be set dynamically for more flexibility.
 
     private var cancellables = Set<AnyCancellable>()
     private let repositoryService: RepositoryService
@@ -19,18 +19,31 @@ class RepoListViewModel {
     @Published private(set) var viewControllerTitle: String
     @Published var errorMessage: String?
 
-    var useCombine: Bool = false
+    @Published var searchTerm: String? {
+        didSet {
+            searchForRepos()
+        }
+    }
+    @Published var originalRepoList = [Repo]()
+
+    var useCombine: Bool = true
 
     init(repositoryService: RepositoryService) {
         self.repositoryService = repositoryService
         viewControllerTitle = "\(username)'s repos"
-
         fetchRepos()
     }
-    
+
+    private func searchForRepos() {
+        guard let searchTerm = searchTerm, !searchTerm.isEmpty else {
+            repoList = originalRepoList
+            return
+        }
+        repoList = originalRepoList.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
+    }
+
     func fetchRepos() {
         if useCombine {
-            // Combine approach
             repositoryService.getUserRepos(username: username)
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { [weak self] completion in
@@ -41,6 +54,7 @@ class RepoListViewModel {
                         self?.errorMessage = error.localizedDescription
                     }
                 }, receiveValue: { [weak self] repos in
+                    self?.originalRepoList = repos
                     self?.repoList = repos
                 })
                 .store(in: &cancellables)
@@ -49,6 +63,7 @@ class RepoListViewModel {
             repositoryService.getUserRepos(username: username) { [weak self] repos in
                 DispatchQueue.main.async {
                     self?.repoList = repos
+                    self?.originalRepoList = repos
                 }
             }
         }
